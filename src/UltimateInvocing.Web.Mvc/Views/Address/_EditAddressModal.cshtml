@@ -1,0 +1,102 @@
+﻿@using UltimateInvocing.Web.Models.Common.Modals
+@model UltimateInvocing.Web.Models.Address.EditAddressViewModel
+@{
+    Layout = null;
+}
+
+@Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditAddress")))
+
+
+
+<div class="modal-body">
+    <form name="AddressEditForm" role="form" novalidate class="form-validation">
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select id="CountryId" name="CountryId" asp-items="Model.Countries" class="validate form-control"></select>
+                        <label for="CountryId" class="form-label">@L("Country")</label>
+                    </div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select id="ProvinceId" name="ProvinceId" asp-items="Model.Provinces" class="validate form-control"></select>
+                        <label for="ProvinceId" class="form-label">@L("Province")</label>
+                    </div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input id="City" type="text" value="@Model.City" name="City" required maxlength="32" minlength="2" class="validate form-control" />
+                        <label for="City" class="form-label">@L("Address.City")</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="StreetAddress" value="@Model.StreetAddress" type="text" name="StreetAddress" required maxlength="32" minlength="2" class="validate form-control" />
+                                <label for="StreetAddress" class="form-label">@L("Address.StreetAddress")</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="HouseNumber" type="text" value="@Model.HouseNumber" name="HouseNumber" required maxlength="32" minlength="1" class="validate form-control" />
+                                <label for="HouseNumber" class="form-label">@L("Address.HouseNumber")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="PostalCode" type="text" value="@Model.PostalCode" name="PostalCode" required maxlength="32" minlength="2" class="validate form-control" />
+                                <label for="PostalCode" class="form-label">@L("Address.PostalCode")</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="PhoneNumber" type="text" value="@Model.PhoneNumber" name="PhoneNumber" required maxlength="32" minlength="2" class="validate form-control" />
+                                <label for="PhoneNumber" class="form-label">@L("Address.PhoneNumber")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+
+                    <div class="col-xs-12">
+                        <div class="form-group form-float">
+                            @if (Model.Taxable)
+                            {
+                                <input class="filled-in" value="True" type="checkbox" name="Taxable" checked="checked" id="TaxableEdit" />
+                            }
+                            else
+                            {
+                                <input class="filled-in" value="False" type="checkbox" name="Taxable" id="TaxableEdit" />
+                            }
+
+                            <label for="TaxableEdit" class="form-label">@L("Address.Taxable")</label>
+                        </div>
+                    </div>
+
+                </div>
+                
+
+
+            </div>
+        </div>
+    </form>
+</div>
+
+@Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+
+<script src="~/view-resources/Views/Customers/Address/_EditAddressModal.js" asp-append-version="true"></script>

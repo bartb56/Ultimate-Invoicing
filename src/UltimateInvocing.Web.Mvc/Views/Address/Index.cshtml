@@ -1,0 +1,210 @@
+﻿@using UltimateInvocing.Web.Startup
+@model UltimateInvocing.Web.Models.Address.AddressListModel
+@{
+    ViewBag.CurrentPageName = PageNames.Addresses; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Customers/Address/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Customers/Address/Index.Min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("Addresses")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" address="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("Country")</th>
+                            <th>@L("Province")</th>
+                            <th>@L("Address.City")</th>
+                            <th>@L("Address.StreetAddress")</th>
+                            <th>@L("Address.HouseNumber")</th>
+                            <th>@L("Address.PostalCode")</th>
+                            <th>@L("Address.PhoneNumber")</th>
+                            <th>@L("Address.Taxable")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var address in Model.Addresses)
+                        {
+                            <tr>
+                                <td>@address.Country.Name</td>
+                                <td>@address.Province.Name</td>
+                                <td>@address.City</td>
+                                <td>@address.StreetAddress</td>
+                                <td>@address.HouseNumber</td>
+                                <td>@address.PostalCode</td>
+                                <td>@address.PhoneNumber</td>
+                                <td>
+                                    @if (address.Taxable)
+                                    {<i class="material-icons">check</i>}
+                                    else
+                                    {<i class="material-icons">cancel</i>}
+                                </td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" address="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block edit-address" data-address-id="@address.Id" data-toggle="modal" data-target="#AddressEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block delete-address" data-address-id="@address.Id" data-address-name="@address.Country.Name"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#AddressCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="AddressCreateModal" tabindex="-1" address="dialog" aria-labelledby="AddressCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" address="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewAddress")</span>
+                </h4>
+            </div>
+
+            <div class="modal-body">
+                <form name="addressCreateForm" address="form" novalidate class="form-validation">
+
+                    <input name="CustomerId" value="@Model.CustomerId" style="display: none;" />
+
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <select id="CountryId" name="CountryId" asp-items="Model.Countries" class="form-control">
+                                      
+                                    </select><label class="form-label">@L("Country")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <select id="ProvinceId" name="ProvinceId" asp-items="Model.Provinces" class="validate form-control"></select>
+                                    <label for="ProvinceId" class="form-label">@L("Province")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="City" type="text" name="City" required maxlength="32" minlength="2" class="validate form-control">
+                                    <label for="City" class="form-label">@L("Address.City")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="StreetAddress" type="text" name="StreetAddress" required maxlength="32" minlength="2" class="validate form-control">
+                                            <label for="StreetAddress" class="form-label">@L("Address.StreetAddress")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="HouseNumber" type="text" name="HouseNumber" required maxlength="32" minlength="1" class="validate form-control">
+                                            <label for="HouseNumber" class="form-label">@L("Address.HouseNumber")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="PostalCode" type="text" name="PostalCode" required maxlength="32" minlength="2" class="validate form-control">
+                                            <label for="PostalCode" class="form-label">@L("Address.PostalCode")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="PhoneNumber" type="text" name="PhoneNumber" required maxlength="32" minlength="2" class="validate form-control">
+                                            <label for="PhoneNumber" class="form-label">@L("Address.PhoneNumber")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <div class="form-group form-float">
+                                <input class="filled-in" value="True" type="checkbox" name="Taxable" id="Taxable" checked="checked" />
+                                <label for="Taxable" class="form-label">@L("Address.Taxable")</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="AddressEditModal" tabindex="-1" address="dialog" aria-labelledby="AddressEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" address="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

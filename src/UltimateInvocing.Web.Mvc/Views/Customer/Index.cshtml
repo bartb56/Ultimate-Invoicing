@@ -1,0 +1,139 @@
+﻿@using UltimateInvocing.Web.Startup
+@model UltimateInvocing.Web.Models.Customer.CustomerListModel
+@{
+    ViewBag.CurrentPageName = PageNames.Customers; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Customers/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Customers/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("Customers")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" customer="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("Customer.CompanyName")</th>
+                            <th>@L("Customer.CompanyEmail")</th>
+                            <th>@L("Customer.CompanyPhonenumber")</th>
+                            <th>@L("Customer.AddressCount")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var customer in Model.Customers)
+                        {
+                            <tr>
+                                <td>@customer.CompanyName</td>
+                                <td>@customer.CompanyEmail</td>
+                                <td>@customer.CompanyPhonenumber</td>
+                                <td>@customer.CustomerAddresses.Count()</td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" customer="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="~/Customer/address/@customer.Id" class="waves-effect waves-block" data-customer-id="@customer.Id"><i class="material-icons">place</i>@L("Customer.MaintainAddress")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block edit-customer" data-customer-id="@customer.Id" data-toggle="modal" data-target="#CustomerEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block delete-customer" data-customer-id="@customer.Id" data-customer-name="@customer.CompanyName"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#CustomerCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="get" action="~/Customer/address/" id="AddressForm">
+    <input type="text" value="" style="display: none;" id="AddressId" name="id" />
+</form>
+
+<div class="modal fade" id="CustomerEditModal" tabindex="-1" customer="dialog" aria-labelledby="CustomerEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" customer="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="CustomerCreateModal" tabindex="-1" customer="dialog" aria-labelledby="CustomerCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" customer="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewCustomer")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="customerCreateForm" customer="form" novalidate class="form-validation">
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="customername" type="text" name="CompanyName" required maxlength="32" minlength="2" class="validate form-control">
+                                    <label for="customername" class="form-label">@L("Customer.CompanyName")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="displayname" type="text" name="CompanyEmail" required maxlength="32" minlength="2" class="validate form-control">
+                                    <label for="displayname" class="form-label">@L("Customer.CompanyEmail")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="customer-description" name="CompanyPhonenumber" class="validate form-control">
+                                    <label for="customer-description" class="form-label">@L("Customer.CompanyPhonenumber")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
