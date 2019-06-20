@@ -18,7 +18,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    @L("Province")
+                    @L("Provinces")
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
@@ -79,7 +79,7 @@
                         <div class="col-sm-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input id="provincename" type="text" name="Name" required maxlength="32" minlength="2" class="validate form-control">
+                                    <input id="provincename" type="text" name="Name" required maxlength="128" minlength="2" class="validate form-control">
                                     <label for="provincename" class="form-label">@L("Province.Name")</label>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                         <div class="col-sm-12">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <select name="CountryId" asp-items="Model.Countries" class="validate form-control"></select>
+                                    <select name="CountryId" required asp-items="Model.Countries" class="validate form-control"></select>
                                     <label for="displayname" class="form-label">@L("Country")</label>
                                 </div>
                             </div>

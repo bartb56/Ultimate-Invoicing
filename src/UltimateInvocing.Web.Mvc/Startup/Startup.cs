@@ -13,7 +13,7 @@ using UltimateInvocing.Configuration;
 using UltimateInvocing.Identity;
 using UltimateInvocing.Web.Resources;
 using Abp.AspNetCore.SignalR.Hubs;
-
+using UltimateInvocing.Factories.Home;
 
 namespace UltimateInvocing.Web.Startup
 {
@@ -37,6 +37,9 @@ namespace UltimateInvocing.Web.Startup
             AuthConfigurer.Configure(services, _appConfiguration);
 
             services.AddScoped<IWebResourceManager, WebResourceManager>();
+
+            //Add factories
+            services.AddScoped<IHomeFactory, HomeFactory>();
 
             services.AddSignalR();
 

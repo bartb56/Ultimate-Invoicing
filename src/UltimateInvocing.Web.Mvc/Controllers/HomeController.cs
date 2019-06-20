@@ -1,15 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Abp.AspNetCore.Mvc.Authorization;
 using UltimateInvocing.Controllers;
+using UltimateInvocing.Factories.Home;
+using System.Threading.Tasks;
 
 namespace UltimateInvocing.Web.Controllers
 {
     [AbpMvcAuthorize]
     public class HomeController : UltimateInvocingControllerBase
     {
-        public ActionResult Index()
+        private readonly IHomeFactory _homeFactory;
+
+        public HomeController(IHomeFactory homeFactory)
         {
-            return View();
+            _homeFactory = homeFactory;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var model = await _homeFactory.PrepareModel();
+            return View(model);
         }
 	}
 }
