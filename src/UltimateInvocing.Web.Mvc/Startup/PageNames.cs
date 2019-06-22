@@ -11,5 +11,6 @@
         public const string Provinces = "Provinces";
         public const string Customers = "Customers";
         public const string Addresses = "Addresses";
+        public const string Product = "Products";
     }
 }

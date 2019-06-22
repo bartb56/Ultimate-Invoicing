@@ -47,11 +47,20 @@ namespace UltimateInvocing.Web.Startup
                 )
                 .AddItem(
                     new MenuItemDefinition(
+                        PageNames.Product,
+                        L("Products"),
+                        url: "Products",
+                        icon: "people",
+                        requiredPermissionName: PermissionNames.Pages_Products
+                        )
+                    )
+                .AddItem(
+                    new MenuItemDefinition(
                         PageNames.Customers,
                         L("Customers"),
                         url: "Customers",
                         icon: "people",
-                        requiredPermissionName: PermissionNames.Pages_Roles
+                        requiredPermissionName: PermissionNames.Pages_Customers
                         )
                     )
                 .AddItem(

@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UltimateInvocing.Country.Dto
+namespace UltimateInvocing.Product.Dto
 {
-    public class PagedCountryResultRequestDto : PagedResultRequestDto
+    public class PagedProductResultRequestDto : PagedResultRequestDto
     {
         public string Keyword { get; set; }
         public bool? IsActive { get; set; }

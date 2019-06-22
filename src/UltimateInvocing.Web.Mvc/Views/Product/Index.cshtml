@@ -1,0 +1,201 @@
+﻿@using UltimateInvocing.Web.Startup
+@model UltimateInvocing.Web.Models.Product.ProductListModel
+@{
+    ViewBag.CurrentPageName = PageNames.Countries; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Products/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Products/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("Countries")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" product="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("Product.Number")</th>
+                            <th>@L("Product.Name")</th>
+                            <th>@L("Product.Description")</th>
+                            <th>@L("Product.SKUCode")</th>
+                            <th>@L("Product.Weight")</th>
+                            <th>@L("Product.Price")</th>
+                            <th>@L("Product.Tax")</th>
+                            <th>@L("Product.IsAvailable")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+                        {
+                        <tr>
+                            <td>@product.Number</td>
+                            <td>@product.Name</td>
+                            <td>@product.Description</td>
+                            <td>@product.SKUCode</td>
+                            <td>@product.Weight</td>
+                            <td>@product.Price</td>
+                            <td>@product.Tax</td>
+                            <td>
+                                @if (product.IsAvailable)
+                                {
+                                    <i class="material-icons">check</i>}
+                                else
+                                {
+                                    <i class="material-icons">cancel</i>}
+                            </td> 
+                            <td class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" product="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">menu</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#" class="waves-effect waves-block edit-product" data-product-id="@product.Id" data-toggle="modal" data-target="#ProductEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block delete-product" data-product-id="@product.Id" data-product-name="@product.Name"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#ProductCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ProductCreateModal" tabindex="-1" product="dialog" aria-labelledby="ProductCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" product="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewProduct")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="productCreateForm" product="form" novalidate class="form-validation">
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Number" type="number" name="Number" required maxlength="128" minlength="2" class="validate form-control">
+                                    <label for="Number" class="form-label">@L("Product.Number")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Name" type="text" name="Name" maxlength="2" minlength="0" class="validate form-control">
+                                    <label for="Name" class="form-label">@L("Product.Name")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Description" type="text" name="Description" maxlength="128" minlength="0" class="validate form-control">
+                                    <label for="Description" class="form-label">@L("Product.Description")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="SKUCode" type="text" name="SKUCode" maxlength="128" minlength="0" class="validate form-control">
+                                    <label for="SKUCode" class="form-label">@L("Product.SKUCode")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Weight" type="number" name="Weight" maxlength="128" minlength="0" class="validate form-control">
+                                    <label for="Weight" class="form-label">@L("Product.Weight")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Price" type="number" name="Price" maxlength="128" minlength="0" class="validate form-control">
+                                    <label for="Price" class="form-label">@L("Product.Price")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Tax" type="number" name="Tax" maxlength="128" minlength="0" class="validate form-control">
+                                    <label for="Tax" class="form-label">@L("Product.Tax")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input class="filled-in" value="True" type="checkbox" name="IsAvailable" id="IsAvailable" checked="checked" />
+                                    <label for="IsAvailable" class="form-label">@L("Product.IsAvailable")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ProductEditModal" tabindex="-1" product="dialog" aria-labelledby="ProductEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" product="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

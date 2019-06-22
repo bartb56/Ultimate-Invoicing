@@ -11,5 +11,7 @@
         public const string Pages_General_Settings = "Pages.General.Settings";
 
         public const string Pages_Customers = "Pages.Customers";
+
+        public const string Pages_Products = "Pages.Products";
     }
 }

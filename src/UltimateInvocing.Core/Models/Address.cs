@@ -12,9 +12,9 @@ namespace UltimateInvocing.Models
     {
         public Address() { }
 
-        [ForeignKey(nameof(CountryId))]
-        public Guid CountryId { get; set; }
-        public Country Country { get; set; }
+        [ForeignKey(nameof(ProductId))]
+        public Guid ProductId { get; set; }
+        public Product Product { get; set; }
 
         [ForeignKey(nameof(ProvinceId))]
         public Guid ProvinceId { get; set; }

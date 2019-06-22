@@ -819,11 +819,11 @@ Zone Asia/Jayapura	9:22:48 -	LMT	1932 Nov
 #	Official Newspaper No. 13548-1370/6/25 [1991-09-16]
 #	No. 16760/T233 H				1370/6/10 [1991-09-01]
 #
-#	The Rule About Change of the Official Time of the Country
+#	The Rule About Change of the Official Time of the Product
 #
 #	The Board of Ministers, in the meeting dated 1370/5/23 [1991-08-14],
 #	based on the suggestion number 2221/D dated 1370/4/22 [1991-07-13]
-#	of the Country's Organization for Official and Employment Affairs,
+#	of the Product's Organization for Official and Employment Affairs,
 #	and referring to the law for equating the working hours of workers
 #	and officers in the whole country dated 1359/4/23 [1980-07-14], and
 #	for synchronizing the official times of the country, agreed that:
@@ -2544,7 +2544,7 @@ Rule	Syria	2007	only	-	Nov	 Fri>=1	0:00	0	-
 # For everyone's info, I saw an IATA time zone change for [Syria] for
 # this month (March 2008) in the last day or so...This is the data IATA
 # are now using:
-# Country     Time Standard   --- DST Start ---   --- DST End ---  DST
+# Product     Time Standard   --- DST Start ---   --- DST End ---  DST
 # Name        Zone Variation   Time    Date        Time    Date
 # Variation
 # Syrian Arab
