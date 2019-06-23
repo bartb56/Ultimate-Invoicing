@@ -120,6 +120,19 @@
 
     <text name="Province.Name">Provincie naam</text>
     <text name="CreateNewProvince">Nieuwe provincie</text>
+
+    <text name="Product.Number">Nummer</text>
+    <text name="Product.Name">Naam</text>
+    <text name="Product.Description">Omschrijving</text>
+    <text name="Product.SKUCode">SKU Code</text>
+    <text name="Product.Weight">Gewicht</text>
+    <text name="Product.Price">Prijs</text>
+    <text name="Product.Tax">Belasting</text>
+    <text name="Product.IsAvailable">Beschikbaar</text>
+    <text name="Product">Product</text>
+    <text name="Products">Producten</text>
+    <text name="EditProduct">Wijzig product</text>
+    <text name="CreateNewProduct">Nieuw product</text>
     
   </texts>
 </localizationDictionary>

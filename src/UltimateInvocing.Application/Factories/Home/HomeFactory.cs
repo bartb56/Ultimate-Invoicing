@@ -10,20 +10,24 @@ namespace UltimateInvocing.Factories.Home
     public class HomeFactory : IHomeFactory
     {
         private readonly IRepository<Models.Customer, Guid> _repository;
+        private readonly IRepository<Models.Product, Guid> _productRepository;
         IRepository<User, long> _userRepository;
 
         public HomeFactory(IRepository<Models.Customer, Guid> repository,
-            IRepository<User, long> userRepository)
+            IRepository<User, long> userRepository,
+            IRepository<Models.Product, Guid> productRepository)
         {
             _repository = repository;
             _userRepository = userRepository;
+            _productRepository = productRepository;
         }
         public async Task<HomeModel> PrepareModel()
         {
             var model = new HomeModel()
             {
                 Customers = await _repository.CountAsync(),
-                Users = await _userRepository.CountAsync()
+                Users = await _userRepository.CountAsync(),
+                Products = await _productRepository.CountAsync()
             };
             return model;
         }
