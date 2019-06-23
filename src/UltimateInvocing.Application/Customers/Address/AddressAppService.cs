@@ -49,7 +49,7 @@ namespace UltimateInvocing.Customers.Address
 
         public async Task<List<AdressDTO>> GetAllByUserId(Guid id)
         {
-            return ObjectMapper.Map<List<AdressDTO>>(await _repository.GetAll().Where(x => x.CustomerId == id).Select(x => x.Address).Include(x => x.Product).Include(x => x.Province).ToListAsync());
+            return ObjectMapper.Map<List<AdressDTO>>(await _repository.GetAll().Where(x => x.CustomerId == id).Select(x => x.Address).Include(x => x.Country).Include(x => x.Province).ToListAsync());
         }
 
         public async Task<AdressDTO> GetById(Guid id)

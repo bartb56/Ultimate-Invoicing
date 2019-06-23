@@ -50,7 +50,7 @@ namespace UltimateInvocing.Web.Startup
                         PageNames.Product,
                         L("Products"),
                         url: "Products",
-                        icon: "people",
+                        icon: "local_grocery_store",
                         requiredPermissionName: PermissionNames.Pages_Products
                         )
                     )

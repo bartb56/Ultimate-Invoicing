@@ -30,5 +30,13 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             };
             return View(model);
         }
+
+        public async Task<ActionResult> EditProductModal(Guid productId)
+        {
+            var output = await _productAppService.GetById(productId);
+            var model = new EditProductViewModel(output);
+
+            return View("_EditProductModal", model);
+        }
     }
 }
