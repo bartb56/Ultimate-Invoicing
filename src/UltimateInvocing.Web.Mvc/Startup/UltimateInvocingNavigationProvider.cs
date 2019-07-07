@@ -22,30 +22,13 @@ namespace UltimateInvocing.Web.Startup
                     )
                 ).AddItem(
                     new MenuItemDefinition(
-                        PageNames.Tenants,
-                        L("Tenants"),
-                        url: "Tenants",
+                        PageNames.Company,
+                        L("Companies"),
+                        url: "Companies",
                         icon: "business",
-                        requiredPermissionName: PermissionNames.Pages_Tenants
+                        requiredPermissionName: PermissionNames.Pages_Companies
                     )
                 ).AddItem(
-                    new MenuItemDefinition(
-                        PageNames.Users,
-                        L("Users"),
-                        url: "Users",
-                        icon: "people",
-                        requiredPermissionName: PermissionNames.Pages_Users
-                    )
-                ).AddItem(
-                    new MenuItemDefinition(
-                        PageNames.Roles,
-                        L("Roles"),
-                        url: "Roles",
-                        icon: "local_offer",
-                        requiredPermissionName: PermissionNames.Pages_Roles
-                    )
-                )
-                .AddItem(
                     new MenuItemDefinition(
                         PageNames.Product,
                         L("Products"),
@@ -83,7 +66,23 @@ namespace UltimateInvocing.Web.Startup
                         L("Provinces"),
                         url: "Provinces"
                     )
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Users,
+                        L("Users"),
+                        url: "Users",
+                        icon: "people",
+                        requiredPermissionName: PermissionNames.Pages_Users
                     )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Roles,
+                        L("Roles"),
+                        url: "Roles",
+                        icon: "local_offer",
+                        requiredPermissionName: PermissionNames.Pages_Roles
+                    )
+                )
                 ).AddItem( // Menu items below is just for demonstration!
                     new MenuItemDefinition(
                         "MultiLevelMenu",

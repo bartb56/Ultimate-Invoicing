@@ -1073,6 +1073,64 @@ namespace UltimateInvocing.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("UltimateInvocing.Models.Company", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("BTW")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<Guid>("CountryId");
+
+                    b.Property<string>("HouseNumber")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("IBAN")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("KVK")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("Logo")
+                        .IsRequired()
+                        .HasMaxLength(256);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<Guid>("ProvinceId");
+
+                    b.Property<string>("StreetAddress")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("ProvinceId");
+
+                    b.ToTable("Companies");
+                });
+
             modelBuilder.Entity("UltimateInvocing.Models.Country", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1386,6 +1444,19 @@ namespace UltimateInvocing.Migrations
                 });
 
             modelBuilder.Entity("UltimateInvocing.Models.Address", b =>
+                {
+                    b.HasOne("UltimateInvocing.Models.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("UltimateInvocing.Models.Province", "Province")
+                        .WithMany()
+                        .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("UltimateInvocing.Models.Company", b =>
                 {
                     b.HasOne("UltimateInvocing.Models.Country", "Country")
                         .WithMany()

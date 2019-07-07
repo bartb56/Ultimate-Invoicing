@@ -13,5 +13,7 @@
         public const string Pages_Customers = "Pages.Customers";
 
         public const string Pages_Products = "Pages.Products";
+
+        public const string Pages_Companies = "Pages.Companies";
     }
 }

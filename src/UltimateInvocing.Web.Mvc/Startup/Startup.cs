@@ -14,6 +14,7 @@ using UltimateInvocing.Identity;
 using UltimateInvocing.Web.Resources;
 using Abp.AspNetCore.SignalR.Hubs;
 using UltimateInvocing.Factories.Home;
+using UltimateInvocing.Web.Factories.Company;
 
 namespace UltimateInvocing.Web.Startup
 {
@@ -40,6 +41,7 @@ namespace UltimateInvocing.Web.Startup
 
             //Add factories
             services.AddScoped<IHomeFactory, HomeFactory>();
+            services.AddScoped<ICompanyFactory, CompanyFactory>();
 
             services.AddSignalR();
 

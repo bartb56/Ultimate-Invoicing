@@ -133,6 +133,16 @@
     <text name="Products">Producten</text>
     <text name="EditProduct">Wijzig product</text>
     <text name="CreateNewProduct">Nieuw product</text>
+    <text name="Company.Name">Bedrijfs naam</text>
+    <text name="Company.KVK">KVK nummer</text>
+    <text name="Company.IBAN">IBAN Code</text>
+    <text name="Company.BTW">BTW Code</text>
+    <text name="Company.City">Stad</text>
+    <text name="Company.StreetAddress">Straatnaam</text>
+    <text name="Company.HouseNumber">Huisnummer</text>
+    <text name="Company.PostalCode">Postcode</text>
+    <text name="Company.PhoneNumber">Telefoonnummer</text>
+    <text name="Companies">Bedrijfen</text>
     
   </texts>
 </localizationDictionary>
