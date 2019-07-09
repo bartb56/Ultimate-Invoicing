@@ -16,14 +16,19 @@ using UltimateInvocing.Models;
 namespace UltimateInvocing.Country
 {
     [AbpAuthorize(PermissionNames.Pages_General_Settings)]
-    public class CountryAppService : AsyncCrudAppService<Models.Country, CountryDto, Guid>, ICountryAppService
+    public class CountryAppService : UltimateInvocingAppServiceBase, ICountryAppService
     {
         private readonly IRepository<Models.Country, Guid> _repository;
 
         public CountryAppService(IRepository<Models.Country, Guid> repository)
-            : base(repository)
         {
             _repository = repository;
+        }
+
+        public async Task Create(CountryDto countryDto)
+        {
+            await _repository.InsertAsync(ObjectMapper.Map<Models.Country>(countryDto));
+            return;
         }
 
         public async Task DeleteCustom(Guid id)
@@ -49,6 +54,13 @@ namespace UltimateInvocing.Country
         public IQueryable<Models.Country> GetCountries()
         {
             return _repository.GetAll();
+        }
+
+        public async Task Update(CountryDto countryDto)
+        {
+            var country = ObjectMapper.Map<Models.Country>(countryDto);
+            await _repository.UpdateAsync(country);
+            return;
         }
     }
 }

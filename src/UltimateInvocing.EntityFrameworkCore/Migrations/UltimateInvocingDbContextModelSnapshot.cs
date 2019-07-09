@@ -1191,6 +1191,22 @@ namespace UltimateInvocing.Migrations
                     b.ToTable("CustomerAddresses");
                 });
 
+            modelBuilder.Entity("UltimateInvocing.Models.PaymentType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("DisplayOrder");
+
+                    b.Property<string>("TypeName")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentTypes");
+                });
+
             modelBuilder.Entity("UltimateInvocing.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")

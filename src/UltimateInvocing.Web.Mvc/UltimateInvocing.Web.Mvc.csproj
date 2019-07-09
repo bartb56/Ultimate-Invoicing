@@ -56,7 +56,6 @@
     <Folder Include="Models\Company\" />
     <Folder Include="wwwroot\images\companies\" />
     <Folder Include="wwwroot\images\NewFolder\" />
-    <Folder Include="wwwroot\view-resources\Views\Companies - Copy\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
 </Project>

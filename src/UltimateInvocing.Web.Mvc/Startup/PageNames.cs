@@ -13,5 +13,6 @@
         public const string Addresses = "Addresses";
         public const string Product = "Products";
         public const string Company = "Companies";
+        public const string PaymentType = "PaymentTypes";
     }
 }

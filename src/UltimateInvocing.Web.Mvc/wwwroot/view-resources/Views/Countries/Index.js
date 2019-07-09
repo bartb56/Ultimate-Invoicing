@@ -43,14 +43,7 @@
             }
 
             var country = _$form.serializeFormToObject(); //serializeFormToObject is defined in main.js
-            country.permissions = [];
-            var _$permissionCheckboxes = $("input[name='permission']:checked");
-            if (_$permissionCheckboxes) {
-                for (var permissionIndex = 0; permissionIndex < _$permissionCheckboxes.length; permissionIndex++) {
-                    var _$permissionCheckbox = $(_$permissionCheckboxes[permissionIndex]);
-                    country.permissions.push(_$permissionCheckbox.val());
-                }
-            }
+            console.log(country);
 
             abp.ui.setBusy(_$modal);
             _countryService.create(country).done(function () {

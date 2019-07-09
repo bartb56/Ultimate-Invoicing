@@ -7,7 +7,7 @@ using System.Text;
 
 namespace UltimateInvocing.Country.Dto
 {
-    [AutoMap(typeof(UltimateInvocing.Models.Product))]
+    [AutoMap(typeof(UltimateInvocing.Models.Country))]
     public class CountryDto : EntityDto<Guid>
     {
         [Required()]

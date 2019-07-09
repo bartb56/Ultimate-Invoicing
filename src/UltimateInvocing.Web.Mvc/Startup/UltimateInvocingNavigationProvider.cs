@@ -22,14 +22,6 @@ namespace UltimateInvocing.Web.Startup
                     )
                 ).AddItem(
                     new MenuItemDefinition(
-                        PageNames.Company,
-                        L("Companies"),
-                        url: "Companies",
-                        icon: "business",
-                        requiredPermissionName: PermissionNames.Pages_Companies
-                    )
-                ).AddItem(
-                    new MenuItemDefinition(
                         PageNames.Product,
                         L("Products"),
                         url: "Products",
@@ -46,6 +38,15 @@ namespace UltimateInvocing.Web.Startup
                         requiredPermissionName: PermissionNames.Pages_Customers
                         )
                     )
+                .AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Company,
+                        L("Companies"),
+                        url: "Companies",
+                        icon: "business",
+                        requiredPermissionName: PermissionNames.Pages_Companies
+                    )
+                )
                 .AddItem(
                     new MenuItemDefinition(
                      "General.Settings",
@@ -68,10 +69,15 @@ namespace UltimateInvocing.Web.Startup
                     )
                     ).AddItem(
                     new MenuItemDefinition(
+                        PageNames.PaymentType,
+                        L("PaymentTypes"),
+                        url: "Settings/PaymentTypes"
+                    )
+                    ).AddItem(
+                    new MenuItemDefinition(
                         PageNames.Users,
                         L("Users"),
                         url: "Users",
-                        icon: "people",
                         requiredPermissionName: PermissionNames.Pages_Users
                     )
                 ).AddItem(
@@ -79,7 +85,6 @@ namespace UltimateInvocing.Web.Startup
                         PageNames.Roles,
                         L("Roles"),
                         url: "Roles",
-                        icon: "local_offer",
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
                 )

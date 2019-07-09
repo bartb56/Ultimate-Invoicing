@@ -8072,3 +8072,15 @@ html.ie11 .bs-searchbox .form-control {
     cursor: pointer;
     color: #F44336
 }
+
+/* Themes */
+body.theme-teal .btn-primary, body.theme-teal .btn-primary:hover, body.theme-teal .btn-primary:active, body.theme-teal .btn-primary:focus {
+    background-color: #009688 !important;
+    color: #fff;
+}
+body.theme-teal .form-group .form-line::after {
+    border-color: #009688 !important;
+}
+body.theme-teal a:hover, body.theme-teal a:focus, body.theme-teal a, {
+    color: #009688;
+}

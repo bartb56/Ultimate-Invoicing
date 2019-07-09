@@ -1,0 +1,113 @@
+﻿@using UltimateInvocing.Web.Startup
+@model UltimateInvocing.Factories.PaymentType.Models.PaymentTypeListModel
+@{
+    ViewBag.CurrentPageName = PageNames.PaymentType; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/PaymentTypes/index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,PaymentTypeion">
+        <script src="~/view-resources/Views/PaymentTypes/index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("PaymentTypes")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" paymentType="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("PaymentType.TypeName")</th>
+                            <th>@L("PaymentType.DisplayOrder")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var paymentType in Model.PaymentTypes)
+                        {
+                            <tr>
+                                <td>@paymentType.TypeName</td>
+                                <td>@paymentType.DisplayOrder</td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" paymentType="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block edit-paymentType" data-paymentType-id="@paymentType.Id" data-toggle="modal" data-target="#PaymentTypeEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block delete-paymentType" data-paymentType-id="@paymentType.Id" data-paymentType-name="@paymentType.TypeName"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#PaymentTypeCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="PaymentTypeEditModal" tabindex="-1" paymentType="dialog" aria-labelledby="PaymentTypeEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" paymentType="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="PaymentTypeCreateModal" tabindex="-1" paymentType="dialog" aria-labelledby="PaymentTypeCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" paymentType="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewPaymentType")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="paymentTypeCreateForm" paymentType="form" novalidate class="form-validation">
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Number" type="text" name="TypeName" required maxlength="128" class="validate form-control">
+                                    <label for="Number" class="form-label">@L("PaymentType.TypeName")</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Number" type="number" name="DisplayOrder" required maxlength="128" class="validate form-control">
+                                    <label for="Number" class="form-label">@L("PaymentType.DisplayOrder")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
