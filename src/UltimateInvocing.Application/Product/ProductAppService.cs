@@ -3,6 +3,7 @@ using Abp.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UltimateInvocing.Authorization;
@@ -45,6 +46,16 @@ namespace UltimateInvocing.Product
         public async Task<ProductDto> GetById(Guid id)
         {
             return ObjectMapper.Map<ProductDto>(await _repository.GetAsync(id));
+        }
+
+        public async Task<int> HighestProductNumber()
+        {
+            var products = await _repository.GetAllListAsync();
+            if (!products.Any())
+                return 0;
+
+            var numbers = products.Select(x => x.Number).ToList();
+            return numbers.Max();
         }
 
         public async Task Update(ProductDto productDto)

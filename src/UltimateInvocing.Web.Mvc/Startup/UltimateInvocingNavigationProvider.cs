@@ -22,6 +22,14 @@ namespace UltimateInvocing.Web.Startup
                     )
                 ).AddItem(
                     new MenuItemDefinition(
+                        PageNames.Order,
+                        L("Orders"),
+                        url: "Orders",
+                        icon: "shopping_basket",
+                        requiredPermissionName: PermissionNames.Pages_Orders
+                        )
+                    ).AddItem(
+                    new MenuItemDefinition(
                         PageNames.Product,
                         L("Products"),
                         url: "Products",

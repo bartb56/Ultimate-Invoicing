@@ -52,7 +52,7 @@ namespace UltimateInvocing.Company
 
         public async Task<CompanyDto> GetById(Guid id)
         {
-            return ObjectMapper.Map<CompanyDto>(await _repository.GetAsync(id));
+            return ObjectMapper.Map<CompanyDto>(await _repository.GetAll().Include(x => x.Country).Include(x => x.Province).FirstOrDefaultAsync(x => x.Id == id));
         }
 
         public async Task Update(CompanyDto companyDto)

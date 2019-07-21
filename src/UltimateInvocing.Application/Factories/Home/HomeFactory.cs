@@ -11,15 +11,18 @@ namespace UltimateInvocing.Factories.Home
     {
         private readonly IRepository<Models.Customer, Guid> _repository;
         private readonly IRepository<Models.Product, Guid> _productRepository;
+        private readonly IRepository<Models.Order, Guid> _orderRepository;
         IRepository<User, long> _userRepository;
 
         public HomeFactory(IRepository<Models.Customer, Guid> repository,
             IRepository<User, long> userRepository,
-            IRepository<Models.Product, Guid> productRepository)
+            IRepository<Models.Product, Guid> productRepository,
+            IRepository<Models.Order, Guid> orderRepository)
         {
             _repository = repository;
             _userRepository = userRepository;
             _productRepository = productRepository;
+            _orderRepository = orderRepository;
         }
         public async Task<HomeModel> PrepareModel()
         {
@@ -27,7 +30,8 @@ namespace UltimateInvocing.Factories.Home
             {
                 Customers = await _repository.CountAsync(),
                 Users = await _userRepository.CountAsync(),
-                Products = await _productRepository.CountAsync()
+                Products = await _productRepository.CountAsync(),
+                Orders = await _orderRepository.CountAsync()
             };
             return model;
         }

@@ -8081,6 +8081,3 @@ body.theme-teal .btn-primary, body.theme-teal .btn-primary:hover, body.theme-tea
 body.theme-teal .form-group .form-line::after {
     border-color: #009688 !important;
 }
-body.theme-teal a:hover, body.theme-teal a:focus, body.theme-teal a, {
-    color: #009688;
-}

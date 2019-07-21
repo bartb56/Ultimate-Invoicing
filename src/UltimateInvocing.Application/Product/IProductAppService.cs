@@ -14,5 +14,7 @@ namespace UltimateInvocing.Product
         Task Delete(Guid id);
         Task<ProductDto> GetById(Guid id);
         Task Update(ProductDto productDto);
+
+        Task<int> HighestProductNumber();
     }
 }

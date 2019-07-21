@@ -21,6 +21,7 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         {
             _factory = factory;
         }
+
         [Route("Companies/")]
         public async Task<IActionResult> Index()
         {

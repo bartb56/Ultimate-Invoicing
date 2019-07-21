@@ -6,6 +6,7 @@ using Abp.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UltimateInvocing.Authorization;
 using UltimateInvocing.Controllers;
+using UltimateInvocing.Factories.Product;
 using UltimateInvocing.Product;
 using UltimateInvocing.Web.Models.Product;
 
@@ -14,29 +15,25 @@ namespace UltimateInvocing.Web.Mvc.Controllers
     [AbpMvcAuthorize(PermissionNames.Pages_Products)]
     public class ProductController : UltimateInvocingControllerBase
     {
-        private readonly IProductAppService _productAppService;
+        private readonly IProductFactory _factory;
 
-        public ProductController(IProductAppService productAppService)
+        public ProductController(IProductFactory factory)
         {
-            _productAppService = productAppService;
+            _factory = factory;
         }
 
         [Route("Products/")]
         public async Task<IActionResult> Index()
         {
-            var model = new ProductListModel()
-            {
-                Products =  await _productAppService.GetAll()
-            };
-            return View(model);
+            return View(await _factory.PrepareListModel());
         }
 
-        public async Task<ActionResult> EditProductModal(Guid productId)
-        {
-            var output = await _productAppService.GetById(productId);
-            var model = new EditProductViewModel(output);
+        //public async Task<ActionResult> EditProductModal(Guid productId)
+        //{
+        //    var output = await _productAppService.GetById(productId);
+        //    var model = new EditProductViewModel(output);
 
-            return View("_EditProductModal", model);
-        }
+        //    return View("_EditProductModal", model);
+        //}
     }
 }

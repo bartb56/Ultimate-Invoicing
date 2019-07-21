@@ -33,8 +33,7 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(Guid id)
         {
-            var addresses = await _addressAppService.GetAllByUserId(id);
-
+            var addresses = await _addressAppService.GetAllByCustomerIdIncluding(id);
             var provinces = await _provinceAppService.GetAll();
             var countries = await _countryAppService.GetAll();
 
@@ -88,5 +87,7 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         {
             return await _provinceAppService.GetAllByCountryId(countryId);
         }
+
+        
     }
 }

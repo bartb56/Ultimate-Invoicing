@@ -47,14 +47,23 @@ namespace UltimateInvocing.Customers.Address
             await _addressRepository.DeleteAsync(customerAddress.Address);
         }
 
-        public async Task<List<AdressDTO>> GetAllByUserId(Guid id)
+        public async Task<List<AdressDTO>> GetAllByCustomerId(Guid id)
         {
-            return ObjectMapper.Map<List<AdressDTO>>(await _repository.GetAll().Where(x => x.CustomerId == id).Select(x => x.Address).Include(x => x.Country).Include(x => x.Province).ToListAsync());
+            var address = await _repository.GetAll().Where(x => x.CustomerId == id).Select(x => x.Address).ToListAsync();
+            var list = ObjectMapper.Map<List<AdressDTO>>(address);
+             return list;
+        }
+
+        public async Task<List<AdressDTO>> GetAllByCustomerIdIncluding(Guid id)
+        {
+            var address = await _repository.GetAll().Where(x => x.CustomerId == id).Select(x => x.Address).Include(x => x.Country).Include(x => x.Province).ToListAsync();
+            var list = ObjectMapper.Map<List<AdressDTO>>(address);
+            return list;
         }
 
         public async Task<AdressDTO> GetById(Guid id)
         {
-            return ObjectMapper.Map<AdressDTO>(await _addressRepository.FirstOrDefaultAsync(x => x.Id == id));
+            return ObjectMapper.Map<AdressDTO>(await _addressRepository.GetAll().Include(x => x.Province).Include(x => x.Country).FirstOrDefaultAsync(x => x.Id == id));
         }
 
         public async Task Update(AdressDTO addressDto)

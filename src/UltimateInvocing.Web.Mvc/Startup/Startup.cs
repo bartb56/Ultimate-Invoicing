@@ -16,6 +16,7 @@ using Abp.AspNetCore.SignalR.Hubs;
 using UltimateInvocing.Factories.Home;
 using UltimateInvocing.Web.Factories.Company;
 using UltimateInvocing.Factories.PaymentType;
+using UltimateInvocing.Factories.Order;
 
 namespace UltimateInvocing.Web.Startup
 {
@@ -44,6 +45,7 @@ namespace UltimateInvocing.Web.Startup
             services.AddScoped<IHomeFactory, HomeFactory>();
             services.AddScoped<ICompanyFactory, CompanyFactory>();
             services.AddScoped<IPaymentTypeFactory, PaymentTypeFactory>();
+            services.AddScoped<IOrderFactory, OrderFactory>();
 
             services.AddSignalR();
 

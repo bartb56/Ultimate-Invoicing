@@ -143,6 +143,11 @@
     <text name="Company.PostalCode">Postcode</text>
     <text name="Company.PhoneNumber">Telefoonnummer</text>
     <text name="Companies">Bedrijfen</text>
+    <text name="Company.Logo">Logo</text>
+    <text name="EditCompany">Wijzig bedrijf</text>
+    <text name="PaymentTypes">Betaal methodes</text>
+    <text name="PaymentType.TypeName">Methode naam</text>
+    <text name="DisplayOrder">Weergave volgorde</text>
     
   </texts>
 </localizationDictionary>

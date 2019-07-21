@@ -18,6 +18,7 @@ namespace UltimateInvocing.EntityFrameworkCore
         public DbSet<Product> Products { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<PaymentType> PaymentTypes { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         public UltimateInvocingDbContext(DbContextOptions<UltimateInvocingDbContext> options)
             : base(options)

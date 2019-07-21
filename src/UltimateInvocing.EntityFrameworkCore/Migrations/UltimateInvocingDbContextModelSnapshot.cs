@@ -1191,6 +1191,72 @@ namespace UltimateInvocing.Migrations
                     b.ToTable("CustomerAddresses");
                 });
 
+            modelBuilder.Entity("UltimateInvocing.Models.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CompanyBTW");
+
+                    b.Property<string>("CompanyCity");
+
+                    b.Property<string>("CompanyCountryName");
+
+                    b.Property<string>("CompanyHouseNumber");
+
+                    b.Property<string>("CompanyIBAN");
+
+                    b.Property<Guid>("CompanyId");
+
+                    b.Property<string>("CompanyKVK");
+
+                    b.Property<string>("CompanyLogo");
+
+                    b.Property<string>("CompanyName");
+
+                    b.Property<string>("CompanyPhoneNumber");
+
+                    b.Property<string>("CompanyPostalCode");
+
+                    b.Property<string>("CompanyProvinceName");
+
+                    b.Property<string>("CompanyStreetAddress");
+
+                    b.Property<Guid>("CustomerAddressId");
+
+                    b.Property<string>("CustomerCity");
+
+                    b.Property<string>("CustomerCompanyEmail");
+
+                    b.Property<string>("CustomerCompanyName");
+
+                    b.Property<string>("CustomerCompanyPhonenumber");
+
+                    b.Property<string>("CustomerCountryName");
+
+                    b.Property<string>("CustomerHouseNumber");
+
+                    b.Property<Guid>("CustomerId");
+
+                    b.Property<string>("CustomerPhoneNumber");
+
+                    b.Property<string>("CustomerPostalCode");
+
+                    b.Property<string>("CustomerProvinceName");
+
+                    b.Property<string>("CustomerStreetAddress");
+
+                    b.Property<bool>("CustomerTaxable");
+
+                    b.Property<Guid>("PaymentTypeId");
+
+                    b.Property<string>("PaymentTypeName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("UltimateInvocing.Models.PaymentType", b =>
                 {
                     b.Property<Guid>("Id")
