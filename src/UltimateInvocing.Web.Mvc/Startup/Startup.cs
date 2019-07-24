@@ -17,6 +17,7 @@ using UltimateInvocing.Factories.Home;
 using UltimateInvocing.Web.Factories.Company;
 using UltimateInvocing.Factories.PaymentType;
 using UltimateInvocing.Factories.Order;
+using UltimateInvocing.Factories.OrderItems;
 
 namespace UltimateInvocing.Web.Startup
 {
@@ -46,6 +47,7 @@ namespace UltimateInvocing.Web.Startup
             services.AddScoped<ICompanyFactory, CompanyFactory>();
             services.AddScoped<IPaymentTypeFactory, PaymentTypeFactory>();
             services.AddScoped<IOrderFactory, OrderFactory>();
+            services.AddScoped<IOrderItemFactory, OrderItemFactory>();
 
             services.AddSignalR();
 

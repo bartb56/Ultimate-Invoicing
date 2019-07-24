@@ -77,6 +77,7 @@
                                     <i class="material-icons">menu</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">
+                                    <li><a href="~/Order/@order.Id" class="waves-effect waves-block" data-customer-id="@order.Id"><i class="material-icons">place</i>@L("Order.OrderItems")</a></li>
                                     <li><a href="#" class="waves-effect waves-block edit-order" data-order-id="@order.Id" data-toggle="modal" data-target="#OrderEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
                                     <li><a href="#" class="waves-effect waves-block update-customer" data-order-id="@order.Id"><i class="material-icons">people</i>@L("UpdateCustomerDetails")</a></li>
                                     <li><a href="#" class="waves-effect waves-block update-company" data-order-id="@order.Id"><i class="material-icons">business</i>@L("UpdateCompanyDetails")</a></li>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using UltimateInvocing.OrderItem.Dto;
 
 namespace UltimateInvocing.Order.Dto
 {
@@ -54,5 +55,7 @@ namespace UltimateInvocing.Order.Dto
 
         public Guid CustomerAddressId { get; set; }
         #endregion
+
+        public ICollection<OrderItemDto> OrderItems { get; set; }
     }
 }

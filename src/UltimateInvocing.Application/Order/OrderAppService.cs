@@ -89,12 +89,12 @@ namespace UltimateInvocing.Order
 
         public async Task Delete(Guid id)
         {
-            await _repository.DeleteAsync(await _repository.GetAsync(id));
+            await _repository.DeleteAsync(await _repository.GetAll().Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == id));
         }
 
         public async Task<OrderListModel> GetAll()
         {
-            var orders = await _repository.GetAllListAsync();
+            var orders = await _repository.GetAll().Include(x => x.OrderItems).ToListAsync();
             var model = new OrderListModel();
             model.orders = ObjectMapper.Map<List<OrderDto>>(orders);
 
@@ -115,35 +115,59 @@ namespace UltimateInvocing.Order
 
         public async Task<OrderDto> GetById(Guid id)
         {
-            return ObjectMapper.Map<OrderDto>(await _repository.GetAsync(id));
+            return ObjectMapper.Map<OrderDto>(await _repository.GetAll().Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == id));
         }
 
-        public async Task Update(Guid orderId)
+        public async Task Update(OrderCreateModel orderCreateModel)
         {
-            var order = await _repository.GetAsync(orderId);
+            var order = await _repository.GetAsync(orderCreateModel.OrderId);
+            if (order == null)
+                throw new Exception("Order not found");
 
-            var customer = await _customerAppService.GetById(order.CustomerId);
-            var address = await _addressAppService.GetById(order.CustomerAddressId);
+            var customer = await _customerAppService.GetById(orderCreateModel.CustomerId);
+            var company = await _companyAppService.GetById(orderCreateModel.CompanyId);
+            var paymentType = await _paymentTypeAppService.GetById(orderCreateModel.PaymentMethodId);
+            var address = await _addressAppService.GetById(orderCreateModel.AddressId);
+            if (paymentType == null || customer == null || company == null || address == null)
+                throw new Exception("An error has occurred please try again.");
 
-            if (address != null)
-            {
-                order.CustomerCompanyPhonenumber = address.PhoneNumber;
-                order.CustomerCountryName = address.Country.Name;
-                order.CustomerHouseNumber = address.HouseNumber;
-                order.CustomerPhoneNumber = address.PhoneNumber;
-                order.CustomerPostalCode = address.PostalCode;
-                order.CustomerProvinceName = address.Province.Name;
-                order.CustomerStreetAddress = address.StreetAddress;
-                order.CustomerTaxable = address.Taxable;
-            }
-            if (customer != null)
-            {
-                order.CustomerCompanyEmail = customer.CompanyEmail;
-                order.CustomerCompanyName = customer.CompanyName;
-                order.CustomerCity = address.City;
-            }
+            //Company section
+            order.CompanyBTW = company.BTW;
+            order.CompanyCity = company.City;
+            order.CompanyCountryName = company.Country.Name;
+            order.CompanyHouseNumber = company.HouseNumber;
+            order.CompanyIBAN = company.IBAN;
+            order.CompanyKVK = company.KVK;
+            order.CompanyLogo = company.Logo;
+            order.CompanyName = company.Name;
+            order.CompanyPhoneNumber = company.PhoneNumber;
+            order.CompanyId = company.Id;
+            order.CompanyPostalCode = company.PostalCode;
+            order.CompanyProvinceName = company.Province.Name;
+            order.CompanyStreetAddress = company.StreetAddress;
+
+            //Customer section
+            order.CustomerCity = address.City;
+            order.CustomerCompanyEmail = customer.CompanyEmail;
+            order.CustomerCompanyName = customer.CompanyName;
+            order.CustomerCompanyPhonenumber = company.PhoneNumber;
+            order.CustomerCountryName = address.Country.Name;
+            order.CustomerHouseNumber = address.HouseNumber;
+            order.CustomerPhoneNumber = address.PhoneNumber;
+            order.CustomerPostalCode = address.PostalCode;
+            order.CustomerProvinceName = address.Province.Name;
+            order.CustomerStreetAddress = address.StreetAddress;
+            order.CustomerTaxable = address.Taxable;
+            order.CustomerId = customer.Id;
+            order.CustomerAddressId = orderCreateModel.AddressId;
+
+
+            //Payment type section
+            order.PaymentTypeName = paymentType.TypeName;
+            order.PaymentTypeId = paymentType.Id;
 
             await _repository.UpdateAsync(order);
+            
             return;
         }
 

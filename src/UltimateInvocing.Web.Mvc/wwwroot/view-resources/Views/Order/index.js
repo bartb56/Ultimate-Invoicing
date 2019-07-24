@@ -26,7 +26,7 @@
 
             e.preventDefault();
             $.ajax({
-                url: abp.appPath + 'Order/EditOrderModal?orderId=' + orderId,
+                url: abp.appPath + 'Order/Edit?orderId=' + orderId,
                 type: 'POST',
                 contentType: 'application/html',
                 success: function (content) {

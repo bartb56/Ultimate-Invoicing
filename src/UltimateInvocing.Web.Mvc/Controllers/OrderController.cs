@@ -40,5 +40,10 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             await _factory.UpdateCompanyDetails(orderId);
             return;
         }
+        [HttpPost]
+        public async Task<IActionResult> Edit(Guid orderId)
+        {
+            return View(await _factory.PrepareEditModel(orderId));
+        }
     }
 }

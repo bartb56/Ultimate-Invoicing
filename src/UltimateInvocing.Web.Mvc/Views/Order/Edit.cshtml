@@ -1,0 +1,60 @@
+﻿@using UltimateInvocing.Web.Models.Common.Modals
+@model UltimateInvocing.Factories.Order.OrderListModel
+@{
+    Layout = null;
+}
+
+@Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditOrder")))
+
+
+
+<div class="modal-body">
+    <form name="OrderEditForm" role="form" novalidate class="form-validation">
+        <input type="hidden" value="@Model.OrderId" name="OrderId" />
+        <div class="row clearfix">
+            @if (Model.Companies.Count > 1)
+            {
+                //We only want to display this if there is more then one country
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <select id="CompanyId" name="CompanyId" required asp-items="Model.Companies" class="validate form-control"></select>
+                            <label for="CompanyId" class="form-label">@L("Companies")</label>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <input type="hidden" value="@Model.Companies.First().Value" name="CompanyId" />
+            }
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select id="OrderId" name="PaymentMethodId" required asp-items="Model.PaymentTypes" class="validate form-control"></select>
+                        <label for="OrderId" class="form-label">@L("Orders")</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select id="CustomerId" name="CustomerId" required asp-items="Model.Customers" class="validate form-control"></select>
+                        <label for="CustomerId" class="form-label">@L("Customers")</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select id="AddressId" name="AddressId" required asp-items="Model.Addresses" class="validate form-control"></select>
+                        <label for="AddressId" class="form-label">@L("Addresses")</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+
+<script src="~/view-resources/Views/Order/Edit.js" asp-append-version="true"></script>

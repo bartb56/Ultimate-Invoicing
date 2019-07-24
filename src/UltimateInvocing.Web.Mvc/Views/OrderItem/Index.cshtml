@@ -1,0 +1,136 @@
+﻿@using UltimateInvocing.Web.Startup
+@model UltimateInvocing.Factories.OrderItems.OrderItemsListModel
+@{
+    ViewBag.CurrentPageName = PageNames.Order; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/OrderItem/index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,OrderItemion">
+        <script src="~/view-resources/Views/OrderItem/index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("OrderItems")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" orderItemItem="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("Customer.CompanyName")</th>
+                            <th>@L("Customer.Email")</th>
+                            <th>@L("Customer.PhoneNumber")</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var orderItem in Model.OrderItems)
+                        {
+                        <tr>
+                            <td>@orderItem.Number</td>
+                            <td>@orderItem.Name</td>
+                            <td>@orderItem.Price</td>
+                            <td class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" orderItem="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">menu</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="~/OrderItem/@orderItem.Id" class="waves-effect waves-block" data-customer-id="@orderItem.Id"><i class="material-icons">place</i>@L("OrderItem.OrderItemItems")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block edit-orderItem" data-orderItem-id="@orderItem.Id" data-toggle="modal" data-target="#OrderItemEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block update-customer" data-orderItem-id="@orderItem.Id"><i class="material-icons">people</i>@L("UpdateCustomerDetails")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block update-company" data-orderItem-id="@orderItem.Id"><i class="material-icons">business</i>@L("UpdateCompanyDetails")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block delete-orderItem" data-orderItem-id="@orderItem.Id" data-orderItem-name="@orderItem.Id"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#OrderItemCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="OrderItemEditModal" tabindex="-1" orderItem="dialog" aria-labelledby="OrderItemEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" orderItem="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OrderItemCreateModal" tabindex="-1" orderItem="dialog" aria-labelledby="OrderItemCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" orderItem="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewOrderItem")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="orderItemCreateForm" orderItem="form" novalidate class="form-validation">
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    
+                                    <label for="CompanyId" class="form-label">@L("Companies")</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    
+                                    <label for="PaymentTypeId" class="form-label">@L("PaymentTypes")</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                   
+                                    <label for="CustomerId" class="form-label">@L("Customers")</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    
+                                    <label for="AddressId" class="form-label">@L("Addresses")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

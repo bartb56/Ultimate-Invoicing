@@ -14,7 +14,7 @@ namespace UltimateInvocing.Order
         Task Create(OrderCreateModel orderCreateModel);
         Task Delete(Guid id);
         Task<OrderDto> GetById(Guid id);
-        Task Update(Guid orderId);
+        Task Update(OrderCreateModel orderCreateModel);
         Task UpdateCustomerDetails(Guid orderId);
         Task UpdateCompanyDetails(Guid orderId);
     }
