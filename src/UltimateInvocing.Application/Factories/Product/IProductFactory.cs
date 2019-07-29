@@ -10,6 +10,6 @@ namespace UltimateInvocing.Factories.Product
     public interface IProductFactory : IApplicationService
     {
         Task<ProductListModel> PrepareListModel();
-        Task PrepareEditModel();
+        Task<EditProductViewModel> PrepareEditModel(Guid productId);
     }
 }

@@ -24,11 +24,9 @@
 
             e.preventDefault();
 
-            e.preventDefault();
             $.ajax({
-                url: abp.appPath + 'Order/Edit?orderId=' + orderId,
-                type: 'POST',
-                contentType: 'application/html',
+                url: abp.appPath + "Orders/EditOrderModal/" + orderId,
+                type: "POST",
                 success: function (content) {
                     console.log("success")
                     $('#OrderEditModal div.modal-content').html(content);
@@ -48,7 +46,7 @@
                 success: function () {
                     location.reload(true);
                 }
-            })
+            });
 
         });
 

@@ -37,14 +37,14 @@
                         <tr>
                             <th>@L("Customer.CompanyName")</th>
                             <th>@L("Customer.Email")</th>
-                            <th>@L("Customer.PhoneNumber")</th>
-                            <th>@L("Customer.City")</th>
-                            <th>@L("Customer.StreetAddress")</th>
-                            <th>@L("Customer.CompanyHouseNumber")</th>
-                            <th>@L("Customer.PostalCode")</th>
-                            <th>@L("Customer.Taxable")</th>
+                            <th>@L("Address.PhoneNumber")</th>
+                            <th>@L("Address.City")</th>
+                            <th>@L("Address.StreetAddress")</th>
+                            <th>@L("Address.HouseNumber")</th>
+                            <th>@L("Address.PostalCode")</th>
+                            <th>@L("Address.Taxable")</th>
                             <th>@L("Order.PaymentType")</th>
-                            @if(Model.Companies.Count > 1)
+                            @if (Model.Companies.Count > 1)
                             {
                                 <th>@L("Company.CompanyName")</th>
                             }
@@ -77,7 +77,7 @@
                                     <i class="material-icons">menu</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a href="~/Order/@order.Id" class="waves-effect waves-block" data-customer-id="@order.Id"><i class="material-icons">place</i>@L("Order.OrderItems")</a></li>
+                                    <li><a href="~/Order/@order.Id" class="waves-effect waves-block" data-customer-id="@order.Id"><i class="material-icons">inbox</i>@L("Order.OrderItems")</a></li>
                                     <li><a href="#" class="waves-effect waves-block edit-order" data-order-id="@order.Id" data-toggle="modal" data-target="#OrderEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
                                     <li><a href="#" class="waves-effect waves-block update-customer" data-order-id="@order.Id"><i class="material-icons">people</i>@L("UpdateCustomerDetails")</a></li>
                                     <li><a href="#" class="waves-effect waves-block update-company" data-order-id="@order.Id"><i class="material-icons">business</i>@L("UpdateCompanyDetails")</a></li>

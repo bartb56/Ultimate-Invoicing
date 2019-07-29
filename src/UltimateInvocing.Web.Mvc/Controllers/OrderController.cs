@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Abp.Runtime.Validation;
 using Microsoft.AspNetCore.Mvc;
 using UltimateInvocing.Controllers;
 using UltimateInvocing.Customers.Address.AddressDto;
@@ -16,6 +17,13 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         {
             _factory = factory;
         }
+
+        [Route("Orders/EditOrderModal/{orderId}/")]
+        public async Task<ActionResult> EditOrderModal(Guid orderId)
+        {
+            return View("Edit", await _factory.PrepareEditModel(orderId));
+        }
+
         [Route("Orders/")]
         public async Task<IActionResult> Index()
         {
@@ -40,10 +48,12 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             await _factory.UpdateCompanyDetails(orderId);
             return;
         }
-        [HttpPost]
-        public async Task<IActionResult> Edit(Guid orderId)
-        {
-            return View(await _factory.PrepareEditModel(orderId));
-        }
+
+        //public async Task<ActionResult> Edit(Guid orderId)
+        //{
+        //    return View(await _factory.PrepareEditModel(orderId));
+        //    return View();
+        //}
+
     }
 }

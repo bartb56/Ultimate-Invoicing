@@ -148,6 +148,11 @@
     <text name="PaymentTypes">Betaal methodes</text>
     <text name="PaymentType.TypeName">Methode naam</text>
     <text name="DisplayOrder">Weergave volgorde</text>
+
+    <text name="Customer.Email">Klant email</text>
+    <text name="Order.PaymentType">Betaal methode</text>
+    <text name="Orders">Orders</text>
+    <text name="CreateNewOrder">Nieuwe order</text>
     
   </texts>
 </localizationDictionary>

@@ -15,9 +15,23 @@ namespace UltimateInvocing.Factories.Product
             _appService = appService;
         }
 
-        public Task PrepareEditModel()
+        public async Task<EditProductViewModel> PrepareEditModel(Guid productId)
         {
-            throw new NotImplementedException();
+            var product = await _appService.GetById(productId);
+
+            var model = new EditProductViewModel
+            {
+                Price = product.Price,
+                Description = product.Description,
+                IsAvailable = product.IsAvailable,
+                Name = product.Name,
+                Number = product.Number,
+                SKUCode = product.SKUCode,
+                Id = product.Id,
+                Tax = product.Tax,
+                Weight = product.Weight
+            };
+            return model;
         }
 
         public async Task<ProductListModel> PrepareListModel()

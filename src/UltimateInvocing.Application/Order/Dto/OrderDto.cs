@@ -56,6 +56,6 @@ namespace UltimateInvocing.Order.Dto
         public Guid CustomerAddressId { get; set; }
         #endregion
 
-        public ICollection<OrderItemDto> OrderItems { get; set; }
+        //public ICollection<OrderItemDto> OrderItems { get; set; }
     }
 }
