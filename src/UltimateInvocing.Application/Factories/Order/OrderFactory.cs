@@ -40,6 +40,7 @@ namespace UltimateInvocing.Factories.Order
             var model = new OrderListModel();
             var order = await _appService.GetById(orderId);
             model.OrderId = orderId;
+            model.NewOrderNumber = order.Number;
             var customers = await _customerAppService.GetAll();
             model.Customers = customers.Select(x => new SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
             model.Customers.FirstOrDefault(x => x.Value == order.CustomerId.ToString()).Selected = true;

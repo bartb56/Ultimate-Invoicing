@@ -12,6 +12,14 @@
     <form name="OrderEditForm" role="form" novalidate class="form-validation">
         <input type="hidden" value="@Model.OrderId" name="OrderId" />
         <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input name="Number" id="Number" class="form-control" value="@Model.NewOrderNumber" type="text" />
+                        <label for="CompanyId" class="form-label">@L("Companies")</label>
+                    </div>
+                </div>
+            </div>
             @if (Model.Companies.Count > 1)
             {
                 //We only want to display this if there is more then one country

@@ -52,7 +52,7 @@ namespace UltimateInvocing.Company.Dto
         public string StreetAddress { get; set; }
 
         [Required()]
-        [MinLength(2)]
+        [MinLength(1)]
         [MaxLength(128)]
         public string HouseNumber { get; set; }
 

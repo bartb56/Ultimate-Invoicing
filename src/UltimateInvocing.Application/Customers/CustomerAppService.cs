@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using UltimateInvocing.Customers.Address;
 using UltimateInvocing.Models;
 
 namespace UltimateInvocing.Customers
@@ -12,10 +13,13 @@ namespace UltimateInvocing.Customers
     public class CustomerAppService : UltimateInvocingAppServiceBase, ICustomerAppService
     {  
         IRepository<Models.Customer, Guid> _repository;
+        private readonly IAddressAppService _addressAppService;
 
-        public CustomerAppService(IRepository<Models.Customer, Guid> repository)
+        public CustomerAppService(IRepository<Models.Customer, Guid> repository,
+            IAddressAppService addressAppService)
         {
             _repository = repository;
+            _addressAppService = addressAppService;
         }
 
         public async Task Create(CustomerDto addressDto)
@@ -27,7 +31,13 @@ namespace UltimateInvocing.Customers
 
         public async Task Delete(Guid id)
         {
-            var customer = await _repository.FirstOrDefaultAsync(x => x.Id == id);
+            var customer = await _repository.GetAll().Include(x => x.CustomerAddresses).FirstOrDefaultAsync(x => x.Id == id);
+
+            foreach(var address in customer.CustomerAddresses)
+            {
+                await _addressAppService.Delete(address.Id);
+            }
+
             await _repository.DeleteAsync(customer);
             return;
         }

@@ -80,7 +80,7 @@
                 abp.utils.formatString(abp.localization.localize('AreYouSureWantToDelete', 'UltimateInvocing'), customerName),
                 function (isConfirmed) {
                     if (isConfirmed) {
-                        _customerService.deleteCustom(customerId).done(function () {
+                        _customerService.delete(customerId).done(function () {
                             refreshCustomerList();
                         });
                     }

@@ -11,6 +11,10 @@ namespace UltimateInvocing.Customers
     [AutoMap(typeof(UltimateInvocing.Models.Customer))]
     public class CustomerDto : EntityDto<Guid>
     {
+
+        [Required()]
+        public int Number { get; set; }
+
         [Required()]
         [MinLength(2)]
         [MaxLength(128)]

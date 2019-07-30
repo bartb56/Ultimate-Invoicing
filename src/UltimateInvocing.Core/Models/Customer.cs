@@ -10,6 +10,10 @@ namespace UltimateInvocing.Models
     {
         public Customer() { }
 
+
+        [Required()]
+        public int Number { get; set; }
+
         [Required()]
         [MinLength(2)]
         [MaxLength(128)]

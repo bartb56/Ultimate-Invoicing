@@ -9,5 +9,7 @@ namespace UltimateInvocing.Web.Models.Customer
     public class CustomerListModel
     {
         public IReadOnlyList<CustomerDto> Customers { get; set; }
+
+        public int NextCustomerNumber { get; set; }
     }
 }

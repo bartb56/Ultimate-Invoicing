@@ -16,6 +16,8 @@ namespace UltimateInvocing.OrderItem
         Task<OrderItemDto> GetById(Guid id);
         Task Update(OrderItemDto productDto);
 
+        Task UpdateProductDetails(Guid orderItemId);
+
         Task<List<OrderItemDto>> GetAllByOrderId(Guid orderId);
     }
 }

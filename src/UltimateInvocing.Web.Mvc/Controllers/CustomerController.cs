@@ -27,10 +27,12 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         public async Task<IActionResult> Index()
         {
             var customers = await _customerAppService.GetAll();
-
+            var numbers = customers.Select(x => x.Number);
+            var number = numbers.Max() + 1;
             var model = new CustomerListModel()
             {
-                Customers = customers
+                Customers = customers,
+                NextCustomerNumber = number
             };
             return View(model);
         }

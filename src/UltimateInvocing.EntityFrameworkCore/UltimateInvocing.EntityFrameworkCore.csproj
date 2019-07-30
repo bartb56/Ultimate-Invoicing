@@ -15,6 +15,12 @@
     <Compile Remove="Migrations\20190629140953_CompanyInit.Designer.cs" />
     <Compile Remove="Migrations\20190719163005_test.cs" />
     <Compile Remove="Migrations\20190719163005_test.Designer.cs" />
+    <Compile Remove="Migrations\20190729171333_HouseNumberCompanyFix.cs" />
+    <Compile Remove="Migrations\20190729171333_HouseNumberCompanyFix.Designer.cs" />
+    <Compile Remove="Migrations\20190730195905_ValidationFix.cs" />
+    <Compile Remove="Migrations\20190730195905_ValidationFix.Designer.cs" />
+    <Compile Remove="Migrations\20190730200051_ValidationFix2.cs" />
+    <Compile Remove="Migrations\20190730200051_ValidationFix2.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />

@@ -8,6 +8,9 @@ namespace UltimateInvocing.Factories.Order
     public class OrderCreateModel
     {
         public Guid OrderId { get; set; }
+
+        [Required()]
+        public int Number { get; set; }
         [Required()]
         public Guid CustomerId { get; set; }
         [Required()]

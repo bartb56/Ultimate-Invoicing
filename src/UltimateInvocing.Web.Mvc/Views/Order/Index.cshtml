@@ -35,6 +35,7 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>@L("Order.Number")</th>
                             <th>@L("Customer.CompanyName")</th>
                             <th>@L("Customer.Email")</th>
                             <th>@L("Address.PhoneNumber")</th>
@@ -54,6 +55,7 @@
                         @foreach (var order in Model.orders)
                         {
                         <tr>
+                            <td>@order.Number</td>
                             <td>@order.CustomerCompanyName</td>
                             <td>@order.CustomerCompanyEmail</td>
                             <td>@order.CustomerCompanyPhonenumber</td>
@@ -114,6 +116,15 @@
             <div class="modal-body">
                 <form name="orderCreateForm" order="form" novalidate class="form-validation">
                     <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input name="Number" id="Number" class="form-control" value="@Model.NewOrderNumber" type="text" />
+                                    <label for="Number" class="form-label">@L("Order.Number")</label>
+                                </div>
+                            </div>
+                        </div>
+
                         @if (Model.Companies.Count > 1)
                         {
                             //We only want to display this if there is more then one country

@@ -45,6 +45,10 @@ namespace UltimateInvocing.Product
 
         public async Task<ProductDto> GetById(Guid id)
         {
+            var product = await _repository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
+            if (product == null)
+                return new ProductDto();
+
             return ObjectMapper.Map<ProductDto>(await _repository.GetAsync(id));
         }
 

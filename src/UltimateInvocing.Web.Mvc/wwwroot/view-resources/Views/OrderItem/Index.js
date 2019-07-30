@@ -19,6 +19,16 @@
             deleteOrderItem(orderItemId, orderItemName);
         });
 
+        $('.refresh-product').click(function (e) {
+            var orderItemId = $(this).attr("data-orderItem-id");
+
+            _orderItemService.updateProductDetails(orderItemId).done(function () {
+                _$modal.modal('hide');
+                location.reload(true); //reload page to see new orderItem!
+            });
+
+        });
+
         $('.edit-orderItem').click(function (e) {
             var orderItemId = $(this).attr("data-orderItem-id");
 

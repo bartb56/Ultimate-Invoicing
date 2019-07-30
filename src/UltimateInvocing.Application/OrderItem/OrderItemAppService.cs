@@ -59,6 +59,31 @@ namespace UltimateInvocing.OrderItem
             return;
         }
 
+        public async Task UpdateProductDetails(Guid orderItemId)
+        {
+            var orderItem = await _repository.GetAsync(orderItemId);
+            
+            if (orderItem == null)
+                throw new Exception("OrderItem not found.");
+
+            var product = await _productAppService.GetById(orderItem.ProductId);
+            if (product.Id == Guid.Empty)
+                return;
+
+            orderItem.Number = product.Number;
+            orderItem.Price = product.Price;
+            orderItem.ProductId = product.Id;
+            orderItem.Description = product.Description;
+            orderItem.Name = product.Name;
+            orderItem.SKUCode = product.SKUCode;
+            orderItem.Tax = product.Tax;
+            orderItem.Weight = product.Weight;
+
+            await _repository.UpdateAsync(orderItem);
+
+            return;
+        }
+
         public async Task Delete(Guid id)
         {
             var product = _repository.Get(id);
@@ -91,5 +116,5 @@ namespace UltimateInvocing.OrderItem
             await _repository.UpdateAsync(product);
             return;
         }
-}
+    }
 }

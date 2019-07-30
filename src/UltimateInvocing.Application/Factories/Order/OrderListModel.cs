@@ -15,5 +15,7 @@ namespace UltimateInvocing.Factories.Order
         public List<SelectListItem> Customers { get; set; }
         public List<SelectListItem> Addresses { get; set; }
         public Guid OrderId { get; set; }
+
+        public int NewOrderNumber { get; set; }
     }
 }

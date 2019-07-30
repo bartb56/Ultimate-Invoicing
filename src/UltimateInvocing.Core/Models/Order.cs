@@ -1,6 +1,7 @@
 ﻿using Abp.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -10,6 +11,9 @@ namespace UltimateInvocing.Models
     public class Order : Entity<Guid>
     {
         public Order() { }
+
+        [Required()]
+        public int Number { get; set; }
 
         #region Customer section
         public string CustomerCompanyName { get; set; }

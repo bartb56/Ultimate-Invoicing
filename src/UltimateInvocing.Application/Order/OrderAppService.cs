@@ -47,6 +47,9 @@ namespace UltimateInvocing.Order
 
             OrderDto model = new OrderDto()
             {
+                //Order section
+                Number = orderCreateModel.Number,
+
                 //Company section
                 CompanyBTW = company.BTW,
                 CompanyCity = company.City,
@@ -98,6 +101,9 @@ namespace UltimateInvocing.Order
             var model = new OrderListModel();
             model.orders = ObjectMapper.Map<List<OrderDto>>(orders);
 
+            var numbers = model.orders.Select(x => x.Number);
+            model.NewOrderNumber = numbers.Max() + 1;
+
             var customers = await _customerAppService.GetAll();
             var companies = await _companyAppService.GetAll();
             var paymentTypes = await _paymentTypeAppService.GetAll();
@@ -131,6 +137,7 @@ namespace UltimateInvocing.Order
             if (paymentType == null || customer == null || company == null || address == null)
                 throw new Exception("An error has occurred please try again.");
 
+            order.Number = orderCreateModel.Number;
             //Company section
             order.CompanyBTW = company.BTW;
             order.CompanyCity = company.City;

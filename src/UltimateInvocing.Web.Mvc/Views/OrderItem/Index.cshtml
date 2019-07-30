@@ -39,7 +39,7 @@
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="number" name="Quantity" id="Quantity" class="form-control" />
-                                    <label for="Quantity" class="form-label">@L("ProductId")</label>
+                                    <label for="Quantity" class="form-label">@L("OrderItem.Quantity")</label>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,8 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>@L("Product.Number")</th>
+                            <th><b>#</b></th>
+                            <th>@L("Product.ProductNumber")</th>
                             <th>@L("Product.Name")</th>
                             <th>@L("Product.Description")</th>
                             <th>@L("Product.SKUCode")</th>
@@ -90,25 +91,28 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @{ int index = 1;}
                         @foreach (var orderItem in Model.OrderItems)
                         {
                             <tr>
+                                <td><b>@index</b></td> @{index++;
+                                }
                                 <td>@orderItem.Number</td>
                                 <td>@orderItem.Name</td>
                                 <td>@orderItem.Description</td>
                                 <td>@orderItem.SKUCode</td>
                                 <td>@orderItem.Weight</td>
-                                <td>@orderItem.Price.ToString("0.00")</td>
+                                <td>€@orderItem.Price.ToString("0.00")</td>
                                 <td>@orderItem.Tax</td>
                                 <td>@orderItem.Quantity</td>
                                 @{ float total = orderItem.Price * orderItem.Quantity; }
-                                <td>@total.ToString("0.00")</td>
+                            <td>€@total.ToString("0.00")</td>
                                 <td class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" orderItem="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">menu</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="#" class="waves-effect waves-block edit-orderItem" data-orderItem-id="@orderItem.Id" data-toggle="modal" data-target="#ProductEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block refresh-product" data-orderItem-id="@orderItem.Id" data-toggle="modal" data-target="#ProductEditModal"><i class="material-icons">local_grocery_store</i>@L("UpdateProductDetails")</a></li>
                                         <li><a href="#" class="waves-effect waves-block delete-orderItem" data-orderItem-id="@orderItem.Id" data-orderItem-name="@orderItem.Name"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
                                     </ul>
                                 </td>
@@ -124,8 +128,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <th>Total</th>
-                            <th>@Model.Total.ToString("0.00")</th>
+                            <th>@L("Total")</th>
+                            <th>€@Model.Total.ToString("0.00")</th>
                         </tr>
                         <tr>
                             <td></td>
@@ -135,8 +139,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <th>Tax</th>
-                            <th>@Model.Tax.ToString("0.00")</th>
+                            <th>@L("Tax")</th>
+                            <th>€@Model.Tax.ToString("0.00")</th>
                         </tr>
                         <tr>
                             <td></td>
@@ -146,8 +150,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <th>Total inc</th>
-                            <th>@Model.TotalTax.ToString("0.00")</th>
+                            <th>@L("TotalTax")</th>
+                            <th>€@Model.TotalTax.ToString("0.00")</th>
                         </tr>
                     </tbody>
                 </table>

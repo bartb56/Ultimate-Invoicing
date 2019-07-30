@@ -15,7 +15,7 @@ namespace UltimateInvocing.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -1168,6 +1168,8 @@ namespace UltimateInvocing.Migrations
                         .IsRequired()
                         .HasMaxLength(128);
 
+                    b.Property<int>("Number");
+
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
@@ -1247,6 +1249,8 @@ namespace UltimateInvocing.Migrations
                     b.Property<string>("CustomerStreetAddress");
 
                     b.Property<bool>("CustomerTaxable");
+
+                    b.Property<int>("Number");
 
                     b.Property<Guid>("PaymentTypeId");
 

@@ -2,6 +2,7 @@
 using Abp.AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using UltimateInvocing.OrderItem.Dto;
@@ -15,6 +16,10 @@ namespace UltimateInvocing.Order.Dto
         {
 
         }
+
+        [Required()]
+        public int Number { get; set; }
+
         #region Customer section
         public string CustomerCompanyName { get; set; }
         public string CustomerCompanyEmail { get; set; }
