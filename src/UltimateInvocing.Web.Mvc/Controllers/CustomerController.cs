@@ -28,7 +28,9 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         {
             var customers = await _customerAppService.GetAll();
             var numbers = customers.Select(x => x.Number);
-            var number = numbers.Max() + 1;
+            int number = 1;
+            if(numbers.Any())
+                number = numbers.Max() + 1;
             var model = new CustomerListModel()
             {
                 Customers = customers,

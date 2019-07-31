@@ -5,13 +5,7 @@
 }
 @section scripts
 {
-    <environment names="Development">
-        <script src="~/view-resources/Views/Order/index.js" asp-append-version="true"></script>
-    </environment>
-
-    <environment names="Staging,Orderion">
-        <script src="~/view-resources/Views/Order/index.min.js" asp-append-version="true"></script>
-    </environment>
+        <script src="~/view-resources/Views/Order/Index.js" asp-append-version="true"></script>
 }
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -45,7 +39,7 @@
                             <th>@L("Address.PostalCode")</th>
                             <th>@L("Address.Taxable")</th>
                             <th>@L("Order.PaymentType")</th>
-                            @if (Model.Companies.Count > 1)
+                            @if (Model.Companies != null && Model.Companies.Count > 1)
                             {
                                 <th>@L("Company.CompanyName")</th>
                             }
@@ -125,7 +119,7 @@
                             </div>
                         </div>
 
-                        @if (Model.Companies.Count > 1)
+                        @if (Model.Companies != null && Model.Companies.Count > 1)
                         {
                             //We only want to display this if there is more then one country
                             <div class="col-sm-6">
@@ -136,6 +130,10 @@
                                     </div>
                                 </div>
                             </div>
+                        }
+                        else if (Model.Companies == null)
+                        {
+                            <input type="hidden" value="0000-0000-0000-0000-0000" name="CompanyId" />
                         }
                         else
                         {

@@ -18,6 +18,7 @@ using UltimateInvocing.Web.Factories.Company;
 using UltimateInvocing.Factories.PaymentType;
 using UltimateInvocing.Factories.Order;
 using UltimateInvocing.Factories.OrderItems;
+using Microsoft.AspNetCore.Hosting.Internal;
 
 namespace UltimateInvocing.Web.Startup
 {
@@ -43,11 +44,11 @@ namespace UltimateInvocing.Web.Startup
             services.AddScoped<IWebResourceManager, WebResourceManager>();
 
             //Add factories
-            services.AddScoped<IHomeFactory, HomeFactory>();
-            services.AddScoped<ICompanyFactory, CompanyFactory>();
-            services.AddScoped<IPaymentTypeFactory, PaymentTypeFactory>();
-            services.AddScoped<IOrderFactory, OrderFactory>();
-            services.AddScoped<IOrderItemFactory, OrderItemFactory>();
+            services.AddSingleton<IHomeFactory, HomeFactory>();
+            services.AddSingleton<ICompanyFactory, CompanyFactory>();
+            services.AddSingleton<IPaymentTypeFactory, PaymentTypeFactory>();
+            services.AddSingleton<IOrderFactory, OrderFactory>();
+            services.AddSingleton<IOrderItemFactory, OrderItemFactory>();
 
             services.AddSignalR();
 

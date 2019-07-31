@@ -102,8 +102,10 @@ namespace UltimateInvocing.Order
             model.orders = ObjectMapper.Map<List<OrderDto>>(orders);
 
             var numbers = model.orders.Select(x => x.Number);
-            model.NewOrderNumber = numbers.Max() + 1;
-
+            if (numbers.Any())
+                model.NewOrderNumber = numbers.Max() + 1;
+            else
+                model.NewOrderNumber = 1;
             var customers = await _customerAppService.GetAll();
             var companies = await _companyAppService.GetAll();
             var paymentTypes = await _paymentTypeAppService.GetAll();

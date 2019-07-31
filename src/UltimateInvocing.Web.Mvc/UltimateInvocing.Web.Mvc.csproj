@@ -10,7 +10,20 @@
     <RootNamespace>UltimateInvocing.Web</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\view-resources\Views\Customers\Index.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json.old" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\view-resources\Views\Customers\Index.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json.old" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="app.config" />
+    <None Include="wwwroot\view-resources\Views\Customers\Index.min.js" />
     <None Update="Dockerfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

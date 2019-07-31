@@ -118,6 +118,7 @@
                 return;
             }
 
+            console.log(_$form);
             var order = _$form.serializeFormToObject(); //serializeFormToObject is defined in main.js
             console.log(order);
 

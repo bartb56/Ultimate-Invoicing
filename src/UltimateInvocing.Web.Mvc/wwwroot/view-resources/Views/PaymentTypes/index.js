@@ -20,6 +20,7 @@
         $('.edit-paymentType').click(function (e) {
             var paymentTypeId = $(this).attr("data-paymentType-id");
 
+            alert("edit");
             e.preventDefault();
 
             e.preventDefault();
