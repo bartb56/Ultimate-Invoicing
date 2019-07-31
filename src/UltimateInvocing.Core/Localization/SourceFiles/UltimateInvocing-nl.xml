@@ -175,6 +175,18 @@
     <text name="[Product.ProductNumber">Product nummer</text>
     <text name="Order.Number">Order nummer</text>
     <text name="Customer.Number">Klant nummer</text>
+    <text name="Pages_General_Settings">Algemeene instellingen</text>
+    <text name="Pages_Products">Producten</text>
+    <text name="Pages_PaymentTypes">Betaal methodes</text>
+    <text name="Pages_Customers">Klanten</text>
+    <text name="Pages_Companies">Bedrijfen</text>
+    <text name="Pages_Orders">Orders</text>
+
+    <text name="Netherlands">Nederland</text>
+    <text name="Germany">Duitsland</text>
+    <text name="Spain">Spanje</text>
+    <text name="France">Frankrijk</text>
+    <text name="Belgium">Belgie</text>
     
   </texts>
 </localizationDictionary>

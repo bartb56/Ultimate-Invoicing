@@ -40,7 +40,8 @@ namespace UltimateInvocing.Province
 
         public async Task<List<ProvinceDto>> GetAll()
         {
-            return ObjectMapper.Map<List<ProvinceDto>>(await _repository.GetAll().Include(x => x.Country).ToListAsync());
+            var provinces = await _repository.GetAll().Include(x => x.Country).ToListAsync();
+            return ObjectMapper.Map<List<ProvinceDto>>(provinces.OrderBy(x => x.DisplayOrder).ThenBy(x => x.Country.DisplayOrder));
         }
 
         public async Task<List<ProvinceDto>> GetAllByCountryId(Guid id)

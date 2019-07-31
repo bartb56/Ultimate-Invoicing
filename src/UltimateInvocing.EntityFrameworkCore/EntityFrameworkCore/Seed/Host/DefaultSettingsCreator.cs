@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Abp.Configuration;
 using Abp.Localization;
 using Abp.Net.Mail;
+using UltimateInvocing.Configuration;
 
 namespace UltimateInvocing.EntityFrameworkCore.Seed.Host
 {
@@ -22,7 +23,9 @@ namespace UltimateInvocing.EntityFrameworkCore.Seed.Host
             AddSettingIfNotExists(EmailSettingNames.DefaultFromDisplayName, "mydomain.com mailer");
 
             // Languages
-            AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "en");
+            AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "nl");
+            AddSettingIfNotExists(AppSettingNames.UiTheme, "teal");
+            
         }
 
         private void AddSettingIfNotExists(string name, string value, int? tenantId = null)

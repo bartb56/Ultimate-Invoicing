@@ -31,7 +31,7 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             var provinces = await _provinceAppService.GetAll();
             var countries = await _countryAppService.GetAll();
 
-            IEnumerable<SelectListItem> selectList = countries.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            IEnumerable<SelectListItem> selectList = countries.Select(x => new SelectListItem { Text = L(x.Name), Value = x.Id.ToString() }).ToList();
             var model = new ProvinceListModel()
             {
                 Provinces = provinces,
@@ -47,7 +47,7 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             var model = new EditProvinceViewModel(output);
 
             var countries = await _countryAppService.GetAll();
-            model.Countries = countries.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            model.Countries = countries.Select(x => new SelectListItem { Text = L(x.Name), Value = x.Id.ToString() }).ToList();
 
             model.Countries.FirstOrDefault(x => x.Value == model.CountryId.ToString()).Selected = true;
 

@@ -17,5 +17,8 @@ namespace UltimateInvocing.Province.Dto
 
         public Guid CountryId { get; set; }
         public virtual Models.Country Country { get; set; }
+
+        [Required()]
+        public int DisplayOrder { get; set; }
     }
 }

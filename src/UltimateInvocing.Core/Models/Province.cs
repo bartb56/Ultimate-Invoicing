@@ -21,5 +21,8 @@ namespace UltimateInvocing.Models
         public Guid CountryId { get; set; }
         public Country Country { get; set; }
 
+        [Required()]
+        public int DisplayOrder { get; set; }
+
     }
 }

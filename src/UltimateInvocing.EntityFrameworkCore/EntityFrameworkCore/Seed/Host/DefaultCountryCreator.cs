@@ -5,7 +5,7 @@ using System.Text;
 
 namespace UltimateInvocing.EntityFrameworkCore.Seed.Host
 {
-    class DefaultCountryCreator
+    public class DefaultCountryCreator
     {
         public static List<Models.Country> InitialCountries => GetInitialCountries();
         private readonly UltimateInvocingDbContext _context;
@@ -14,11 +14,11 @@ namespace UltimateInvocing.EntityFrameworkCore.Seed.Host
         {
             return new List<Models.Country>
             {
-                new Models.Country(){ IsoCode = "NL", IsoCode3 = "NLD", Name = "Nederland", Id = new Guid("00000000-0000-0000-0000-000000000000")},
-                new Models.Country(){ IsoCode = "DE", IsoCode3 = "DEU", Name = "Duitsland", Id = new Guid("00000000-0000-0000-0000-000000000001")},
-                new Models.Country(){ IsoCode = "BE", IsoCode3 = "BEL", Name = "Belgie", Id = new Guid("00000000-0000-0000-0000-000000000002")},
-                new Models.Country(){ IsoCode = "FR", IsoCode3 = "FRA", Name = "Franrijk", Id = new Guid("00000000-0000-0000-0000-000000000003")},
-                new Models.Country(){ IsoCode = "ES", IsoCode3 = "ESP", Name = "Spain", Id = new Guid("00000000-0000-0000-0000-000000000004")},
+                new Models.Country(){ IsoCode = "NL", IsoCode3 = "NLD", Name = "Netherlands", DisplayOrder = 0, Id = new Guid("00000000-0000-0000-0000-000000000005")},
+                new Models.Country(){ IsoCode = "DE", IsoCode3 = "DEU", Name = "Germany", DisplayOrder = 1, Id = new Guid("00000000-0000-0000-0000-000000000001")},
+                new Models.Country(){ IsoCode = "BE", IsoCode3 = "BEL", Name = "Belgium", DisplayOrder = 2, Id = new Guid("00000000-0000-0000-0000-000000000002")},
+                new Models.Country(){ IsoCode = "FR", IsoCode3 = "FRA", Name = "France", DisplayOrder = 3, Id = new Guid("00000000-0000-0000-0000-000000000003")},
+                new Models.Country(){ IsoCode = "ES", IsoCode3 = "ESP", Name = "Spain", DisplayOrder = 4, Id = new Guid("00000000-0000-0000-0000-000000000004")},
             };
         }
 

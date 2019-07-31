@@ -8,19 +8,18 @@
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Migrations\20180726102624_Upgrade_ABP_380.cs" />
-    <Compile Remove="Migrations\20180927062408_test.cs" />
-    <Compile Remove="Migrations\20190111071724_Upgraded_To_Abp_v4_1_0.cs" />
-    <Compile Remove="Migrations\20190629140953_CompanyInit.cs" />
-    <Compile Remove="Migrations\20190629140953_CompanyInit.Designer.cs" />
-    <Compile Remove="Migrations\20190719163005_test.cs" />
-    <Compile Remove="Migrations\20190719163005_test.Designer.cs" />
-    <Compile Remove="Migrations\20190729171333_HouseNumberCompanyFix.cs" />
-    <Compile Remove="Migrations\20190729171333_HouseNumberCompanyFix.Designer.cs" />
-    <Compile Remove="Migrations\20190730195905_ValidationFix.cs" />
-    <Compile Remove="Migrations\20190730195905_ValidationFix.Designer.cs" />
-    <Compile Remove="Migrations\20190730200051_ValidationFix2.cs" />
-    <Compile Remove="Migrations\20190730200051_ValidationFix2.Designer.cs" />
+    <Compile Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\20190731175211_V0.1.cs" />
+    <Compile Include="Migrations\20190731175211_V0.1.designer.cs" />
+    <Compile Include="Migrations\20190731180516_DisplayOrder.cs" />
+    <Compile Include="Migrations\20190731180516_DisplayOrder.designer.cs" />
+    <Compile Include="Migrations\20190731221047_OrderCreatinDate.cs" />
+    <Compile Include="Migrations\20190731221047_OrderCreatinDate.designer.cs" />
+    <Compile Include="Migrations\UltimateInvocingDbContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />

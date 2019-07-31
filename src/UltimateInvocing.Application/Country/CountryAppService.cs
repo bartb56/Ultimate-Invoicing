@@ -43,7 +43,8 @@ namespace UltimateInvocing.Country
 
         public async Task<List<CountryDto>> GetAll()
         {
-            return ObjectMapper.Map<List<CountryDto>>(await _repository.GetAllListAsync());
+            var countries = await _repository.GetAllListAsync();
+            return ObjectMapper.Map<List<CountryDto>>(countries.OrderBy(x => x.DisplayOrder));
         }
 
         public async Task<CountryDto> GetById(Guid id)

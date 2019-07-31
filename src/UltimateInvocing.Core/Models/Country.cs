@@ -17,6 +17,9 @@ namespace UltimateInvocing.Models
         [MaxLength(3)]
         public string IsoCode3 { get; set; }
 
+        [Required()]
+        public int DisplayOrder { get; set; }
+
         public virtual ICollection<Province> Provinces { get; set; }
 
         //Ef core ctor

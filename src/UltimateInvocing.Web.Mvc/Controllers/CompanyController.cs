@@ -25,7 +25,12 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         [Route("Companies/")]
         public async Task<IActionResult> Index()
         {
-            return View(await _factory.PrepareCompanyModel());
+            var model = await _factory.PrepareCompanyModel();
+            foreach(var country in model.Countries)
+            {
+                country.Text = L(country.Text);
+            }
+            return View(model);
         }
 
         [HttpPost]
@@ -39,6 +44,10 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         public async Task<IActionResult> EditCompanyModel(Guid id)
         {
             var model = await _factory.PrepareEditModal(id);
+            foreach (var country in model.Countries)
+            {
+                country.Value = L(country.Value);
+            }
             return View("EditCompanyModal", model);
         }
 
@@ -46,7 +55,12 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         public async Task<IActionResult> Update(CompanyDto companyDto)
         {
             await _factory.Edit(companyDto);
-            return RedirectToAction("index", await _factory.PrepareCompanyModel());
+            var model = await _factory.PrepareCompanyModel();
+            foreach (var country in model.Countries)
+            {
+                country.Text = L(country.Text);
+            }
+            return RedirectToAction("index", model);
         }
     }
 }

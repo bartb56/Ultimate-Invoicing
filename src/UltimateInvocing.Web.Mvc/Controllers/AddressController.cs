@@ -41,8 +41,8 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             {
                 throw new Exception("No countries found!");
             }
-
-            IEnumerable<SelectListItem> selectListCountries = countries.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            
+            IEnumerable<SelectListItem> selectListCountries = countries.Select(x => new SelectListItem { Text = L(x.Name), Value = x.Id.ToString() }).ToList();
             IEnumerable<SelectListItem> selectListProvinces = provinces.Where(x => x.CountryId == countries.First().Id).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
 
             var addressViewModel = new AddressListModel()
@@ -68,7 +68,7 @@ namespace UltimateInvocing.Web.Mvc.Controllers
                 throw new Exception("No countries found!");
             }
 
-            IEnumerable<SelectListItem> selectListCountries = countries.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            IEnumerable<SelectListItem> selectListCountries = countries.Select(x => new SelectListItem { Text = L(x.Name), Value = x.Id.ToString() }).ToList();
             IEnumerable<SelectListItem> selectListProvinces = provinces.Where(x => x.CountryId == output.CountryId).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
 
             var model = new EditAddressViewModel(output);

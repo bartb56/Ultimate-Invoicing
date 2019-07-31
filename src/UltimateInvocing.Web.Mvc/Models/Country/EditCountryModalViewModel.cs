@@ -14,10 +14,12 @@ namespace UltimateInvocing.Web.Models.Country
             Name = output.Name;
             IsoCode = output.IsoCode;
             IsoCode3 = output.IsoCode3;
+            DisplayOrder = output.DisplayOrder;
         }
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string IsoCode { get; set; }
         public string IsoCode3 { get; set; }
+        public int DisplayOrder { get; set; }
     }
 }

@@ -18,5 +18,8 @@ namespace UltimateInvocing.Country.Dto
         public string IsoCode { get; set; }
         [MaxLength(3)]
         public string IsoCode3 { get; set; }
+
+        [Required()]
+        public int DisplayOrder { get; set; }
     }
 }
