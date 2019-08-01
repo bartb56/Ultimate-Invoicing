@@ -13,6 +13,59 @@
         <script src="~/view-resources/Views/Provinces/Index.min.js" asp-append-version="true"></script>
     </environment>
 }
+
+<div class="modal fade" id="ProvinceCreateModal" tabindex="-1" province="dialog" aria-labelledby="ProvinceCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" province="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewProvince")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="provinceCreateForm" province="form" novalidate class="form-validation">
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="provincename" type="text" name="Name" required maxlength="128" minlength="2" class="validate form-control">
+                                    <label for="provincename" class="form-label">@L("Province.Name")</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <select id="CountryId" name="CountryId" required asp-items="Model.Countries" class="validate form-control"></select>
+                                    <label for="CountryId" class="form-label">@L("Country")</label>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="displayorder" type="number" name="Displayorder" value="1" required class="validate form-control" min="0">
+                                    <label for="displayorder" class="form-label">@L("DisplayOrder")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -43,74 +96,26 @@
                     <tbody>
                         @foreach (var province in Model.Provinces)
                         {
-                        <tr>
-                            <td>@province.Name</td>
-                            <td>@L(province.Country.Name)</td>
-                            <td>@province.DisplayOrder</td>
-                            <td class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" province="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">menu</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" class="waves-effect waves-block edit-province" data-province-id="@province.Id" data-toggle="modal" data-target="#ProvinceEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
-                                    <li><a href="#" class="waves-effect waves-block delete-province" data-province-id="@province.Id" data-province-name="@province.Name"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
-                                </ul>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>@province.Name</td>
+                                <td>@L(province.Country.Name)</td>
+                                <td>@province.DisplayOrder</td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" province="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block edit-province" data-province-id="@province.Id" data-toggle="modal" data-target="#ProvinceEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block delete-province" data-province-id="@province.Id" data-province-name="@province.Name"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
                 <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#ProvinceCreateModal">
                     <i class="material-icons">add</i>
                 </button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="ProvinceCreateModal" tabindex="-1" province="dialog" aria-labelledby="ProvinceCreateModalLabel" data-backdrop="static">
-    <div class="modal-dialog" province="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    <span>@L("CreateNewProvince")</span>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <form name="provinceCreateForm" province="form" novalidate class="form-validation">
-                    <div class="row clearfix">
-                        <div class="col-sm-6">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="provincename" type="text" name="Name" required maxlength="128" minlength="2" class="validate form-control">
-                                    <label for="provincename" class="form-label">@L("Province.Name")</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <select name="CountryId" required asp-items="Model.Countries" class="validate form-control"></select>
-                                    <label for="displayname" class="form-label">@L("Country")</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="displayorder" type="number" name="Displayorder" required  class="validate form-control">
-                                    <label for="displayorder" class="form-label">@L("DisplayOrder")</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                   
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
-                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

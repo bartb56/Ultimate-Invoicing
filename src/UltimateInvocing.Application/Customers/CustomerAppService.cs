@@ -3,6 +3,7 @@ using Abp.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UltimateInvocing.Customers.Address;
@@ -44,7 +45,7 @@ namespace UltimateInvocing.Customers
 
         public async Task<List<CustomerDto>> GetAll()
         {
-            return ObjectMapper.Map<List<CustomerDto>>(await _repository.GetAll().Include(x => x.CustomerAddresses).ToListAsync());
+            return ObjectMapper.Map<List<CustomerDto>>(await _repository.GetAll().Include(x => x.CustomerAddresses).OrderBy(x => x.Number).ToListAsync());
         }
 
         public async Task<CustomerDto> GetById(Guid id)

@@ -21,5 +21,6 @@ namespace UltimateInvocing.Order
         Task UpdateCompanyDetails(Guid orderId);
 
         Task<string> GetWeeklyBestSellers();
+        Task<string> GetLastWeekOrderCount();
     }
 }

@@ -9,55 +9,61 @@
         }
     });
 
-    initRealTimeChart();
+    
     initDonutChart();
+    initRealTimeChart();
     initSparkline();
 });
 
 var realtime = 'on';
 function initRealTimeChart() {
+    var data = "';"
     //Real time ==========================================================================================
-    var plot = $.plot('#real_time_chart', [getRandomData()], {
-        series: {
-            shadowSize: 0,
-            color: 'rgb(0, 188, 212)'
-        },
-        grid: {
-            borderColor: '#f3f3f3',
-            borderWidth: 1,
-            tickColor: '#f3f3f3'
-        },
-        lines: {
-            fill: true
-        },
-        yaxis: {
-            min: 0,
-            max: 25
-        },
-        xaxis: {
-            min: 0,
-            max: 7
+    var data = [];
+    var labels = [];
+    abp.services.app.order.getLastWeekOrderCount().done(function (content) {
+        content = JSON.parse(content);
+        console.log(content)
+        for (var i = 0; i < content.length; i++) {
+            data.push(content[i].Value);
+            labels.push(content[i].Name);
         }
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Order',
+                    data: data,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function (value) { if (Number.isInteger(value)) { return value; } },
+                            suggestedMax: 10,
+                            stepSize: 2,
+                        }
+                    }]
+                },
+                maintainAspectRatio: false,
+            }
+        });
     });
 
-    function updateRealTime() {
-        plot.setData([getRandomData()]);
-        plot.draw();
+    console.log(data);
+    
 
-        var timeout;
-        if (realtime === 'off') {
-            timeout = setTimeout(updateRealTime, 320);
-        } else {
-            clearTimeout(timeout);
-        }
-    }
-
-    updateRealTime();
-
-    $('#realtime').on('change', function () {
-        realtime = this.checked ? 'on' : 'off';
-        updateRealTime();
-    });
+    
     //====================================================================================================
 }
 
@@ -82,7 +88,7 @@ function initDonutChart() {
     });
 }
 
-var data = [], totalPoints = 110;
+var data = [], totalPoints = 80;
 function getRandomData() {
     if (data.length > 0) data = data.slice(1);
 

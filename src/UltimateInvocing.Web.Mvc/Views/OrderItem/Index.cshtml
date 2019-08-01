@@ -5,15 +5,8 @@
 }
 @section scripts
 {
-    <environment names="Development">
         <script src="~/view-resources/Views/OrderItem/Index.js" asp-append-version="true"></script>
-    </environment>
-
-    <environment names="Staging,OrderItemion">
-        <script src="~/view-resources/Views/OrderItem/Index.min.js" asp-append-version="true"></script>
-    </environment>
 }
-
 <div class="modal fade" id="OrderItemCreateModal" tabindex="-1" orderItem="dialog" aria-labelledby="OrderItemCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" orderItem="document">
         <div class="modal-content">
@@ -30,8 +23,8 @@
                         <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <select asp-items="Model.Products" name="ProductId" id="ProductId"></select>
-                                    <label for="CompanyId" class="form-label">@L("ProductId")</label>
+                                    <select id="Products" asp-items="Model.Products" name="ProductId" id="ProductId"></select>
+                                    <label for="Products" class="form-label">@L("ProductId")</label>
                                 </div>
                             </div>
                         </div>

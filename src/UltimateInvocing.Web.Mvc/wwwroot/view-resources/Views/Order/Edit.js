@@ -29,7 +29,7 @@
         select.selectpicker("refresh");
 
         $.ajax({
-            url: abp.appPath + 'Order/UpdateAddresses?customerId=' + customerId,
+            url: abp.appPath + 'Orders/UpdateAddresses/' + customerId,
             type: 'POST',
             dataType: "json",
             success: function (content) {

@@ -327,6 +327,33 @@ namespace UltimateInvocing.Order
             return JsonConvert.SerializeObject(topOrderItems);
         }
 
+        public async Task<string> GetLastWeekOrderCount()
+        {
+            List<Graph> data = new List<Graph>();
+
+            var firstDate = DateTime.Now.AddDays(-6);
+            for(int daysPassed = 0; daysPassed < 7; daysPassed++)
+            {
+                var graphSequence = new Graph();
+                var newDate = firstDate.AddDays(daysPassed);
+                var counter = await _repository.GetAll().Where(x => x.OrderCreationtTime.Date == newDate.Date).ToListAsync();
+                graphSequence.Value = 0;
+                if (counter != null)
+                    graphSequence.Value = counter.Count();
+
+                graphSequence.Name = L(newDate.Date.DayOfWeek.ToString());
+                data.Add(graphSequence);
+            }
+            return JsonConvert.SerializeObject(data);
+        }
+
+        public class Graph
+        {
+            public int Value { get; set; }
+
+            public string Name { get; set; }
+        }
+
         public class BestSellers
         {
             public string label;

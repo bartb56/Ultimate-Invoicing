@@ -30,19 +30,19 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             return View(await _factory.PrepareListModel());
         }
 
-        [HttpPost]
+        [Route("Orders/UpdateAddresses/{customerId}/")]
         public async Task<List<AdressDTO>> UpdateAddresses(Guid customerId)
         {
             return await _factory.UpdateAddressByCustomerId(customerId);
         }
 
-        [HttpPost]
+        [Route("Orders/UpdateCustomerDetails/{orderId}/")]
         public async Task UpdateCustomerDetails(Guid orderId)
         {
             await _factory.UpdateCustomerDetails(orderId);
             return;
         }
-        [HttpPost]
+        [Route("Orders/UpdateCompanyDetails/{orderId}/")]
         public async Task UpdateCompanyDetails(Guid orderId)
         {
             await _factory.UpdateCompanyDetails(orderId);

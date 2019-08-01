@@ -41,7 +41,7 @@
             e.preventDefault();
 
             $.ajax({
-                url: abp.appPath + "Order/UpdateCustomerDetails?orderId=" + orderId,
+                url: abp.appPath + "Orders/UpdateCustomerDetails/" + orderId,
                 type: "POST",
                 success: function () {
                     location.reload(true);
@@ -56,7 +56,7 @@
             e.preventDefault();
 
             $.ajax({
-                url: abp.appPath + "Order/UpdateCompanyDetails?orderId=" + orderId,
+                url: abp.appPath + "Orders/UpdateCompanyDetails/" + orderId,
                 type: "POST",
                 success: function () {
                     location.reload(true);
@@ -72,7 +72,7 @@
             select.selectpicker("refresh");
 
             $.ajax({
-                url: abp.appPath + 'Order/UpdateAddresses?customerId=' + customerId,
+                url: abp.appPath + 'Orders/UpdateAddresses/' + customerId,
                 type: 'POST',
                 dataType: "json",
                 success: function (content) {

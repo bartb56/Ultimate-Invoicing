@@ -37,7 +37,7 @@ namespace UltimateInvocing.Web.Mvc.Controllers
         public async Task<IActionResult> Create(CompanyDto companyDto)
         {
             await _factory.Create(companyDto);
-            return RedirectToAction("index", await _factory.PrepareCompanyModel());
+            return View("Index", await _factory.PrepareCompanyModel());
         } 
 
         [HttpPost]

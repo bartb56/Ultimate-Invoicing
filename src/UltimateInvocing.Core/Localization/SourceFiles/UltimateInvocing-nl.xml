@@ -190,6 +190,15 @@
 
     <text name="Order.Recent">Meest recente orders</text>
     <text name="Products.TopSelling">Best verkochte producten deze week</text>
+
+    <text name="Friday">Vrijdag</text>
+    <text name="Saturday">Zaterdag</text>
+    <text name="Sunday">Zondag</text>
+    <text name="Monday">Maandag</text>
+    <text name="Tuesday">Dinsdag</text>
+    <text name="Wednesday">Woensdag</text>
+    <text name="Thursday">Donderdag</text>
+    <text name="CreateNewPaymentType">Nieuwe betaal methode</text>
     
   </texts>
 </localizationDictionary>

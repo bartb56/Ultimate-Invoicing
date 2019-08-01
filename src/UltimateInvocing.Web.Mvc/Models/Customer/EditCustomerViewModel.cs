@@ -15,8 +15,13 @@ namespace UltimateInvocing.Web.Models.Customer
             CompanyName = dto.CompanyName;
             CompanyEmail = dto.CompanyEmail;
             CompanyPhonenumber = dto.CompanyPhonenumber;
+            Number = dto.Number;
         }
         public Guid Id { get; set; }
+
+        [Required()]
+        public int Number { get; set; }
+
         [Required()]
         [MinLength(2)]
         [MaxLength(128)]

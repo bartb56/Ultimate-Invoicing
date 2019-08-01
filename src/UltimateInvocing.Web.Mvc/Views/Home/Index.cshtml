@@ -2,7 +2,7 @@
 @{
     ViewBag.CurrentPageName = PageNames.Home; // The menu item will be active for this page.
 }
-@model  UltimateInvocing.Factories.Home.HomeModel
+@model UltimateInvocing.Factories.Home.HomeModel
 @section styles {
     <link href="~/lib/morris.js/morris.css" rel="stylesheet" asp-append-version="true" />
 }
@@ -87,7 +87,9 @@
                 </div>
             </div>
             <div class="body">
-                <div id="real_time_chart" class="dashboard-flot-chart"></div>
+                <div id="" class="dashboard-flot-chart">
+                    <canvas id="myChart" width="800" height="275"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -113,29 +115,28 @@
                                 <th>@L("Address.StreetAddress")</th>
                                 <th>@L("Address.HouseNumber")</th>
                                 <th>@L("Address.PostalCode")</th>
-                                <th>@L("Address.Taxable")</th>
+                                <th>@L("Order.PaymentType")</th>
                             </tr>
                         </thead>
                         <tbody>
                             @{
-                            if(Model.RecentOrders != null && Model.RecentOrders.orders != null)
-                            {
-                            foreach(var order in Model.RecentOrders.orders)
-                            {
-                                <tr>
-                                    <td>@order.Number</td>
-                                    <td>@order.CustomerCompanyName</td>
-                                    <td>@order.CustomerCompanyEmail</td>
-                                    <td>@order.CustomerCompanyPhonenumber</td>
-                                    <td>@order.CustomerCity</td>
-                                    <td>@order.CustomerStreetAddress</td>
-                                    <td>@order.CustomerHouseNumber</td>
-                                    <td>@order.CustomerPostalCode</td>
-
-                                    <td>@order.PaymentTypeName</td>
-                                </tr>
-                            }
-                            }
+                                if (Model.RecentOrders != null && Model.RecentOrders.orders != null)
+                                {
+                                    foreach (var order in Model.RecentOrders.orders)
+                                    {
+                                        <tr>
+                                            <td>@order.Number</td>
+                                            <td>@order.CustomerCompanyName</td>
+                                            <td>@order.CustomerCompanyEmail</td>
+                                            <td>@order.CustomerCompanyPhonenumber</td>
+                                            <td>@order.CustomerCity</td>
+                                            <td>@order.CustomerStreetAddress</td>
+                                            <td>@order.CustomerHouseNumber</td>
+                                            <td>@order.CustomerPostalCode</td>
+                                            <td>@order.PaymentTypeName</td>
+                                        </tr>
+                                    }
+                                }
                             }
                         </tbody>
                     </table>
@@ -149,8 +150,7 @@
         <div class="card">
             <div class="header">
                 <h2>@L("Products.TopSelling")</h2>
-                <ul class="header-dropdown m-r--5">
-                </ul>
+                <ul class="header-dropdown m-r--5"></ul>
             </div>
             <div class="body">
                 <div id="donut_chart" class="dashboard-donut-chart"></div>
@@ -159,3 +159,6 @@
     </div>
     <!-- #END# Browser Usage -->
 </div>
+<script>
+
+</script>
