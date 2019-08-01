@@ -10,8 +10,8 @@ using UltimateInvocing.EntityFrameworkCore;
 namespace UltimateInvocing.Migrations
 {
     [DbContext(typeof(UltimateInvocingDbContext))]
-    [Migration("20190731221738_OrderCreationDate")]
-    partial class OrderCreationDate
+    [Migration("20190801230319_V0.2")]
+    partial class V02
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

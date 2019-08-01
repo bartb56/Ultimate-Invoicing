@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace UltimateInvocing.Migrations
 {
-    public partial class V01 : Migration
+    public partial class V02 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -398,7 +398,8 @@ namespace UltimateInvocing.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 128, nullable: false),
                     IsoCode = table.Column<string>(maxLength: 2, nullable: true),
-                    IsoCode3 = table.Column<string>(maxLength: 3, nullable: true)
+                    IsoCode3 = table.Column<string>(maxLength: 3, nullable: true),
+                    DisplayOrder = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -426,6 +427,7 @@ namespace UltimateInvocing.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Number = table.Column<int>(nullable: false),
+                    OrderCreationtTime = table.Column<DateTime>(nullable: false),
                     CustomerCompanyName = table.Column<string>(nullable: true),
                     CustomerCompanyEmail = table.Column<string>(nullable: true),
                     CustomerCompanyPhonenumber = table.Column<string>(nullable: true),
@@ -759,7 +761,8 @@ namespace UltimateInvocing.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 128, nullable: false),
-                    CountryId = table.Column<Guid>(nullable: false)
+                    CountryId = table.Column<Guid>(nullable: false),
+                    DisplayOrder = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

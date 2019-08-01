@@ -13,16 +13,8 @@
     <None Remove="Migrations\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20190731175211_V0.1.cs" />
-    <Compile Include="Migrations\20190731175211_V0.1.designer.cs" />
-    <Compile Include="Migrations\20190731180516_DisplayOrder.cs" />
-    <Compile Include="Migrations\20190731180516_DisplayOrder.designer.cs" />
-    <Compile Include="Migrations\20190731221047_OrderCreatinDate.cs" />
-    <Compile Include="Migrations\20190731221047_OrderCreatinDate.designer.cs" />
-    <Compile Include="Migrations\20190731221309_Remove.cs" />
-    <Compile Include="Migrations\20190731221309_Remove.designer.cs" />
-    <Compile Include="Migrations\20190731221738_OrderCreationDate.cs" />
-    <Compile Include="Migrations\20190731221738_OrderCreationDate.designer.cs" />
+    <Compile Include="Migrations\20190801230319_V0.2.cs" />
+    <Compile Include="Migrations\20190801230319_V0.2.designer.cs" />
     <Compile Include="Migrations\UltimateInvocingDbContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
