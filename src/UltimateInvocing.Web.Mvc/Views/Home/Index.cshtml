@@ -105,71 +105,33 @@
                     <table class="table table-hover dashboard-task-infos">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Task</th>
-                                <th>Status</th>
-                                <th>Manager</th>
-                                <th>Progress</th>
+                                <th>@L("Order.Number")</th>
+                                <th>@L("Customer.CompanyName")</th>
+                                <th>@L("Customer.Email")</th>
+                                <th>@L("Address.PhoneNumber")</th>
+                                <th>@L("Address.City")</th>
+                                <th>@L("Address.StreetAddress")</th>
+                                <th>@L("Address.HouseNumber")</th>
+                                <th>@L("Address.PostalCode")</th>
+                                <th>@L("Address.Taxable")</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach(var order in Model.RecentOrders.orders)
+                            {
                             <tr>
-                                <td>1</td>
-                                <td>Task A</td>
-                                <td><span class="label bg-green">Doing</span></td>
-                                <td>John Doe</td>
-                                <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
-                                    </div>
-                                </td>
+                                <td>@order.Number</td>
+                                <td>@order.CustomerCompanyName</td>
+                                <td>@order.CustomerCompanyEmail</td>
+                                <td>@order.CustomerCompanyPhonenumber</td>
+                                <td>@order.CustomerCity</td>
+                                <td>@order.CustomerStreetAddress</td>
+                                <td>@order.CustomerHouseNumber</td>
+                                <td>@order.CustomerPostalCode</td>
+    
+                                <td>@order.PaymentTypeName</td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Task B</td>
-                                <td><span class="label bg-blue">To Do</span></td>
-                                <td>John Doe</td>
-                                <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Task C</td>
-                                <td><span class="label bg-light-blue">On Hold</span></td>
-                                <td>John Doe</td>
-                                <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-light-blue" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Task D</td>
-                                <td><span class="label bg-orange">Wait Approvel</span></td>
-                                <td>John Doe</td>
-                                <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Task E</td>
-                                <td>
-                                    <span class="label bg-red">Suspended</span>
-                                </td>
-                                <td>John Doe</td>
-                                <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-red" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%"></div>
-                                    </div>
-                                </td>
-                            </tr>
+                            }
                         </tbody>
                     </table>
                 </div>

@@ -12,6 +12,8 @@ using UltimateInvocing.Order.Dto;
 using UltimateInvocing.PaymentType;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace UltimateInvocing.Order
 {
@@ -113,10 +115,10 @@ namespace UltimateInvocing.Order
             {
                 var addreses = await _addressAppService.GetAllByCustomerId(customers.First().Id);
 
-                model.Customers = customers.Select(x => new SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
-                model.Addresses = addreses.Select(x => new SelectListItem { Text = x.StreetAddress + " " + x.HouseNumber, Value = x.Id.ToString() }).ToList();
-                model.Companies = companies.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
-                model.PaymentTypes = paymentTypes.Select(x => new SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
+                model.Customers = customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
+                model.Addresses = addreses.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.StreetAddress + " " + x.HouseNumber, Value = x.Id.ToString() }).ToList();
+                model.Companies = companies.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+                model.PaymentTypes = paymentTypes.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
             }
             return model;
         }
@@ -247,6 +249,88 @@ namespace UltimateInvocing.Order
             //Save changes
             await _repository.UpdateAsync(order);
             return;
+        }
+
+        public async Task<OrderListModel> Get(int amount)
+        {
+            if (amount == 0)
+                throw new Exception("Amount can not be 0");
+
+            var orders = await _repository.GetAll().OrderByDescending(x => x.OrderCreationtTime).ToListAsync();
+            orders = orders.Take(5).ToList();
+
+            var model = new OrderListModel();
+            model.orders = ObjectMapper.Map<List<OrderDto>>(orders);
+
+            var numbers = model.orders.Select(x => x.Number);
+            if (numbers.Any())
+                model.NewOrderNumber = numbers.Max() + 1;
+            else
+                model.NewOrderNumber = 1;
+            var customers = await _customerAppService.GetAll();
+            var companies = await _companyAppService.GetAll();
+            var paymentTypes = await _paymentTypeAppService.GetAll();
+            if (customers.Any() || companies.Any() || paymentTypes.Any())
+            {
+                var addreses = await _addressAppService.GetAllByCustomerId(customers.First().Id);
+
+                model.Customers = customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
+                model.Addresses = addreses.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.StreetAddress + " " + x.HouseNumber, Value = x.Id.ToString() }).ToList();
+                model.Companies = companies.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+                model.PaymentTypes = paymentTypes.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
+            }
+            return model;
+        }
+
+        public async Task<string> GetWeeklyBestSellers()
+        {
+            var firstDate = DateTime.Now.AddDays(-7);
+
+            var orders = await _repository.GetAll().Include(x => x.OrderItems).Where(x => x.OrderCreationtTime >= firstDate).ToListAsync();
+
+            var orderItemsTotal = new List<Models.OrderItem>();
+            foreach(Models.Order order in orders)
+            {
+                orderItemsTotal.AddRange(order.OrderItems);
+            }
+
+            var topOrderItems = new List<BestSellers>();
+
+
+            var options = new List<BestSellers>();
+            foreach (var orderItem in orderItemsTotal)
+            {
+                var option = options.FirstOrDefault(x => x.label == orderItem.Name);
+                if (option == null)
+                {
+                    options.Add(new BestSellers { label = orderItem.Name, value = orderItem.Quantity });
+                }
+                else
+                {
+                    option.value += orderItem.Quantity;
+                }
+            }
+            topOrderItems = options.OrderByDescending(x => x.value).Take(5).ToList();
+
+            var totalProducts = 0;
+            foreach(var bestSeller in topOrderItems)
+            {
+                totalProducts += bestSeller.value;
+            }
+
+            float percentPerItem = 100 / totalProducts;
+            foreach (var bestSeller in topOrderItems)
+            {
+                bestSeller.value = bestSeller.value * (int)percentPerItem;
+            }
+
+            return JsonConvert.SerializeObject(topOrderItems);
+        }
+
+        public class BestSellers
+        {
+            public string label;
+            public int value;
         }
     }
 }

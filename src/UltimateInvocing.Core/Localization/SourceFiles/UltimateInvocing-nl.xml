@@ -187,6 +187,9 @@
     <text name="Spain">Spanje</text>
     <text name="France">Frankrijk</text>
     <text name="Belgium">Belgie</text>
+
+    <text name="Order.Recent">Meest recente orders</text>
+    <text name="Products.TopSelling">Best verkochte producten deze week</text>
     
   </texts>
 </localizationDictionary>

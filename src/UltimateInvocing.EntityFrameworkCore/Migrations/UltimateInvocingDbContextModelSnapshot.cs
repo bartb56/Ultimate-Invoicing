@@ -1254,7 +1254,7 @@ namespace UltimateInvocing.Migrations
 
                     b.Property<int>("Number");
 
-                    b.Property<DateTime>("OrderCreationtTimeUtc");
+                    b.Property<DateTime>("OrderCreationtTime");
 
                     b.Property<Guid>("PaymentTypeId");
 

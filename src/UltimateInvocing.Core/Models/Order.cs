@@ -16,7 +16,7 @@ namespace UltimateInvocing.Models
         public int Number { get; set; }
 
         [Required()]
-        public DateTime OrderCreationtTimeUtc { get; set; } = DateTime.UtcNow;
+        public DateTime OrderCreationtTime { get; set; } = DateTime.Now;
 
         #region Customer section
         public string CustomerCompanyName { get; set; }

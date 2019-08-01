@@ -32,11 +32,11 @@ function initRealTimeChart() {
         },
         yaxis: {
             min: 0,
-            max: 100
+            max: 25
         },
         xaxis: {
             min: 0,
-            max: 100
+            max: 7
         }
     });
 
@@ -45,7 +45,7 @@ function initRealTimeChart() {
         plot.draw();
 
         var timeout;
-        if (realtime === 'on') {
+        if (realtime === 'off') {
             timeout = setTimeout(updateRealTime, 320);
         } else {
             clearTimeout(timeout);
@@ -69,29 +69,16 @@ function initSparkline() {
 }
 
 function initDonutChart() {
-    Morris.Donut({
-        element: 'donut_chart',
-        data: [{
-                label: 'Chrome',
-                value: 37
-            }, {
-                label: 'Firefox',
-                value: 30
-            }, {
-                label: 'Safari',
-                value: 18
-            }, {
-                label: 'Opera',
-                value: 12
-            },
-            {
-                label: 'Other',
-                value: 3
-            }],
-        colors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(255, 152, 0)', 'rgb(0, 150, 136)', 'rgb(96, 125, 139)'],
-        formatter: function (y) {
-            return y + '%'
-        }
+    var bestSellers = abp.services.app.order.getWeeklyBestSellers().done(function (content) {
+        console.log(JSON.parse(content))
+        Morris.Donut({
+            element: 'donut_chart',
+            data: JSON.parse(content),
+            colors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(255, 152, 0)', 'rgb(0, 150, 136)', 'rgb(96, 125, 139)'],
+            formatter: function (y) {
+                return y + '%'
+            }
+        });
     });
 }
 
