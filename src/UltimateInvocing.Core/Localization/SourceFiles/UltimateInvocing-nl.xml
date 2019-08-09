@@ -201,7 +201,8 @@
     <text name="CreateNewPaymentType">Nieuwe betaal methode</text>
     
     <text name="Product.Stock">Voorraad</text>
-    
+    <text name="LowStock">Niet genoeg voorraad</text>
+    <text name="LowStockDesc">Order regel toch toevoegen?</text>
     
   </texts>
 </localizationDictionary>

@@ -124,9 +124,11 @@
 
 
             abp.ui.setBusy(_$modal);
-            _orderService.create(order).done(function () {
+            _orderService.create(order).done(function (content) {
                 _$modal.modal('hide');
-                location.reload(true); //reload page to see new order!
+                console.log(content);
+                window.location.pathname = "Order/" + content;
+                //location.reload(true); //reload page to see new order!
             }).always(function () {
                 abp.ui.clearBusy(_$modal);
             });

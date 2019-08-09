@@ -44,9 +44,6 @@ namespace UltimateInvocing.OrderItem
 
             int newProductStock = product.Stock - orderItem.Quantity;
 
-            //Product stock is lower then 0
-            if (newProductStock < 0)
-                return;
 
             product.Stock = newProductStock;
             await _productAppService.UpdateStock(product.Stock, product.Id);

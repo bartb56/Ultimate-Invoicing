@@ -13,7 +13,7 @@ namespace UltimateInvocing.Order
     {
         Task<OrderListModel> GetAll();
         Task<OrderListModel> Get(int amount);
-        Task Create(OrderCreateModel orderCreateModel);
+        Task<Guid> Create(OrderCreateModel orderCreateModel);
         Task Delete(Guid id);
         Task<OrderDto> GetById(Guid id);
         Task Update(OrderCreateModel orderCreateModel);

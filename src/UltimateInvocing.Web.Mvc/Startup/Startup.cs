@@ -65,6 +65,7 @@ namespace UltimateInvocing.Web.Startup
         {
             app.UseAbp(); // Initializes ABP framework.
 
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -52,6 +52,17 @@ namespace UltimateInvocing.Product
             return ObjectMapper.Map<ProductDto>(await _repository.GetAsync(id));
         }
 
+        public async Task<int> GetStock(Guid id)
+        {
+            var product = await GetById(id);
+            if(product != null)
+            {
+                return product.Stock;
+            }
+            return 0;
+
+        }
+
         public async Task<int> HighestProductNumber()
         {
             var products = await _repository.GetAllListAsync();

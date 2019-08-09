@@ -59,12 +59,39 @@
 
 
             abp.ui.setBusy(_$modal);
-            _orderItemService.create(orderItem).done(function () {
-                _$modal.modal('hide');
-                location.reload(true); //reload page to see new orderItem!
-            }).always(function () {
-                abp.ui.clearBusy(_$modal);
-            });
+
+            console.log(orderItem.ProductId)
+            var productRepository = abp.services.app.product;
+            productRepository.getStock(orderItem.ProductId).done(function (data) {
+                if (data >= orderItem.Quantity) {
+                    _orderItemService.create(orderItem).done(function () {
+                        _$modal.modal('hide');
+                        location.reload(true); //reload page to see new orderItem!
+                    }).always(function () {
+                        abp.ui.clearBusy(_$modal);
+                    });
+                } else {
+                    abp.ui.clearBusy(_$modal);
+                    
+                    abp.message.confirm(
+                        abp.localization.localize('LowStockDesc', 'UltimateInvocing'),
+                        abp.localization.localize('LowStock', 'UltimateInvocing'),
+                        function (isConfirmed) {
+                            if (isConfirmed) {
+                                abp.ui.setBusy(_$modal);
+                                _orderItemService.create(orderItem).done(function () {
+                                    _$modal.modal('hide');
+                                    location.reload(true); //reload page to see new orderItem!
+                                }).always(function () {
+                                    abp.ui.clearBusy(_$modal);
+                                });
+                            }
+                        }
+                    );
+                }
+            })
+
+            
         });
 
         _$modal.on('shown.bs.modal', function () {

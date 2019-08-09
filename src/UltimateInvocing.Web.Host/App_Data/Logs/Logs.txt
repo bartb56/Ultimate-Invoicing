@@ -1,0 +1,504 @@
+DEBUG 2019-08-09 19:34:06,548 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-09 19:34:06,828 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-09 19:34:06,862 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.Web.Host.Startup.UltimateInvocingWebHostModule, UltimateInvocing.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,866 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingWebCoreModule, UltimateInvocing.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,866 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingApplicationModule, UltimateInvocing.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,867 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingCoreModule, UltimateInvocing.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,867 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,867 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,867 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,868 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,868 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.EntityFrameworkCore.UltimateInvocingEntityFrameworkModule, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,868 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,868 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,868 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,869 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,869 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,869 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:06,872 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-09 19:34:06,968 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:06,968 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:06,968 [1    ] o.Configuration.LanguageManagementConfig - Converted UltimateInvocing (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:06,968 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:07,327 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: UltimateInvocing.EntityFrameworkCore.UltimateInvocingDbContext, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:08,523 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-09 19:34:08,563 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-09 19:34:08,573 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-09 19:34:08,579 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: UltimateInvocing
+DEBUG 2019-08-09 19:34:08,583 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-09 19:34:08,802 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-08-09 19:34:08,927 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-08-09 19:34:08,973 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 24 classes define auto mapping attributes
+DEBUG 2019-08-09 19:34:08,973 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-09 19:34:08,981 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.CreateUserDto
+DEBUG 2019-08-09 19:34:08,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.UserDto
+DEBUG 2019-08-09 19:34:08,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-09 19:34:08,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-09 19:34:08,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-09 19:34:08,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.FlatPermissionDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.PermissionDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleEditDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleListDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.PagedProvinceResultRequestDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.ProvinceDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.PaymentType.Dto.PaymentTypeDto
+DEBUG 2019-08-09 19:34:08,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Order.Dto.OrderDto
+DEBUG 2019-08-09 19:34:08,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.OrderItem.Dto.OrderItemDto
+DEBUG 2019-08-09 19:34:08,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-09 19:34:08,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-09 19:34:08,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.CustomerDto
+DEBUG 2019-08-09 19:34:08,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.Address.AddressDto.AdressDTO
+DEBUG 2019-08-09 19:34:08,985 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Product.Dto.ProductDto
+DEBUG 2019-08-09 19:34:08,985 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Country.Dto.CountryDto
+DEBUG 2019-08-09 19:34:08,985 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.CompanyDto
+DEBUG 2019-08-09 19:34:08,985 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.PagedCompanyResultRequestDto
+DEBUG 2019-08-09 19:34:33,151 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-09 19:34:33,175 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-09 19:34:33,191 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.Web.Host.Startup.UltimateInvocingWebHostModule, UltimateInvocing.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,194 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingWebCoreModule, UltimateInvocing.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,195 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingApplicationModule, UltimateInvocing.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,195 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingCoreModule, UltimateInvocing.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,195 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,195 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,196 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,196 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,196 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.EntityFrameworkCore.UltimateInvocingEntityFrameworkModule, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,196 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,196 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,197 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,197 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,197 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,197 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,200 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-09 19:34:33,257 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:33,257 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:33,257 [1    ] o.Configuration.LanguageManagementConfig - Converted UltimateInvocing (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:33,257 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:34:33,509 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: UltimateInvocing.EntityFrameworkCore.UltimateInvocingDbContext, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:34:33,896 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-09 19:34:33,927 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-09 19:34:33,936 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-09 19:34:33,940 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: UltimateInvocing
+DEBUG 2019-08-09 19:34:33,943 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-09 19:34:33,988 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-08-09 19:34:34,012 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-08-09 19:34:34,054 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 24 classes define auto mapping attributes
+DEBUG 2019-08-09 19:34:34,054 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-09 19:34:34,064 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.CreateUserDto
+DEBUG 2019-08-09 19:34:34,065 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.UserDto
+DEBUG 2019-08-09 19:34:34,065 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-09 19:34:34,066 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-09 19:34:34,066 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-09 19:34:34,066 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.FlatPermissionDto
+DEBUG 2019-08-09 19:34:34,066 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.PermissionDto
+DEBUG 2019-08-09 19:34:34,066 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleEditDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleListDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.PagedProvinceResultRequestDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.ProvinceDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.PaymentType.Dto.PaymentTypeDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Order.Dto.OrderDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.OrderItem.Dto.OrderItemDto
+DEBUG 2019-08-09 19:34:34,067 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-09 19:34:34,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-09 19:34:34,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.CustomerDto
+DEBUG 2019-08-09 19:34:34,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.Address.AddressDto.AdressDTO
+DEBUG 2019-08-09 19:34:34,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Product.Dto.ProductDto
+DEBUG 2019-08-09 19:34:34,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Country.Dto.CountryDto
+DEBUG 2019-08-09 19:34:34,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.CompanyDto
+DEBUG 2019-08-09 19:34:34,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.PagedCompanyResultRequestDto
+FATAL 2019-08-09 19:34:45,848 [1    ] Abp.AbpBootstrapper                      - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "UltimateInvocingDb" requested by the login. The login failed.
+Login failed for user 'DESKTOP-ILQLJ8F\Bart'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide, String name) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 120
+   at UltimateInvocing.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at UltimateInvocing.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at UltimateInvocing.EntityFrameworkCore.UltimateInvocingEntityFrameworkModule.PostInitialize() in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\UltimateInvocingEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+ClientConnectionId:7696968f-40df-4c1d-9aac-c56515a36a1d
+Error Number:4060,State:1,Class:11
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "UltimateInvocingDb" requested by the login. The login failed.
+Login failed for user 'DESKTOP-ILQLJ8F\Bart'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide, String name) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 120
+   at UltimateInvocing.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at UltimateInvocing.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at UltimateInvocing.EntityFrameworkCore.UltimateInvocingEntityFrameworkModule.PostInitialize() in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\UltimateInvocingEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+ClientConnectionId:7696968f-40df-4c1d-9aac-c56515a36a1d
+Error Number:4060,State:1,Class:11
+WARN  2019-08-09 19:34:45,848 [7    ] Abp.BackgroundJobs.BackgroundJobManager  - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "UltimateInvocingDb" requested by the login. The login failed.
+Login failed for user 'DESKTOP-ILQLJ8F\Bart'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide, String name) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 120
+   at Abp.EntityFrameworkCore.Repositories.EfCoreRepositoryBase`3.<GetQueryable>b__7_0(Type key) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Repositories\EfCoreRepositoryBaseOfTEntityAndTPrimaryKey.cs:line 55
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Abp.EntityFrameworkCore.Repositories.EfCoreRepositoryBase`3.GetQueryable() in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Repositories\EfCoreRepositoryBaseOfTEntityAndTPrimaryKey.cs:line 55
+   at Abp.EntityFrameworkCore.Repositories.EfCoreRepositoryBase`3.GetAllIncluding(Expression`1[] propertySelectors) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Repositories\EfCoreRepositoryBaseOfTEntityAndTPrimaryKey.cs:line 114
+   at Castle.Proxies.Invocations.IRepository`2_GetAll_3.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) in D:\Github\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 68
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IRepository`2Proxy_1.GetAll()
+   at Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\Github\aspnetboilerplate\src\Abp.Zero.Common\BackgroundJobs\BackgroundJobStore.cs:line 36
+   at Castle.Proxies.Invocations.BackgroundJobStore_GetWaitingJobsAsync.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformAsyncUow(IInvocation invocation, UnitOfWorkOptions options) in D:\Github\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 78
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.BackgroundJobStoreProxy.GetWaitingJobsAsync(Int32 maxResultCount)
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Abp.BackgroundJobs.BackgroundJobManager.DoWork() in D:\Github\aspnetboilerplate\src\Abp\BackgroundJobs\BackgroundJobManager.cs:line 92
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Threading.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\Github\aspnetboilerplate\src\Abp\Threading\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 48
+ClientConnectionId:7696968f-40df-4c1d-9aac-c56515a36a1d
+Error Number:4060,State:1,Class:11
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "UltimateInvocingDb" requested by the login. The login failed.
+Login failed for user 'DESKTOP-ILQLJ8F\Bart'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide, String name) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 120
+   at Abp.EntityFrameworkCore.Repositories.EfCoreRepositoryBase`3.<GetQueryable>b__7_0(Type key) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Repositories\EfCoreRepositoryBaseOfTEntityAndTPrimaryKey.cs:line 55
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Abp.EntityFrameworkCore.Repositories.EfCoreRepositoryBase`3.GetQueryable() in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Repositories\EfCoreRepositoryBaseOfTEntityAndTPrimaryKey.cs:line 55
+   at Abp.EntityFrameworkCore.Repositories.EfCoreRepositoryBase`3.GetAllIncluding(Expression`1[] propertySelectors) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Repositories\EfCoreRepositoryBaseOfTEntityAndTPrimaryKey.cs:line 114
+   at Castle.Proxies.Invocations.IRepository`2_GetAll_3.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) in D:\Github\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 68
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.IRepository`2Proxy_1.GetAll()
+   at Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\Github\aspnetboilerplate\src\Abp.Zero.Common\BackgroundJobs\BackgroundJobStore.cs:line 36
+   at Castle.Proxies.Invocations.BackgroundJobStore_GetWaitingJobsAsync.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformAsyncUow(IInvocation invocation, UnitOfWorkOptions options) in D:\Github\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 78
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.BackgroundJobStoreProxy.GetWaitingJobsAsync(Int32 maxResultCount)
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Abp.BackgroundJobs.BackgroundJobManager.DoWork() in D:\Github\aspnetboilerplate\src\Abp\BackgroundJobs\BackgroundJobManager.cs:line 92
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Threading.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\Github\aspnetboilerplate\src\Abp\Threading\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 48
+ClientConnectionId:7696968f-40df-4c1d-9aac-c56515a36a1d
+Error Number:4060,State:1,Class:11
+FATAL 2019-08-09 19:34:45,866 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "UltimateInvocingDb" requested by the login. The login failed.
+Login failed for user 'DESKTOP-ILQLJ8F\Bart'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide, String name) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 120
+   at UltimateInvocing.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at UltimateInvocing.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at UltimateInvocing.EntityFrameworkCore.UltimateInvocingEntityFrameworkModule.PostInitialize() in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.EntityFrameworkCore\EntityFrameworkCore\UltimateInvocingEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.InitializeAbp(IApplicationBuilder app) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\AbpApplicationBuilderExtensions.cs:line 67
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\AbpApplicationBuilderExtensions.cs:line 38
+   at UltimateInvocing.Web.Host.Startup.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) in P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.Web.Host\Startup\Startup.cs:line 90
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+ClientConnectionId:7696968f-40df-4c1d-9aac-c56515a36a1d
+Error Number:4060,State:1,Class:11
+INFO  2019-08-09 19:34:46,283 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:21021/  0
+INFO  2019-08-09 19:34:46,283 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+ERROR 2019-08-09 19:34:46,324 [9    ] Microsoft.AspNetCore.Server.Kestrel      - Connection id "0HLOSTVFGL4SF", Request id "0HLOSTVFGL4SF:00000001": An unhandled exception was thrown by the application.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: values
+   at System.String.Join(String separator, IEnumerable`1 values)
+   at Microsoft.Extensions.RazorViews.BaseView.EndWriteAttribute()
+   at Microsoft.AspNetCore.Hosting.Views.ErrorPage.ExecuteAsync()
+   at Microsoft.Extensions.RazorViews.BaseView.ExecuteAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+INFO  2019-08-09 19:34:46,373 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 88.6174ms 500 
+INFO  2019-08-09 19:34:46,399 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 121.876ms 500 text/html; charset=utf-8
+DEBUG 2019-08-09 19:35:02,351 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-09 19:35:02,405 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-09 19:35:02,431 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.Web.Host.Startup.UltimateInvocingWebHostModule, UltimateInvocing.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,435 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingWebCoreModule, UltimateInvocing.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,435 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingApplicationModule, UltimateInvocing.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,435 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingCoreModule, UltimateInvocing.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,435 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,436 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,436 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,436 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,436 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.EntityFrameworkCore.UltimateInvocingEntityFrameworkModule, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,437 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,437 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,437 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,437 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,437 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,438 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:02,441 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-09 19:35:02,508 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:35:02,508 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:35:02,508 [1    ] o.Configuration.LanguageManagementConfig - Converted UltimateInvocing (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:35:02,508 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:35:02,830 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: UltimateInvocing.EntityFrameworkCore.UltimateInvocingDbContext, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:35:03,835 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-09 19:35:03,875 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-09 19:35:03,887 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-09 19:35:03,893 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: UltimateInvocing
+DEBUG 2019-08-09 19:35:03,897 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-09 19:35:04,104 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-08-09 19:35:04,264 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-08-09 19:35:04,307 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 24 classes define auto mapping attributes
+DEBUG 2019-08-09 19:35:04,307 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-09 19:35:04,314 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.CreateUserDto
+DEBUG 2019-08-09 19:35:04,314 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.UserDto
+DEBUG 2019-08-09 19:35:04,315 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-09 19:35:04,315 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-09 19:35:04,315 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-09 19:35:04,315 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.FlatPermissionDto
+DEBUG 2019-08-09 19:35:04,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.PermissionDto
+DEBUG 2019-08-09 19:35:04,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleDto
+DEBUG 2019-08-09 19:35:04,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleEditDto
+DEBUG 2019-08-09 19:35:04,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleListDto
+DEBUG 2019-08-09 19:35:04,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.PagedProvinceResultRequestDto
+DEBUG 2019-08-09 19:35:04,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.ProvinceDto
+DEBUG 2019-08-09 19:35:04,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.PaymentType.Dto.PaymentTypeDto
+DEBUG 2019-08-09 19:35:04,317 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Order.Dto.OrderDto
+DEBUG 2019-08-09 19:35:04,317 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.OrderItem.Dto.OrderItemDto
+DEBUG 2019-08-09 19:35:04,317 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-09 19:35:04,318 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-09 19:35:04,318 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.CustomerDto
+DEBUG 2019-08-09 19:35:04,318 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.Address.AddressDto.AdressDTO
+DEBUG 2019-08-09 19:35:04,318 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Product.Dto.ProductDto
+DEBUG 2019-08-09 19:35:04,318 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Country.Dto.CountryDto
+DEBUG 2019-08-09 19:35:04,318 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.CompanyDto
+DEBUG 2019-08-09 19:35:04,318 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.PagedCompanyResultRequestDto
+INFO  2019-08-09 19:35:09,183 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:21021/  0
+INFO  2019-08-09 19:35:09,183 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-08-09 19:35:09,266 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 88.8472ms 200 
+INFO  2019-08-09 19:35:13,009 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host)
+INFO  2019-08-09 19:35:14,001 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host) - Validation state: Valid
+INFO  2019-08-09 19:35:14,006 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 1.8188ms.
+INFO  2019-08-09 19:35:14,288 [6    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-08-09 19:35:14,305 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host) in 1289.78ms
+INFO  2019-08-09 19:35:14,331 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5149.9191ms 302 
+INFO  2019-08-09 19:35:14,338 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger  
+INFO  2019-08-09 19:35:14,369 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.7556ms 301 
+INFO  2019-08-09 19:35:14,380 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-08-09 19:35:14,582 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 200.7185ms 200 text/html
+INFO  2019-08-09 19:35:14,631 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-standalone-preset.js  
+INFO  2019-08-09 19:35:14,646 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui.css  
+INFO  2019-08-09 19:35:14,650 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-bundle.js  
+INFO  2019-08-09 19:35:14,651 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2019-08-09 19:35:14,653 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2019-08-09 19:35:14,744 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.Web.Host\wwwroot\swagger\ui\abp.js'
+INFO  2019-08-09 19:35:14,755 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2019-08-09 19:35:14,766 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2019-08-09 19:35:14,772 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2019-08-09 19:35:14,785 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 144.2131ms 200 text/css
+INFO  2019-08-09 19:35:14,790 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 130.2658ms 200 application/javascript
+INFO  2019-08-09 19:35:14,799 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 144.2133ms 200 application/javascript
+INFO  2019-08-09 19:35:14,801 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 95.9216ms 200 application/javascript
+INFO  2019-08-09 19:35:14,818 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.swagger.js'. Physical path: 'P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.Web.Host\wwwroot\swagger\ui\abp.swagger.js'
+INFO  2019-08-09 19:35:14,834 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 169.4308ms 200 application/javascript
+INFO  2019-08-09 19:35:15,014 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/favicon-16x16.png  
+INFO  2019-08-09 19:35:15,019 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+INFO  2019-08-09 19:35:15,022 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.5759ms 200 image/png
+INFO  2019-08-09 19:35:15,121 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-08-09 19:35:15,378 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 268.1259ms 200 application/json;charset=utf-8
+INFO  2019-08-09 19:36:45,312 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/PaymentType/GetAll  
+INFO  2019-08-09 19:36:45,340 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "PaymentType"}. Executing action UltimateInvocing.PaymentType.PaymentTypeAppService.GetAll (UltimateInvocing.Application)
+WARN  2019-08-09 19:36:45,801 [20   ] Mvc.Authorization.AbpAuthorizationFilter - Abp.Authorization.AbpAuthorizationException: Huidige gebruiker is niet ingelogd in de applicatie!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+Abp.Authorization.AbpAuthorizationException: Huidige gebruiker is niet ingelogd in de applicatie!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+INFO  2019-08-09 19:36:45,807 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter'.
+INFO  2019-08-09 19:36:45,833 [20   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-09 19:36:45,865 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action UltimateInvocing.PaymentType.PaymentTypeAppService.GetAll (UltimateInvocing.Application) in 522.9926ms
+INFO  2019-08-09 19:36:45,873 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 557.499ms 401 application/json; charset=utf-8
+INFO  2019-08-09 19:37:49,802 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/TestNotification/wewwe  
+INFO  2019-08-09 19:37:49,804 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.0207ms 404 
+INFO  2019-08-09 19:37:49,946 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/favicon.ico  
+INFO  2019-08-09 19:37:49,949 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.0209ms 404 
+INFO  2019-08-09 19:37:59,428 [28   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/Home/TestNotification/wewwe  
+INFO  2019-08-09 19:37:59,458 [28   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "TestNotification", controller = "Home", area = ""}. Executing action UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host)
+INFO  2019-08-09 19:37:59,506 [28   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host) with arguments () - Validation state: Valid
+INFO  2019-08-09 19:38:23,766 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host), returned result Microsoft.AspNetCore.Mvc.ContentResult in 24256.8288ms.
+INFO  2019-08-09 19:38:23,918 [32   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+INFO  2019-08-09 19:38:23,927 [32   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host) in 24461.9017ms
+INFO  2019-08-09 19:38:23,963 [32   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24515.9221ms 200 text/plain; charset=utf-8
+INFO  2019-08-09 19:39:13,656 [31   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/Home/TestNotification/  
+INFO  2019-08-09 19:39:13,666 [31   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "TestNotification", controller = "Home", area = ""}. Executing action UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host)
+INFO  2019-08-09 19:39:13,669 [31   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host) with arguments () - Validation state: Valid
+INFO  2019-08-09 19:39:16,233 [31   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host), returned result Microsoft.AspNetCore.Mvc.ContentResult in 2560.8287ms.
+INFO  2019-08-09 19:39:16,304 [31   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+INFO  2019-08-09 19:39:16,306 [31   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action UltimateInvocing.Web.Host.Controllers.HomeController.TestNotification (UltimateInvocing.Web.Host) in 2638.1017ms
+INFO  2019-08-09 19:39:16,309 [31   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2652.4553ms 200 text/plain; charset=utf-8
+DEBUG 2019-08-09 19:42:18,521 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-09 19:42:18,584 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-09 19:42:18,599 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.Web.Host.Startup.UltimateInvocingWebHostModule, UltimateInvocing.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,602 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingWebCoreModule, UltimateInvocing.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,602 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingApplicationModule, UltimateInvocing.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,603 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.UltimateInvocingCoreModule, UltimateInvocing.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,603 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,603 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,603 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,604 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,604 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: UltimateInvocing.EntityFrameworkCore.UltimateInvocingEntityFrameworkModule, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,604 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,604 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,604 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.8.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:18,608 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-09 19:42:18,675 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:42:18,675 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:42:18,675 [1    ] o.Configuration.LanguageManagementConfig - Converted UltimateInvocing (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:42:18,675 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-09 19:42:19,010 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: UltimateInvocing.EntityFrameworkCore.UltimateInvocingDbContext, UltimateInvocing.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-09 19:42:19,993 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-09 19:42:20,033 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-09 19:42:20,045 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-09 19:42:20,051 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: UltimateInvocing
+DEBUG 2019-08-09 19:42:20,056 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-09 19:42:20,253 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-08-09 19:42:20,387 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-08-09 19:42:20,429 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 24 classes define auto mapping attributes
+DEBUG 2019-08-09 19:42:20,429 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-09 19:42:20,436 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.CreateUserDto
+DEBUG 2019-08-09 19:42:20,437 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Users.Dto.UserDto
+DEBUG 2019-08-09 19:42:20,437 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-09 19:42:20,437 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-09 19:42:20,437 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-09 19:42:20,437 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.FlatPermissionDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.PermissionDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleEditDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Roles.Dto.RoleListDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.PagedProvinceResultRequestDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Province.Dto.ProvinceDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.PaymentType.Dto.PaymentTypeDto
+DEBUG 2019-08-09 19:42:20,438 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Order.Dto.OrderDto
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.OrderItem.Dto.OrderItemDto
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.CustomerDto
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Customers.Address.AddressDto.AdressDTO
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Product.Dto.ProductDto
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Country.Dto.CountryDto
+DEBUG 2019-08-09 19:42:20,439 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.CompanyDto
+DEBUG 2019-08-09 19:42:20,440 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - UltimateInvocing.Company.Dto.PagedCompanyResultRequestDto
+INFO  2019-08-09 19:42:25,015 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:21021/  0
+INFO  2019-08-09 19:42:25,015 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-08-09 19:42:25,096 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 87.4248ms 200 
+INFO  2019-08-09 19:42:28,587 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host)
+INFO  2019-08-09 19:42:29,484 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host) - Validation state: Valid
+INFO  2019-08-09 19:42:29,490 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 2.2879ms.
+INFO  2019-08-09 19:42:29,747 [9    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-08-09 19:42:29,761 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action UltimateInvocing.Web.Host.Controllers.HomeController.Index (UltimateInvocing.Web.Host) in 1168.1589ms
+INFO  2019-08-09 19:42:29,795 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4784.2657ms 302 
+INFO  2019-08-09 19:42:29,808 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-08-09 19:42:30,003 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 196.0562ms 200 text/html
+INFO  2019-08-09 19:42:30,062 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2019-08-09 19:42:30,066 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2019-08-09 19:42:30,098 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.Web.Host\wwwroot\swagger\ui\abp.js'
+INFO  2019-08-09 19:42:30,099 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.swagger.js'. Physical path: 'P:\projects\UltimateInvoicing\aspnet-core\src\UltimateInvocing.Web.Host\wwwroot\swagger\ui\abp.swagger.js'
+INFO  2019-08-09 19:42:30,102 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.401ms 200 application/javascript
+INFO  2019-08-09 19:42:30,103 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 46.3014ms 200 application/javascript
+INFO  2019-08-09 19:42:30,413 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-08-09 19:42:30,701 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 287.4013ms 200 application/json;charset=utf-8

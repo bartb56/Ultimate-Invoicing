@@ -16,6 +16,8 @@ namespace UltimateInvocing.Product
         Task UpdateStock(int stock, Guid productId);
         Task Update(ProductDto productDto);
 
+        Task<int> GetStock(Guid id);
+
         Task<int> HighestProductNumber();
     }
 }

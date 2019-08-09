@@ -65,7 +65,14 @@
                                     {
                                         <i class="material-icons">cancel</i>}
                                 </td>
-                                <td>@product.Stock</td>
+                                @if(product.Stock < 0)
+                                {
+                                    <td class="error-message">@product.Stock</td>
+                                }
+                                else
+                                {
+                                    <td>@product.Stock</td>
+                                }
                                 <td class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" product="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">menu</i>

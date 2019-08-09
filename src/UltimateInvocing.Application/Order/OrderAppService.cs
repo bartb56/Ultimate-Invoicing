@@ -38,7 +38,7 @@ namespace UltimateInvocing.Order
             _addressAppService = addressAppService;
         }
 
-        public async Task Create(OrderCreateModel orderCreateModel)
+        public async Task<Guid> Create(OrderCreateModel orderCreateModel)
         {
             var customer = await _customerAppService.GetById(orderCreateModel.CustomerId);
             var company = await _companyAppService.GetById(orderCreateModel.CompanyId);
@@ -88,8 +88,7 @@ namespace UltimateInvocing.Order
                 PaymentTypeId = paymentType.Id
             };
 
-            await _repository.InsertAsync(ObjectMapper.Map<Models.Order>(model));
-            return;
+            return await _repository.InsertAndGetIdAsync(ObjectMapper.Map<Models.Order>(model));
         }
 
         public async Task Delete(Guid id)
@@ -101,7 +100,7 @@ namespace UltimateInvocing.Order
         {
             var orders = await _repository.GetAll().Include(x => x.OrderItems).ToListAsync();
             var model = new OrderListModel();
-            model.orders = ObjectMapper.Map<List<OrderDto>>(orders);
+            model.orders = ObjectMapper.Map<List<OrderDto>>(orders.OrderByDescending(x => x.OrderCreationtTime).ToList());
 
             var numbers = model.orders.Select(x => x.Number);
             if (numbers.Any())

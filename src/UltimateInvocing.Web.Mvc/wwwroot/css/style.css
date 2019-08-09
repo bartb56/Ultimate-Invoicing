@@ -8096,3 +8096,6 @@ body.login-page {
 .dashboard-flot-chart{
     height: 500px;
 }
+.error-message {
+    color: #D8000C;
+}
