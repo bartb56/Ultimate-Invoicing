@@ -68,5 +68,16 @@ namespace UltimateInvocing.Product
             await _repository.UpdateAsync(product);
             return;
         }
+        public async Task UpdateStock(int stock, Guid productId)
+        {
+            var product = await _repository.GetAsync(productId);
+            if(product != null)
+            {
+                product.Stock = stock;
+
+                await _repository.UpdateAsync(product);
+            }
+            return;
+        }
     }
 }

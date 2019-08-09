@@ -42,6 +42,15 @@ namespace UltimateInvocing.OrderItem
             if (product == null)
                 throw new Exception("No product match has been found.");
 
+            int newProductStock = product.Stock - orderItem.Quantity;
+
+            //Product stock is lower then 0
+            if (newProductStock < 0)
+                return;
+
+            product.Stock = newProductStock;
+            await _productAppService.UpdateStock(product.Stock, product.Id);
+
             Models.OrderItem newOrderItem = new Models.OrderItem()
             {
                 Number = product.Number,
@@ -86,10 +95,17 @@ namespace UltimateInvocing.OrderItem
 
         public async Task Delete(Guid id)
         {
-            var product = _repository.Get(id);
-            if (product != null)
+            var orderItem = _repository.Get(id);
+            var productId = orderItem.ProductId;
+            if(orderItem != null && productId != null)
             {
-                await _repository.DeleteAsync(product);
+                var product = await _productAppService.GetById(productId);
+                product.Stock += orderItem.Quantity;
+                await _productAppService.UpdateStock(product.Stock, product.Id);
+            }
+            if (orderItem != null)
+            {
+                await _repository.DeleteAsync(orderItem);
             }
             return;
         }
@@ -110,10 +126,32 @@ namespace UltimateInvocing.OrderItem
             return ObjectMapper.Map<OrderItemDto>(await _repository.GetAsync(id));
         }
 
-        public async Task Update(OrderItemDto productDto)
+        public async Task Update(OrderItemDto orderItemDto)
         {
-            var product = ObjectMapper.Map<Models.OrderItem>(productDto);
-            await _repository.UpdateAsync(product);
+            var orderItem = ObjectMapper.Map<Models.OrderItem>(orderItemDto);
+            //Get last orderItem quantity, we use this to update the product stock.
+            var originalOrderItem = await _repository.GetAsync(orderItem.Id);
+            int originalQuantity = 0;
+            if(originalOrderItem != null)
+            {
+                originalQuantity = originalOrderItem.Quantity;
+            }
+            await _repository.UpdateAsync(orderItem);
+
+            var product = await _productAppService.GetById(orderItem.ProductId);
+            if(product != null && originalQuantity != orderItem.Quantity)
+            {
+                if(originalQuantity > orderItem.Quantity)
+                {
+                    //The original quantity was higher so we must readd some of the stock
+                    product.Stock += (originalQuantity - orderItem.Quantity);
+                }
+                else
+                {
+                    product.Stock += (orderItem.Quantity - originalQuantity);
+                }
+                await _productAppService.UpdateStock(product.Stock, product.Id);
+            }
             return;
         }
     }

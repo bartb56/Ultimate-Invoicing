@@ -23,5 +23,7 @@ namespace UltimateInvocing.Factories.Product.ViewModels
         public int Tax { get; set; }
         [Required()]
         public bool IsAvailable { get; set; }
+        [Required()]
+        public int Stock { get; set; }
     }
 }

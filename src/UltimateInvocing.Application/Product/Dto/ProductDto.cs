@@ -7,7 +7,7 @@ using System.Text;
 
 namespace UltimateInvocing.Product.Dto
 {
-    [AutoMap(typeof(UltimateInvocing.Models.Province))]
+    [AutoMap(typeof(UltimateInvocing.Models.Product))]
     public class ProductDto : EntityDto<Guid>
     {
         public int Number { get; set; }
@@ -25,5 +25,8 @@ namespace UltimateInvocing.Product.Dto
         public int Tax { get; set; }
         [Required()]
         public bool IsAvailable { get; set; }
+
+        [Required()]
+        public int Stock { get; set; }
     }
 }

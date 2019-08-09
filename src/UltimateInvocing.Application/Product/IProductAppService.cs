@@ -13,6 +13,7 @@ namespace UltimateInvocing.Product
         Task Create(ProductDto productDto);
         Task Delete(Guid id);
         Task<ProductDto> GetById(Guid id);
+        Task UpdateStock(int stock, Guid productId);
         Task Update(ProductDto productDto);
 
         Task<int> HighestProductNumber();

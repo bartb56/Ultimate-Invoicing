@@ -111,15 +111,17 @@ namespace UltimateInvocing.Order
             var customers = await _customerAppService.GetAll();
             var companies = await _companyAppService.GetAll();
             var paymentTypes = await _paymentTypeAppService.GetAll();
-            if(customers.Any() || companies.Any() || paymentTypes.Any())
+            if(customers.Any())
+                model.Customers = customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
+            if (companies.Any())
             {
                 var addreses = await _addressAppService.GetAllByCustomerId(customers.First().Id);
-
-                model.Customers = customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
-                model.Addresses = addreses.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.StreetAddress + " " + x.HouseNumber, Value = x.Id.ToString() }).ToList();
-                model.Companies = companies.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
-                model.PaymentTypes = paymentTypes.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
+                if (addreses.Any())
+                    model.Addresses = addreses.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.StreetAddress + " " + x.HouseNumber, Value = x.Id.ToString() }).ToList();
             }
+            if(companies.Any())
+                model.Companies = companies.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            model.PaymentTypes = paymentTypes.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
             return model;
         }
 
@@ -270,15 +272,17 @@ namespace UltimateInvocing.Order
             var customers = await _customerAppService.GetAll();
             var companies = await _companyAppService.GetAll();
             var paymentTypes = await _paymentTypeAppService.GetAll();
-            if (customers.Any() || companies.Any() || paymentTypes.Any())
+            if (customers.Any())
+                model.Customers = customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
+            if (companies.Any())
             {
                 var addreses = await _addressAppService.GetAllByCustomerId(customers.First().Id);
-
-                model.Customers = customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
-                model.Addresses = addreses.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.StreetAddress + " " + x.HouseNumber, Value = x.Id.ToString() }).ToList();
-                model.Companies = companies.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
-                model.PaymentTypes = paymentTypes.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
+                if (addreses.Any())
+                    model.Addresses = addreses.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.StreetAddress + " " + x.HouseNumber, Value = x.Id.ToString() }).ToList();
             }
+            if (companies.Any())
+                model.Companies = companies.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            model.PaymentTypes = paymentTypes.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
             return model;
         }
 

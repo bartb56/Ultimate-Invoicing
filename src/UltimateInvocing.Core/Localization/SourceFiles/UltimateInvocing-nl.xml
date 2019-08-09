@@ -200,5 +200,8 @@
     <text name="Thursday">Donderdag</text>
     <text name="CreateNewPaymentType">Nieuwe betaal methode</text>
     
+    <text name="Product.Stock">Voorraad</text>
+    
+    
   </texts>
 </localizationDictionary>

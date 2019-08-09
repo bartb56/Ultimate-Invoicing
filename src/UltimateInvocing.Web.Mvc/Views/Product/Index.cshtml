@@ -43,6 +43,7 @@
                             <th>@L("Product.Price")</th>
                             <th>@L("Product.Tax")</th>
                             <th>@L("Product.IsAvailable")</th>
+                            <th>@L("Product.Stock")</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,6 +65,7 @@
                                     {
                                         <i class="material-icons">cancel</i>}
                                 </td>
+                                <td>@product.Stock</td>
                                 <td class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" product="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">menu</i>
@@ -92,6 +94,10 @@
     </div>
 </div>
 
+
+
+
+
 <div class="modal fade" id="ProductCreateModal" tabindex="-1" product="dialog" aria-labelledby="ProductCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" product="document">
         <div class="modal-content">
@@ -103,7 +109,7 @@
             <div class="modal-body">
                 <form name="productCreateForm" product="form" novalidate class="form-validation">
                     <div class="row clearfix">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input id="Number" name="Number" required value="@Model.NextProductNumber" class="validate form-control" type="number" min="0">
@@ -111,10 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input id="Name" type="text" name="Name" required maxlength="128" minlength="0" class="validate form-control">
@@ -124,8 +127,8 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-12">
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input id="Description" type="text" name="Description" maxlength="128" minlength="0" class="validate form-control">
@@ -133,10 +136,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input id="SKUCode" type="text" name="SKUCode" required maxlength="128" minlength="0" class="validate form-control">
@@ -147,7 +147,7 @@
                     </div>
 
                     <div class="row clearfix">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input id="Weight" type="number" name="Weight" required maxlength="128" minlength="0" class="validate form-control">
@@ -155,10 +155,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input id="Price" type="number" name="Price" required maxlength="128" minlength="0" class="validate form-control">
@@ -169,24 +166,32 @@
                     </div>
 
                     <div class="row clearfix">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input id="Tax" type="number" name="Tax" required maxlength="128" minlength="0" class="validate form-control">
+                                    <input id="Tax" type="number" name="Tax" required minlength="0" class="validate form-control">
                                     <label for="Tax" class="form-label">@L("Product.Tax")</label>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="form-group form-float">
-                                    <input class="filled-in" value="True" type="checkbox" name="IsAvailable" id="IsAvailable" checked="checked" />
-                                    <label for="IsAvailable" class="form-label">@L("Product.IsAvailable")</label> 
+                                <div class="form-line">
+                                    <input id="Stock" type="number" name="Stock" required minlength="0" class="validate form-control">
+                                    <label for="Stock" class="form-label">@L("Product.Stock")</label>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <input class="filled-in" value="True" type="checkbox" name="IsAvailable" id="IsAvailable" checked="checked" />
+                                <label for="IsAvailable" class="form-label">@L("Product.IsAvailable")</label>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>

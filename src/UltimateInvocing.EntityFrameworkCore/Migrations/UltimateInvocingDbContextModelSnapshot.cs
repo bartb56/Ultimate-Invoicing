@@ -1344,6 +1344,8 @@ namespace UltimateInvocing.Migrations
                     b.Property<string>("SKUCode")
                         .HasMaxLength(128);
 
+                    b.Property<int>("Stock");
+
                     b.Property<int>("Tax")
                         .HasMaxLength(15);
 
