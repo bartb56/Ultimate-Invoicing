@@ -1,0 +1,130 @@
+﻿@using UltimateInvocing.Web.Startup
+@model UltimateInvocing.Web.Models.TaxGroup.TaxGroupListViewModel
+@{
+    ViewBag.CurrentPageName = PageNames.TaxGroups; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/TaxGroups/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/TaxGroups/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+<div class="modal fade" id="TaxGroupCreateModal" tabindex="-1" taxGroup="dialog" aria-labelledby="TaxGroupCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" taxGroup="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewTaxGroup")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="taxGroupCreateForm" taxGroup="form" novalidate class="form-validation">
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="taxGroupname" type="text" name="Name" required maxlength="128" minlength="2" class="validate form-control">
+                                    <label for="taxGroupname" class="form-label">@L("TaxGroup.Name")</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="Percentage" type="number" name="Percentage" required maxlength="128" class="validate form-control">
+                                    <label for="Percentage" class="form-label">@L("Percentage")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="displayorder" type="number" name="Displayorder" value="1" required class="validate form-control" min="0">
+                                    <label for="displayorder" class="form-label">@L("DisplayOrder")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("TaxGroups")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" taxGroup="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("TaxGroup.Name")</th>
+                            <th>@L("TaxGroup.Percentage")</th>
+                            <th>@L("DisplayOrder")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var taxGroup in Model.TaxGroups)
+                        {
+                            <tr>
+                                <td>@L(taxGroup.Name)</td>
+                                <td>@taxGroup.Percentage%</td>
+                                <td>@taxGroup.DisplayOrder</td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" taxGroup="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block edit-taxGroup" data-taxGroup-id="@taxGroup.Id" data-toggle="modal" data-target="#TaxGroupEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block delete-taxGroup" data-taxGroup-id="@taxGroup.Id" data-taxGroup-name="@taxGroup.Name"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#TaxGroupCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="TaxGroupEditModal" tabindex="-1" taxGroup="dialog" aria-labelledby="TaxGroupEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" taxGroup="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

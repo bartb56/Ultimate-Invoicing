@@ -19,5 +19,7 @@
         public const string Pages_PaymentTypes = "Pages.PaymentTypes";
 
         public const string Pages_Orders = "Pages.Orders";
+
+        public const string Pages_TaxGroups = "Pages.TaxGroups";
     }
 }

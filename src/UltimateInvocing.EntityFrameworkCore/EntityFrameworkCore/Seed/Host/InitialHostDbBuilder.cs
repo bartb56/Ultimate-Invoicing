@@ -26,6 +26,8 @@ namespace UltimateInvocing.EntityFrameworkCore.Seed.Host
             _context.SaveChanges();
             if (!_context.PaymentTypes.Any())
                 new DefaultPaymentMethodCreator(_context).Create();
+            if (!_context.TaxGroups.Any())
+                new DefaultTaxGroupCreater(_context).Create();
         }
     }
 }

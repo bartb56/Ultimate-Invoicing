@@ -203,6 +203,8 @@
     <text name="Product.Stock">Voorraad</text>
     <text name="LowStock">Niet genoeg voorraad</text>
     <text name="LowStockDesc">Order regel toch toevoegen?</text>
+
+    <text name="EditOrder">Verander order</text>
     
   </texts>
 </localizationDictionary>

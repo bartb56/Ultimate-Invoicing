@@ -15,5 +15,6 @@
         public const string Company = "Companies";
         public const string PaymentType = "PaymentTypes";
         public const string Order = "Orders";
+        public const string TaxGroups = "TaxGroups";
     }
 }

@@ -80,8 +80,13 @@ namespace UltimateInvocing.Web.Startup
                         PageNames.PaymentType,
                         L("PaymentTypes"),
                         url: "Settings/PaymentTypes"
-                    )
-                    ).AddItem(
+                    )).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.TaxGroups,
+                        L("TaxGroups"),
+                        url: "Settings/TaxGroups",
+                        requiredPermissionName: PermissionNames.Pages_TaxGroups
+                    )).AddItem(
                     new MenuItemDefinition(
                         PageNames.Users,
                         L("Users"),

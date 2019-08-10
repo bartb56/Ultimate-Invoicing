@@ -17,6 +17,10 @@
     <Compile Include="Migrations\20190801230319_V0.2.designer.cs" />
     <Compile Include="Migrations\20190809142942_ProductStock.cs" />
     <Compile Include="Migrations\20190809142942_ProductStock.designer.cs" />
+    <Compile Include="Migrations\20190810131327_TaxGroupsInit.cs" />
+    <Compile Include="Migrations\20190810131327_TaxGroupsInit.designer.cs" />
+    <Compile Include="Migrations\20190810133712_TaxGroupValidations.cs" />
+    <Compile Include="Migrations\20190810133712_TaxGroupValidations.designer.cs" />
     <Compile Include="Migrations\UltimateInvocingDbContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>

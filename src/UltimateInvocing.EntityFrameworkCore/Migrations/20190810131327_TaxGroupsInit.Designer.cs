@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UltimateInvocing.EntityFrameworkCore;
 
 namespace UltimateInvocing.Migrations
 {
     [DbContext(typeof(UltimateInvocingDbContext))]
-    partial class UltimateInvocingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190810131327_TaxGroupsInit")]
+    partial class TaxGroupsInit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1385,8 +1387,7 @@ namespace UltimateInvocing.Migrations
 
                     b.Property<int>("DisplayOrder");
 
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
                     b.Property<int>("Percentage");
 

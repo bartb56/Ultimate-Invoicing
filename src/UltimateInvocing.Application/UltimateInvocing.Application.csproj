@@ -19,6 +19,6 @@
     <ProjectReference Include="..\UltimateInvocing.Core\UltimateInvocing.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Customers\CustomerAddresses\" />
+    <Folder Include="Services\Customers\CustomerAddresses\" />
   </ItemGroup>
 </Project>
