@@ -31,5 +31,13 @@ namespace UltimateInvocing.Web.Mvc.Controllers
             };
             return View(model);
         }
+
+        public async Task<ActionResult> Edit(Guid taxGroupId)
+        {
+            var output = await _taxGroupAppService.GetById(taxGroupId);
+            var model = new EditTaxGroupViewModel(output);
+
+            return View("Edit", model);
+        }
     }
 }

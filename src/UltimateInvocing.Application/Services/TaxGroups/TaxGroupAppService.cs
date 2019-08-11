@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UltimateInvocing.Services.TaxGroups.Dto;
@@ -36,7 +37,8 @@ namespace UltimateInvocing.Services.TaxGroups
 
         public async Task<List<TaxGroupDto>> GetAll()
         {
-            return ObjectMapper.Map<List<TaxGroupDto>>(await _repository.GetAllListAsync());
+            var taxGroups = await _repository.GetAllListAsync();
+            return ObjectMapper.Map<List<TaxGroupDto>>(taxGroups.OrderBy(x => x.DisplayOrder));
         }
 
         public async Task<TaxGroupDto> GetById(Guid id)

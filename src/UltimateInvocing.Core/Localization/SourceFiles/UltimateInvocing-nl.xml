@@ -205,6 +205,14 @@
     <text name="LowStockDesc">Order regel toch toevoegen?</text>
 
     <text name="EditOrder">Verander order</text>
-    
+
+
+    <text name="TaxGroups">Belastings groepen</text>
+    <text name="TaxGroup.Name">Naam</text>
+    <text name="TaxGroup.Percentage">Percentage</text>
+    <text name="CreateNewTaxGroup">Nieuwe belastings groep</text>
+    <text name="EditTaxGroup">Verander belastings groep</text>
+    <text name="Low">Laag</text>
+    <text name="High">Hoog</text>
   </texts>
 </localizationDictionary>

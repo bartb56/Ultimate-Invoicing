@@ -26,7 +26,7 @@
 
             e.preventDefault();
             $.ajax({
-                url: abp.appPath + 'TaxGroup/EditTaxGroupModal?taxGroupId=' + taxGroupId,
+                url: abp.appPath + 'TaxGroups/Edit?taxGroupId=' + taxGroupId,
                 type: 'POST',
                 contentType: 'application/html',
                 success: function (content) {

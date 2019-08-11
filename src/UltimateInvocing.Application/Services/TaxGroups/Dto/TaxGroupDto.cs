@@ -7,7 +7,8 @@ using System.Text;
 
 namespace UltimateInvocing.Services.TaxGroups.Dto
 {
-    [AutoMap(typeof(Models.TaxGroup))]
+    [AutoMapTo(typeof(Models.TaxGroup))]
+    [AutoMapFrom(typeof(Models.TaxGroup))]
     public class TaxGroupDto : EntityDto<Guid>
     {
         public TaxGroupDto() { }
