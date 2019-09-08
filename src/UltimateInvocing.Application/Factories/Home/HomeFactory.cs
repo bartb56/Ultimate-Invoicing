@@ -32,7 +32,7 @@ namespace UltimateInvocing.Factories.Home
         public async Task<HomeModel> PrepareModel()
         {
             var orders = await _orderAppService.GetAll();
-            var recentOrders = await _orderAppService.Get(5);
+            var recentOrders = await _orderAppService.GetLastOrders(5);
 
             var model = new HomeModel()
             {

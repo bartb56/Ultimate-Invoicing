@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using UltimateInvocing.Models;
 
 namespace UltimateInvocing.Factories.Product.ViewModels
 {
@@ -25,5 +27,8 @@ namespace UltimateInvocing.Factories.Product.ViewModels
         public bool IsAvailable { get; set; }
         [Required()]
         public int Stock { get; set; }
+
+        public Guid TaxGroupId { get; set; }
+        public IEnumerable<SelectListItem> TaxGroups { get; set; }
     }
 }

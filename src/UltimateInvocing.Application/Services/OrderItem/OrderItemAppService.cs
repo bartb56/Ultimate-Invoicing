@@ -58,7 +58,7 @@ namespace UltimateInvocing.OrderItem
                 OrderId = orderItem.OrderId,
                 Quantity = orderItem.Quantity,
                 SKUCode = product.SKUCode,
-                Tax = product.Tax,
+                Tax = product.TaxGroup.Percentage,
                 Weight = product.Weight
             };
             await _repository.InsertAsync(newOrderItem);
@@ -82,7 +82,7 @@ namespace UltimateInvocing.OrderItem
             orderItem.Description = product.Description;
             orderItem.Name = product.Name;
             orderItem.SKUCode = product.SKUCode;
-            orderItem.Tax = product.Tax;
+            orderItem.Tax = product.TaxGroup.Percentage;
             orderItem.Weight = product.Weight;
 
             await _repository.UpdateAsync(orderItem);

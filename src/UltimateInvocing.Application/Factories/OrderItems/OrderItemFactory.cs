@@ -25,6 +25,7 @@ namespace UltimateInvocing.Factories.OrderItems
         public async Task<OrderItemsListModel> PrepareListModel(Guid orderId)
         {
             var products = await _productAppService.GetAll();
+            products = products.Where(x => x.IsAvailable == true).ToList();
             var orderItems = await _appService.GetAllByOrderId(orderId);
             var model = new OrderItemsListModel { OrderItems = orderItems, OrderId = orderId };
             model.Products = products.Select(x => new SelectListItem { Text = x.Number + " " + x.Name, Value = x.Id.ToString() }).ToList();

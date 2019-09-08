@@ -1,4 +1,8 @@
-﻿using Abp.Modules;
+﻿using Abp.Dependency;
+using Abp.MailKit;
+using Abp.Modules;
+using Abp.Net.Mail;
+using Abp.Net.Mail.Smtp;
 using Abp.Reflection.Extensions;
 using Abp.Timing;
 using Abp.Zero;
@@ -12,7 +16,8 @@ using UltimateInvocing.Timing;
 
 namespace UltimateInvocing
 {
-    [DependsOn(typeof(AbpZeroCoreModule))]
+    [DependsOn(typeof(AbpZeroCoreModule),
+        typeof(AbpMailKitModule))]
     public class UltimateInvocingCoreModule : AbpModule
     {
         public override void PreInitialize()
@@ -33,6 +38,8 @@ namespace UltimateInvocing
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();
+            IocManager.Register<ISmtpEmailSenderConfiguration, SmtpEmailSenderConfiguration>();
+            IocManager.Register<ISmtpEmailSender, SmtpEmailSender>();
         }
 
         public override void Initialize()

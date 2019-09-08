@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace UltimateInvocing.Models
@@ -22,12 +23,14 @@ namespace UltimateInvocing.Models
         public float Weight { get; set; }
         [MaxLength(15)]
         public float Price { get; set; }
-        [MaxLength(15)]
-        public int Tax { get; set; }
         [Required()]
         public bool IsAvailable { get; set; }
         [Required()]
         public int Stock { get; set; }
+
+        [ForeignKey(nameof(TaxGroup))]
+        public Guid TaxGroupId { get; set; }
+        public virtual TaxGroup TaxGroup { get; set; }
     }
 }
 

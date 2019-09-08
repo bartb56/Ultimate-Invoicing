@@ -97,7 +97,6 @@ namespace UltimateInvocing.Web.Host.Startup
 
             app.UseAbpRequestLocalization();
 
-
             app.UseSignalR(routes =>
             {
                 routes.MapHub<AbpCommonHub>("/signalr");

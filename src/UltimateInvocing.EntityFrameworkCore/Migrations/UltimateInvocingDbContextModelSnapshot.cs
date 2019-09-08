@@ -1347,13 +1347,14 @@ namespace UltimateInvocing.Migrations
 
                     b.Property<int>("Stock");
 
-                    b.Property<int>("Tax")
-                        .HasMaxLength(15);
+                    b.Property<Guid>("TaxGroupId");
 
                     b.Property<float>("Weight")
                         .HasMaxLength(15);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TaxGroupId");
 
                     b.ToTable("Products");
                 });
@@ -1639,6 +1640,14 @@ namespace UltimateInvocing.Migrations
                     b.HasOne("UltimateInvocing.Models.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("UltimateInvocing.Models.Product", b =>
+                {
+                    b.HasOne("UltimateInvocing.Models.TaxGroup", "TaxGroup")
+                        .WithMany("Products")
+                        .HasForeignKey("TaxGroupId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

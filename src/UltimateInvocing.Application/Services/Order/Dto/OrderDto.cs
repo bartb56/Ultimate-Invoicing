@@ -5,7 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using UltimateInvocing.Company.Dto;
+using UltimateInvocing.Customers;
+using UltimateInvocing.Customers.Address.AddressDto;
+using UltimateInvocing.Factories.Order;
 using UltimateInvocing.OrderItem.Dto;
+using UltimateInvocing.PaymentType.Dto;
 
 namespace UltimateInvocing.Order.Dto
 {
@@ -15,6 +20,47 @@ namespace UltimateInvocing.Order.Dto
         public OrderDto()
         {
 
+        }
+
+        public OrderDto(OrderCreateModel orderCreateModel, CustomerDto customer, CompanyDto company, AdressDTO address, PaymentTypeDto paymentType)
+        {
+            //Order section
+            Number = orderCreateModel.Number;
+
+            //Company section
+            CompanyBTW = company.BTW;
+            CompanyCity = company.City;
+            CompanyCountryName = company.Country.Name;
+            CompanyHouseNumber = company.HouseNumber;
+            CompanyIBAN = company.IBAN;
+            CompanyKVK = company.KVK;
+            CompanyLogo = company.Logo;
+            CompanyName = company.Name;
+            CompanyPhoneNumber = company.PhoneNumber;
+            CompanyId = company.Id;
+            CompanyPostalCode = company.PostalCode;
+            CompanyProvinceName = company.Province.Name;
+            CompanyStreetAddress = company.StreetAddress;
+
+            //Customer section
+            CustomerCity = address.City;
+            CustomerCompanyEmail = customer.CompanyEmail;
+            CustomerCompanyName = customer.CompanyName;
+            CustomerCompanyPhonenumber = company.PhoneNumber;
+            CustomerCountryName = address.Country.Name;
+            CustomerHouseNumber = address.HouseNumber;
+            CustomerPhoneNumber = address.PhoneNumber;
+            CustomerPostalCode = address.PostalCode;
+            CustomerProvinceName = address.Province.Name;
+            CustomerStreetAddress = address.StreetAddress;
+            CustomerTaxable = address.Taxable;
+            CustomerId = customer.Id;
+            CustomerAddressId = orderCreateModel.AddressId;
+
+
+            //Payment type section
+            PaymentTypeName = paymentType.TypeName;
+            PaymentTypeId = paymentType.Id;
         }
 
         [Required()]

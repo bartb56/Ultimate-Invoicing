@@ -12,7 +12,7 @@ namespace UltimateInvocing.Order
     public interface IOrderAppService : IApplicationService
     {
         Task<OrderListModel> GetAll();
-        Task<OrderListModel> Get(int amount);
+        Task<OrderListModel> GetLastOrders(int amount);
         Task<Guid> Create(OrderCreateModel orderCreateModel);
         Task Delete(Guid id);
         Task<OrderDto> GetById(Guid id);

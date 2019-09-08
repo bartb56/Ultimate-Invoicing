@@ -214,5 +214,7 @@
     <text name="EditTaxGroup">Verander belastings groep</text>
     <text name="Low">Laag</text>
     <text name="High">Hoog</text>
+
+    <text name="Pages_TaxGroups">Belastings groepen</text>
   </texts>
 </localizationDictionary>

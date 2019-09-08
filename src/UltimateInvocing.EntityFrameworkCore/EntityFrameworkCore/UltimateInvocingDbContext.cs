@@ -4,6 +4,7 @@ using UltimateInvocing.Authorization.Roles;
 using UltimateInvocing.Authorization.Users;
 using UltimateInvocing.MultiTenancy;
 using UltimateInvocing.Models;
+using Abp.Configuration;
 
 namespace UltimateInvocing.EntityFrameworkCore
 {

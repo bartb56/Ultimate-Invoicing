@@ -24,7 +24,8 @@ namespace UltimateInvocing.Product
         public async Task Create(ProductDto productDto)
         {
             var product = ObjectMapper.Map<Models.Product>(productDto);
-            await _repository.InsertAsync(product);
+            product.Id = Guid.NewGuid();
+            var insert = await _repository.InsertAsync(product);
             return;
         }
 
@@ -40,12 +41,12 @@ namespace UltimateInvocing.Product
 
         public async Task<List<ProductDto>> GetAll()
         {
-            return ObjectMapper.Map<List<ProductDto>>(await _repository.GetAllListAsync());
+            return ObjectMapper.Map<List<ProductDto>>(await _repository.GetAll().Include(x => x.TaxGroup).ToListAsync());
         }
 
         public async Task<ProductDto> GetById(Guid id)
         {
-            var product = await _repository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
+            var product = await _repository.GetAll().Include(x => x.TaxGroup).FirstOrDefaultAsync(x => x.Id == id);
             if (product == null)
                 return new ProductDto();
 

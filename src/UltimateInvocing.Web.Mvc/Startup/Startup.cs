@@ -20,6 +20,7 @@ using UltimateInvocing.Factories.Order;
 using UltimateInvocing.Factories.OrderItems;
 using Microsoft.AspNetCore.Hosting.Internal;
 
+
 namespace UltimateInvocing.Web.Startup
 {
     public class Startup
@@ -49,7 +50,6 @@ namespace UltimateInvocing.Web.Startup
             services.AddSingleton<IPaymentTypeFactory, PaymentTypeFactory>();
             services.AddSingleton<IOrderFactory, OrderFactory>();
             services.AddSingleton<IOrderItemFactory, OrderItemFactory>();
-
             services.AddSignalR();
 
             // Configure Abp and Dependency Injection
@@ -65,7 +65,6 @@ namespace UltimateInvocing.Web.Startup
         {
             app.UseAbp(); // Initializes ABP framework.
 
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -73,11 +72,13 @@ namespace UltimateInvocing.Web.Startup
             else
             {
                 app.UseExceptionHandler("/Error");
+                app.UseHttpsRedirection();
             }
-
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            app.UseCookiePolicy();
 
             app.UseJwtTokenMiddleware();
 

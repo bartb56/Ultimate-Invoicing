@@ -18,5 +18,7 @@ namespace UltimateInvocing.Models
         [Required()]
         public int DisplayOrder { get; set; }
 
+
+        public virtual IList<Product> Products { get; set; }
     }
 }

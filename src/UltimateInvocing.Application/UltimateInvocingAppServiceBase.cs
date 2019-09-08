@@ -6,6 +6,7 @@ using Abp.IdentityFramework;
 using Abp.Runtime.Session;
 using UltimateInvocing.Authorization.Users;
 using UltimateInvocing.MultiTenancy;
+using Abp.Net.Mail.Smtp;
 
 namespace UltimateInvocing
 {
@@ -15,7 +16,7 @@ namespace UltimateInvocing
     public abstract class UltimateInvocingAppServiceBase : ApplicationService
     {
         public TenantManager TenantManager { get; set; }
-
+        private readonly ISmtpEmailSender _emailSender;
         public UserManager UserManager { get; set; }
 
         protected UltimateInvocingAppServiceBase()

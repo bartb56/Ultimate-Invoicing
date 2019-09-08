@@ -19,8 +19,15 @@ namespace UltimateInvocing.EntityFrameworkCore.Seed.Host
         public void Create()
         {
             // Emailing
-            AddSettingIfNotExists(EmailSettingNames.DefaultFromAddress, "admin@mydomain.com");
-            AddSettingIfNotExists(EmailSettingNames.DefaultFromDisplayName, "mydomain.com mailer");
+            AddSettingIfNotExists(EmailSettingNames.DefaultFromAddress, "mail.ultimateinvoicing.com");
+            AddSettingIfNotExists(EmailSettingNames.DefaultFromDisplayName, "Ultimate invoicing");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.UserName, "mail.ultimateinvoicing.com");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Domain, "ultimateinvoicing.com");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.EnableSsl, "false");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Host, "mail.ultimateinvoicing.com");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Port, "8889");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Password, "@5zZ6Eq$MgeN");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.UseDefaultCredentials, "false");
 
             // Languages
             AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "nl");

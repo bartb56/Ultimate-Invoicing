@@ -59,6 +59,7 @@ namespace UltimateInvocing.Models
         public Guid CustomerAddressId { get; set; }
         #endregion
 
-        public ICollection<OrderItem> OrderItems { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
+
     }
 }
