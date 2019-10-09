@@ -3,60 +3,72 @@ using Abp.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UltimateInvocing.Services.Email;
 
 namespace UltimateInvocing.Settings
 {
     public class EmailSettingProvider : SettingProvider
     {
+        private readonly IEmailService _emailService;
+
+        public EmailSettingProvider(IEmailService emailService)
+        {
+            _emailService = emailService;
+        }
+
         public override IEnumerable<SettingDefinition> GetSettingDefinitions(SettingDefinitionProviderContext context)
         {
+            var settings = _emailService.GetEmailSettings();
+
             return new[]
                     {
                 new SettingDefinition(
                         "Abp.Net.Mail.DefaultFromAddress",
-                        "donotreply@ultimateinvoicing.com",
-                        scopes: SettingScopes.User,
+                        settings.DefaultFromAddress,
+                        scopes: SettingScopes.Application,
                         clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 ),
                 new SettingDefinition(
                     "Abp.Net.Mail.Smtp.Host",
-                    "mail.ultimateinvoicing.com"
+                    settings.Host,
+                    scopes: SettingScopes.Application,
+                    clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 ),
 
                 new SettingDefinition(
                     "Abp.Net.Mail.Smtp.Port",
-                    "8889",
-                    scopes: SettingScopes.User,
+                    settings.Port,
+                    scopes: SettingScopes.Application,
                     clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 ),
                 new SettingDefinition(
                     "Abp.Net.Mail.DefaultFromDisplayName",
-                    "Ultimate invoicing",
-                    scopes: SettingScopes.User,
+                    settings.DefaultFromDisplayName,
+                    scopes: SettingScopes.Application,
                     clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 ),
                 new SettingDefinition(
                     "Abp.Net.Mail.Smtp.UserName",
-                    "donotreply@ultimateinvoicing.com",
-                    scopes: SettingScopes.User,
+                    settings.UserName,
+                    scopes: SettingScopes.Application,
                     clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 ),
                 new SettingDefinition(
                     "Abp.Net.Mail.Smtp.Password",
-                    "@5zZ6Eq$MgeN",
-                    scopes: SettingScopes.User,
+                    settings.Password,
+                    scopes: SettingScopes.Application,
                     clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 ),
                 new SettingDefinition(
                     "Abp.Net.Mail.Smtp.EnableSsl",
-                    "false",
-                    scopes: SettingScopes.User,
+                    settings.EnableSsl.ToString(),
+                    scopes: SettingScopes.Application,
                     clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 ),
                 new SettingDefinition(
                     "Abp.Net.Mail.Smtp.UseDefaultCredentials",
-                    "false",
-                    scopes: SettingScopes.User,
+                    settings.UseDefaultCredentials.ToString(),
+                    scopes: SettingScopes.Application,
                     clientVisibilityProvider: new VisibleSettingClientVisibilityProvider()
                 )
                 };

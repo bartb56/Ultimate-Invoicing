@@ -74,6 +74,7 @@
     <Folder Include="Models\Company\" />
     <Folder Include="wwwroot\images\companies\" />
     <Folder Include="wwwroot\images\NewFolder\" />
+    <Folder Include="wwwroot\js\Extra\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
 </Project>

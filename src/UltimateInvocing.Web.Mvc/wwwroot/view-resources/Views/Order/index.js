@@ -3,6 +3,8 @@
 
         var _orderService = abp.services.app.order;
         var _$modal = $('#OrderCreateModal');
+        var _$sendModel = $("#OrderSendModal");
+        var _$sendForm = _$sendModel.find('form');
         var _$form = _$modal.find('form');
 
         _$form.validate({
@@ -33,6 +35,14 @@
                 },
                 error: function (e) { console.log("Failure") }
             });
+        });
+
+        $('.send-mail').click(function (e) {
+            var orderId = $(this).attr("data-order-id");
+
+            e.preventDefault();
+            var OrderId = _$sendForm.find('#OrderId');
+            OrderId.val(orderId);
         });
 
         $('.update-customer').click(function (e) {
@@ -131,6 +141,19 @@
                 //location.reload(true); //reload page to see new order!
             }).always(function () {
                 abp.ui.clearBusy(_$modal);
+            });
+        });
+
+        _$sendForm.find('button[type="submit"]').click(function(e) {
+            e.preventDefault();
+
+            var data = _$sendForm.serializeFormToObject();
+            console.log(data);
+            abp.ui.setBusy(_$sendModel);
+            abp.services.app.email.sendOrderEmail(data).done(function (content) {
+                _$sendModel.modal('hide');
+            }).always(function () {
+                abp.ui.clearBusy(_$sendModel);
             });
         });
 

@@ -23,6 +23,9 @@ namespace UltimateInvocing.EntityFrameworkCore
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<TaxGroup> TaxGroups { get; set; }
 
+        public DbSet<EmailSettings> EmailSettings { get; set; }
+        public DbSet<EmailTemplate> EmailTemplates { get; set; }
+
         public UltimateInvocingDbContext(DbContextOptions<UltimateInvocingDbContext> options)
             : base(options)
         {

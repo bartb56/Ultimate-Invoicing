@@ -1,14 +1,18 @@
-﻿using Abp.Domain.Repositories;
+﻿using Abp.Authorization;
+using Abp.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UltimateInvocing.Authorization;
 using UltimateInvocing.Services.TaxGroups.Dto;
 
 namespace UltimateInvocing.Services.TaxGroups
 {
+    [AbpAuthorize]
+    [AbpAuthorize(PermissionNames.Pages_TaxGroups)]
     public class TaxGroupAppService : UltimateInvocingAppServiceBase, ITaxGroupAppService
     {
         private readonly IRepository<Models.TaxGroup, Guid> _repository;

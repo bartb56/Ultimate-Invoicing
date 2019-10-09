@@ -18,9 +18,15 @@ using UltimateInvocing.Services.Order.Dto;
 using Abp.Net.Mail;
 using Abp.Net.Mail.Smtp;
 using Abp.Domain.Services;
+using Abp.Configuration;
+using UltimateInvocing.Services.Emails.EmailTemplates;
+using Abp.Authorization;
+using UltimateInvocing.Authorization;
 
 namespace UltimateInvocing.Order
 {
+    [AbpAuthorize]
+    [AbpAuthorize(PermissionNames.Pages_Orders)]
     public class OrderAppService : UltimateInvocingAppServiceBase, IOrderAppService, IDomainService
     {
 
@@ -32,6 +38,8 @@ namespace UltimateInvocing.Order
         private readonly IAddressAppService _addressAppService;
         private readonly ISmtpEmailSenderConfiguration _smtpConfig;
         private readonly ISmtpEmailSender _smtpEmailSender;
+        private readonly ISettingManager _settingManager;
+        private readonly IEmailTemplateAppService _emailTemplateAppService;
         #endregion
 
         #region Constructor
@@ -42,7 +50,9 @@ namespace UltimateInvocing.Order
             IPaymentTypeAppService paymentTypeAppService,
             IAddressAppService addressAppService,
             ISmtpEmailSenderConfiguration smtpConfig,
-            ISmtpEmailSender smtpEmailSender)
+            ISmtpEmailSender smtpEmailSender,
+            ISettingManager settingManager,
+            IEmailTemplateAppService emailTemplateAppService)
         {
             _repository = repository;
             _customerAppService = customerAppService;
@@ -51,6 +61,8 @@ namespace UltimateInvocing.Order
             _addressAppService = addressAppService;
             _smtpConfig = smtpConfig;
             _smtpEmailSender = smtpEmailSender;
+            _settingManager = settingManager;
+            _emailTemplateAppService = emailTemplateAppService;
         }
         #endregion
 
@@ -100,20 +112,6 @@ namespace UltimateInvocing.Order
 
             //Generate the order
             OrderDto model = new OrderDto(orderCreateModel, customer, company, address, paymentType);
-
-            try
-            {
-                await _smtpEmailSender.SendAsync(
-                    to: "Bartblokhuis123@outlook.com",
-                    subject: "You have a new task!",
-                    body: $"A new task is assigned for you: <b>test</b>",
-                    isBodyHtml: true);
-            }
-            catch (Exception exception)
-            {
-
-                throw exception;
-            } 
           
             //We return the id so we can redirect to the orderitem page.
             return await _repository.InsertAndGetIdAsync(ObjectMapper.Map<Models.Order>(model));
@@ -155,8 +153,8 @@ namespace UltimateInvocing.Order
 
             //Customer section
             order.CustomerCity = address.City;
-            order.CustomerCompanyEmail = customer.CompanyEmail;
-            order.CustomerCompanyName = customer.CompanyName;
+            order.CustomerCompanyEmail = customer.CustomerEmail;
+            order.CustomerCompanyName = customer.CustomerName;
             order.CustomerCompanyPhonenumber = company.PhoneNumber;
             order.CustomerCountryName = address.Country.Name;
             order.CustomerHouseNumber = address.HouseNumber;
@@ -221,8 +219,8 @@ namespace UltimateInvocing.Order
             }
             if (customer != null)
             {
-                order.CustomerCompanyEmail = customer.CompanyEmail;
-                order.CustomerCompanyName = customer.CompanyName;
+                order.CustomerCompanyEmail = customer.CustomerEmail;
+                order.CustomerCompanyName = customer.CustomerName;
                 order.CustomerCity = address.City;
             }
 
@@ -287,71 +285,6 @@ namespace UltimateInvocing.Order
             return model;
         }
 
-        public async Task<string> GetWeeklyBestSellers()
-        {
-            var firstDate = DateTime.Now.AddDays(-7);
-
-            var orders = await _repository.GetAll().Include(x => x.OrderItems).Where(x => x.OrderCreationtTime >= firstDate).ToListAsync();
-
-            var orderItemsTotal = new List<Models.OrderItem>();
-            foreach (Models.Order order in orders)
-            {
-                orderItemsTotal.AddRange(order.OrderItems);
-            }
-
-            var topOrderItems = new List<BestSellers>();
-
-
-            var options = new List<BestSellers>();
-            foreach (var orderItem in orderItemsTotal)
-            {
-                var option = options.FirstOrDefault(x => x.label == orderItem.Name);
-                if (option == null)
-                {
-                    options.Add(new BestSellers { label = orderItem.Name, value = orderItem.Quantity });
-                }
-                else
-                {
-                    option.value += orderItem.Quantity;
-                }
-            }
-            topOrderItems = options.OrderByDescending(x => x.value).Take(5).ToList();
-
-            var totalProducts = 0;
-            foreach (var bestSeller in topOrderItems)
-            {
-                totalProducts += bestSeller.value;
-            }
-
-            float percentPerItem = 100 / totalProducts;
-            foreach (var bestSeller in topOrderItems)
-            {
-                bestSeller.value = bestSeller.value * (int)percentPerItem;
-            }
-
-            return JsonConvert.SerializeObject(topOrderItems);
-        }
-
-        public async Task<string> GetLastWeekOrderCount()
-        {
-            List<Graph> data = new List<Graph>();
-
-            var firstDate = DateTime.Now.AddDays(-6);
-            for (int daysPassed = 0; daysPassed < 7; daysPassed++)
-            {
-                var graphSequence = new Graph();
-                var newDate = firstDate.AddDays(daysPassed);
-                var counter = await _repository.GetAll().Where(x => x.OrderCreationtTime.Date == newDate.Date).ToListAsync();
-                graphSequence.Value = 0;
-                if (counter != null)
-                    graphSequence.Value = counter.Count();
-
-                graphSequence.Name = L(newDate.Date.DayOfWeek.ToString());
-                data.Add(graphSequence);
-            }
-            return JsonConvert.SerializeObject(data);
-        }
-
         #endregion
 
         #region Functions
@@ -364,7 +297,7 @@ namespace UltimateInvocing.Order
         {
             var customers = await _customerAppService.GetAll();
             if (customers.Any())
-                return customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
+                return customers.Select(x => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Text = x.CustomerName, Value = x.Id.ToString() }).ToList();
 
             //Since i rather have an empty list vs a null reference error we return a empty list.
             return new List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>();

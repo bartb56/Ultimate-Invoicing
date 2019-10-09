@@ -14,6 +14,7 @@ using UltimateInvocing.Product;
 
 namespace UltimateInvocing.OrderItem
 {
+    [AbpAuthorize]
     [AbpAuthorize(PermissionNames.Pages_Orders)]
     public class OrderItemAppService : UltimateInvocingAppServiceBase, IOrderItemAppService
     {

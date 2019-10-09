@@ -12,7 +12,8 @@ using UltimateInvocing.Web.Factories.Company;
 
 namespace UltimateInvocing.Company
 {
-    [AbpAuthorize(PermissionNames.Pages_General_Settings)]
+    [AbpAuthorize]
+    [AbpAuthorize(PermissionNames.Pages_Companies)]
     public class CompanyAppService : UltimateInvocingAppServiceBase, ICompanyAppService
     {
         private readonly IRepository<Models.Company, Guid> _repository;

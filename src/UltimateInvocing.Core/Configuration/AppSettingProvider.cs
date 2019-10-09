@@ -12,8 +12,7 @@ namespace UltimateInvocing.Configuration
         {
             return new[]
             {
-                new SettingDefinition(AppSettingNames.UiTheme, "teal", scopes: SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User, isVisibleToClients: true),
-                new SettingDefinition(EmailSettingNames.Smtp.Host, "smtp.patatat.com", L("SmtpHost"), scopes: SettingScopes.Application | SettingScopes.Tenant)
+                new SettingDefinition(AppSettingNames.UiTheme, "black", scopes: SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User, isVisibleToClients: true)
             };
         }
 

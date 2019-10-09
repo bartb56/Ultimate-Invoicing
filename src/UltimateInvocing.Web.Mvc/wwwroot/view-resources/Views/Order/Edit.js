@@ -33,7 +33,6 @@
             type: 'POST',
             dataType: "json",
             success: function (content) {
-                console.log(content);
                 var provinces = content.result;
                 console.log(provinces);
                 var i = 0;

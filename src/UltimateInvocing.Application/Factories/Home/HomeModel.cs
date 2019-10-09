@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 using UltimateInvocing.Factories.Order;
+using UltimateInvocing.Services.Dashboard.DashboardModels;
 
 namespace UltimateInvocing.Factories.Home
 {
     public class HomeModel
     {
-        public int Customers { get; set; }
-        public int Users { get; set; }
-        public int Products { get; set; }
-        public int Orders { get; set; }
+        public HomeModel(Counters counters, IList<Models.Order> recentOrders)
+        {
+            Counters = counters;
+            RecentOrders = recentOrders;
+        }
 
-        public OrderListModel RecentOrders { get; set; }
+        public Counters Counters { get; set; }
+        public IList<Models.Order> RecentOrders { get; set; }
         
     }
 }

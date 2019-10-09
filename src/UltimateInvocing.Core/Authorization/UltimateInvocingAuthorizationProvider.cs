@@ -17,6 +17,7 @@ namespace UltimateInvocing.Authorization
             context.CreatePermission(PermissionNames.Pages_PaymentTypes, L("Pages_PaymentTypes"));
             context.CreatePermission(PermissionNames.Pages_Orders, L("Pages_Orders"));
             context.CreatePermission(PermissionNames.Pages_TaxGroups, L("Pages_TaxGroups"));
+            context.CreatePermission(PermissionNames.Pages_Emails, L("Pages_Emails"));
             context.CreatePermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
         }
 

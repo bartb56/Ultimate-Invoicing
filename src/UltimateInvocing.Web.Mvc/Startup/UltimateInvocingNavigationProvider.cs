@@ -101,6 +101,14 @@ namespace UltimateInvocing.Web.Startup
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
                 )
+                .AddItem(
+                    new MenuItemDefinition(
+                        PageNames.EmailTemplates,
+                        L("Emails"),
+                        url: "EmailTemplates",
+                        requiredPermissionName: PermissionNames.Pages_Emails
+                    )
+                )
                 );
         }
 

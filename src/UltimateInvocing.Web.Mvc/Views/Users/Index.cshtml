@@ -20,6 +20,9 @@
             <div class="header">
                 <h2>
                     @L("Users")
+                    <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float" data-toggle="modal" data-target="#UserCreateModal">
+                        <i class="material-icons">add</i>
+                    </button>
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
@@ -50,7 +53,14 @@
                                 <td>@user.UserName</td>
                                 <td>@user.FullName</td>
                                 <td>@user.EmailAddress</td>
-                                <td><i class="material-icons" style="color:@(user.IsActive ? "green":"red");">@(user.IsActive ? "check_box" : "indeterminate_check_box")</i></td>
+                                <td>
+                                    @if (user.IsActive)
+                                    {
+                                        <i class="material-icons">check</i>}
+                                    else
+                                    {
+                                        <i class="material-icons">cancel</i>}
+                                </td>
                                 <td class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">menu</i>
@@ -64,9 +74,6 @@
                         }
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#UserCreateModal">
-                    <i class="material-icons">add</i>
-                </button>
             </div>
         </div>
     </div>

@@ -11,6 +11,7 @@ using UltimateInvocing.PaymentType.Dto;
 
 namespace UltimateInvocing.PaymentType
 {
+    [AbpAuthorize]
     [AbpAuthorize(PermissionNames.Pages_PaymentTypes)]
     public class PaymentTypeAppService : UltimateInvocingAppServiceBase, IPaymentTypeAppService
     {

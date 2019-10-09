@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -6,11 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UltimateInvocing.Authorization;
 using UltimateInvocing.Customers.Address;
 using UltimateInvocing.Models;
 
 namespace UltimateInvocing.Customers
 {
+    [AbpAuthorize]
+    [AbpAuthorize(PermissionNames.Pages_Customers)]
     public class CustomerAppService : UltimateInvocingAppServiceBase, ICustomerAppService
     {  
         IRepository<Models.Customer, Guid> _repository;

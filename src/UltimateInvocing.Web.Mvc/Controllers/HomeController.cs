@@ -14,7 +14,7 @@ namespace UltimateInvocing.Web.Controllers
         public HomeController(IHomeFactory homeFactory)
         {
             _homeFactory = homeFactory;
-        }
+       }
 
         public async Task<IActionResult> Index()
         {

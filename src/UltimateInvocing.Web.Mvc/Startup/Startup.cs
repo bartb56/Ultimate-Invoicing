@@ -19,7 +19,9 @@ using UltimateInvocing.Factories.PaymentType;
 using UltimateInvocing.Factories.Order;
 using UltimateInvocing.Factories.OrderItems;
 using Microsoft.AspNetCore.Hosting.Internal;
-
+using UltimateInvocing.Services.Email;
+using UltimateInvocing.Factories.EmailTemplates;
+using UltimateInvocing.Services.Emails.EmailService;
 
 namespace UltimateInvocing.Web.Startup
 {
@@ -50,6 +52,10 @@ namespace UltimateInvocing.Web.Startup
             services.AddSingleton<IPaymentTypeFactory, PaymentTypeFactory>();
             services.AddSingleton<IOrderFactory, OrderFactory>();
             services.AddSingleton<IOrderItemFactory, OrderItemFactory>();
+            services.AddSingleton<IEmailTemplateFactory, EmailTemplateFactory>();
+            services.AddSingleton<IEmailAppService, EmailAppService>();
+
+            services.AddSingleton<IEmailService, EmailService>();
             services.AddSignalR();
 
             // Configure Abp and Dependency Injection

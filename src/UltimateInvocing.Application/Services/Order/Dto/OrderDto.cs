@@ -44,8 +44,8 @@ namespace UltimateInvocing.Order.Dto
 
             //Customer section
             CustomerCity = address.City;
-            CustomerCompanyEmail = customer.CompanyEmail;
-            CustomerCompanyName = customer.CompanyName;
+            CustomerCompanyEmail = customer.CustomerEmail;
+            CustomerCompanyName = customer.CustomerName;
             CustomerCompanyPhonenumber = company.PhoneNumber;
             CustomerCountryName = address.Country.Name;
             CustomerHouseNumber = address.HouseNumber;

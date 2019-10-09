@@ -15,6 +15,7 @@ using UltimateInvocing.Models;
 
 namespace UltimateInvocing.Country
 {
+    [AbpAuthorize]
     [AbpAuthorize(PermissionNames.Pages_General_Settings)]
     public class CountryAppService : UltimateInvocingAppServiceBase, ICountryAppService
     {

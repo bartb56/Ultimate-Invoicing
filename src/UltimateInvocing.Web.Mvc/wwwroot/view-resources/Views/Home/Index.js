@@ -21,7 +21,7 @@ function initRealTimeChart() {
     //Real time ==========================================================================================
     var data = [];
     var labels = [];
-    abp.services.app.order.getLastWeekOrderCount().done(function (content) {
+    abp.services.app.dashboard.getOrderGraph().done(function (content) {
         content = JSON.parse(content);
         console.log(content)
         for (var i = 0; i < content.length; i++) {
@@ -75,7 +75,7 @@ function initSparkline() {
 }
 
 function initDonutChart() {
-    var bestSellers = abp.services.app.order.getWeeklyBestSellers().done(function (content) {
+    var bestSellers = abp.services.app.dashboard.getBestSellers().done(function (content) {
         console.log(JSON.parse(content))
         Morris.Donut({
             element: 'donut_chart',
@@ -86,23 +86,4 @@ function initDonutChart() {
             }
         });
     });
-}
-
-var data = [], totalPoints = 80;
-function getRandomData() {
-    if (data.length > 0) data = data.slice(1);
-
-    while (data.length < totalPoints) {
-        var prev = data.length > 0 ? data[data.length - 1] : 50, y = prev + Math.random() * 10 - 5;
-        if (y < 0) { y = 0; } else if (y > 100) { y = 100; }
-
-        data.push(y);
-    }
-
-    var res = [];
-    for (var i = 0; i < data.length; ++i) {
-        res.push([i, data[i]]);
-    }
-
-    return res;
 }

@@ -268,5 +268,11 @@
     "inputFiles": [
       "wwwroot/view-resources/Views/Order/test.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/EmailTemplates/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/EmailTemplates/Index.js"
+    ]
   }
 ]

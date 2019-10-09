@@ -19,6 +19,7 @@ namespace UltimateInvocing.EntityFrameworkCore.Seed.Host
                 new Models.Country(){ IsoCode = "BE", IsoCode3 = "BEL", Name = "Belgium", DisplayOrder = 2, Id = new Guid("00000000-0000-0000-0000-000000000002")},
                 new Models.Country(){ IsoCode = "FR", IsoCode3 = "FRA", Name = "France", DisplayOrder = 3, Id = new Guid("00000000-0000-0000-0000-000000000003")},
                 new Models.Country(){ IsoCode = "ES", IsoCode3 = "ESP", Name = "Spain", DisplayOrder = 4, Id = new Guid("00000000-0000-0000-0000-000000000004")},
+                new Models.Country(){ IsoCode = "IT", IsoCode3 = "ITA", Name = "Italy", DisplayOrder = 4, Id = new Guid("00000000-0000-0000-0000-000000000005")},
             };
         }
 

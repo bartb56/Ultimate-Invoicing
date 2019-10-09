@@ -17,6 +17,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace UltimateInvocing.Roles
 {
+    [AbpAuthorize]
     [AbpAuthorize(PermissionNames.Pages_Roles)]
     public class RoleAppService : AsyncCrudAppService<Role, RoleDto, int, PagedRoleResultRequestDto, CreateRoleDto, RoleDto>, IRoleAppService
     {

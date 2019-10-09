@@ -20,5 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\Customers\CustomerAddresses\" />
+    <Folder Include="Services\Emails\Email\" />
+    <Folder Include="Services\Settings\" />
   </ItemGroup>
 </Project>

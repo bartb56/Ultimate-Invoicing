@@ -12,9 +12,10 @@ namespace UltimateInvocing.Web.Models.Customer
         public EditCustomerViewModel(CustomerDto dto)
         {
             Id = dto.Id;
-            CompanyName = dto.CompanyName;
-            CompanyEmail = dto.CompanyEmail;
-            CompanyPhonenumber = dto.CompanyPhonenumber;
+            CompanyName = dto.CustomerName;
+            CompanyEmail = dto.CustomerEmail;
+            CompanyPhonenumber = dto.CustomerMainPhonenumber;
+            CustomerTaxNumber = dto.CustomerTaxNumber;
             Number = dto.Number;
         }
         public Guid Id { get; set; }
@@ -36,5 +37,9 @@ namespace UltimateInvocing.Web.Models.Customer
         [MinLength(2)]
         [MaxLength(128)]
         public string CompanyPhonenumber { get; set; }
+
+        [Required()]
+        [MaxLength(128)]
+        public string CustomerTaxNumber { get; set; }
     }
 }

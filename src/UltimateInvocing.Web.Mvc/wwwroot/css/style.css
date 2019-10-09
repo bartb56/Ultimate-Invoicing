@@ -8089,7 +8089,8 @@ body.login-page {
 
 @media only screen and (min-width: 768px) {
     .table-responsive {
-        max-height: 80vh;
+        max-height: 78.3vh; /* Fall back for old browsers */
+        max-height: calc(100vh - 210px);
     }
 }
 
@@ -8098,4 +8099,181 @@ body.login-page {
 }
 .error-message {
     color: #D8000C;
+}
+
+
+/* width */
+.table-responsive::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+
+/* Handle */
+.table-responsive::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: #333;
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+.table-responsive::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.table-responsive::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+body.theme-black{
+    background-color: #121212;
+}
+
+.theme-black .navbar{
+    background-color: #212121 !important;
+}
+.theme-black .sidebar {
+    background-color: #212121;
+}
+.theme-black .sidebar .menu .list a span{
+    color: #fff;
+    opacity: 0.7;
+}
+.theme-black .sidebar .menu .list li.active > :first-child i, 
+.theme-black .sidebar .menu .list li.active > :first-child span{
+    color: #fff !important;
+}
+
+.theme-black .sidebar .legal{
+    background-color: #212121 !important;
+}
+body.theme-black .sidebar .legal .copyright a{
+    color: #fff !important;
+}
+body.theme-black{
+    color: #fff;
+}
+
+.theme-black .card{
+    background-color: #212121;
+    color: #fff !important;
+}
+
+.theme-black .table thead tr th {
+    color: #fff;
+}
+
+.theme-black .table tbody tr td, .table tbody tr th{
+    color: #fff;
+    opacity: 0.7;
+}
+
+.theme-black .table > thead > tr > th, 
+.theme-black .table > tbody > tr > th, 
+.theme-black .table > tfoot > tr > th, 
+.theme-black .table > thead > tr > td, 
+.theme-black .table > tbody > tr > td, 
+.theme-black .table > tfoot > tr > td{
+    border-top: 1px solid #121212;
+}
+
+.theme-black .table thead tr th,
+.theme-black .table tbody tr td, .table tbody tr th {
+    border-bottom: 1px solid #121212;
+}
+
+.theme-black .card .header h2 {
+    color: #fff;
+}
+.theme-black .btn-primary,
+.theme-black .btn-primary:hover,
+.theme-black .btn-primary:active,
+.theme-black .btn-primary:focus {
+    background-color: #FF3F80  !important;
+}
+.theme-black a {
+    color: #FF3F80;
+}
+.theme-black .sidebar .user-info{
+    border-bottom: 0;
+}
+.theme-black .sidebar .legal{
+    border-top: 1px solid #121212;
+}
+.theme-black .sidebar .user-info{
+    background: #303030 !important;
+}
+.theme-black .modal-content {
+    background-color: #303030;
+}
+.theme-black .form-group .form-line .form-label{
+    color: #fff;
+    opacity: 0.7;
+}
+.theme-black .dropdown-menu {
+    background-color: #303030;
+}
+
+.theme-black .form-control {
+    background-color: #303030;
+    color: #fff;
+}
+.theme-black .dropdown-menu > li > a{
+    color: #fff;
+    opacity: 0.7;
+}
+
+.theme-black .dropdown-menu > li > a:hover{
+    opacity: 1;
+    color: #fff;
+}
+
+.theme-black .btn-default {
+    background-color: #303030;
+}
+.theme-black .bootstrap-select .dropdown-menu li.selected a{
+    color: #fff !important;
+    background-color: #212121 !important;
+}
+
+.theme-black .dropdown-menu > li > a:hover{
+    background-color: #212121;
+}
+.theme-black .btn-default{
+    color: #fff;
+}
+.theme-black .btn-default,
+.theme-black .btn-default:hover,
+.theme-black .btn-default:active,
+.theme-black .btn-default:focus{
+    background-color: #303030 !important;
+}
+.theme-black .bootstrap-select > .dropdown-toggle.bs-placeholder,
+.theme-black .bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.theme-black .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.theme-black .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+    color: #fff;
+    opacity: 0.5;
+}
+.theme-black .card .header{
+    border-bottom: 0;
+}
+body.theme-black .form-group .form-line::after {
+    border-color: #FF3F80 !important;
+}
+.theme-black [type="checkbox"].filled-in:checked + label::after {
+    border-color: #FF3F80 !important;
+    background-color: #FF3F80;
+}
+.theme-black .dropdown{
+    opacity: 1 !important;
+}
+.theme-black .page-loader-wrapper{
+    background-color: #121212;
+}
+.theme-black .spinner-layer.pl-red{
+    border-color: #FF3F80;
 }

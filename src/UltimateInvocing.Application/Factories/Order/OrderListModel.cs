@@ -14,6 +14,10 @@ namespace UltimateInvocing.Factories.Order
         public List<SelectListItem> PaymentTypes { get; set; }
         public List<SelectListItem> Customers { get; set; }
         public List<SelectListItem> Addresses { get; set; }
+
+        public List<SelectListItem> EmailTemplates { get; set; }
+
+
         public Guid OrderId { get; set; }
 
         public int NewOrderNumber { get; set; }

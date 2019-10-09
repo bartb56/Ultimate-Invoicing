@@ -1,14 +1,18 @@
-﻿using Abp.Domain.Repositories;
+﻿using Abp.Authorization;
+using Abp.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UltimateInvocing.Authorization;
 using UltimateInvocing.Customers.Address.AddressDto;
 
 namespace UltimateInvocing.Customers.Address
 {
+    [AbpAuthorize]
+    [AbpAuthorize(PermissionNames.Pages_Customers)]
     public class AddressAppService : UltimateInvocingAppServiceBase, IAddressAppService
     {
         private readonly IRepository<Models.CustomerAddress, Guid> _repository;

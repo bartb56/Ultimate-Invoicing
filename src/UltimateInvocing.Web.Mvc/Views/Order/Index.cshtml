@@ -13,7 +13,11 @@
             <div class="header">
                 <h2>
                     @L("Orders")
+                    <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float " data-toggle="modal" data-target="#OrderCreateModal">
+                        <i class="material-icons">add</i>
+                    </button>
                 </h2>
+                
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" order="button" aria-haspopup="true" aria-expanded="false">
@@ -75,6 +79,7 @@
                                 <ul class="dropdown-menu pull-right">
                                     <li><a href="~/Order/@order.Id" class="waves-effect waves-block" data-customer-id="@order.Id"><i class="material-icons">inbox</i>@L("Order.OrderItems")</a></li>
                                     <li><a href="#" class="waves-effect waves-block edit-order" data-order-id="@order.Id" data-toggle="modal" data-target="#OrderEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block send-mail" data-order-id="@order.Id" data-toggle="modal" data-target="#OrderSendModal"><i class="material-icons">email</i>@L("EmailCustomer")</a></li>
                                     <li><a href="#" class="waves-effect waves-block update-customer" data-order-id="@order.Id"><i class="material-icons">people</i>@L("UpdateCustomerDetails")</a></li>
                                     <li><a href="#" class="waves-effect waves-block update-company" data-order-id="@order.Id"><i class="material-icons">business</i>@L("UpdateCompanyDetails")</a></li>
                                     <li><a href="#" class="waves-effect waves-block delete-order" data-order-id="@order.Id" data-order-name="@order.Id"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
@@ -84,10 +89,8 @@
                         }
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#OrderCreateModal">
-                    <i class="material-icons">add</i>
-                </button>
             </div>
+
         </div>
     </div>
 </div>
@@ -95,6 +98,38 @@
     <div class="modal-dialog" order="document">
         <div class="modal-content">
 
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OrderSendModal" tabindex="-1" order="dialog" aria-labelledby="OrderSendModalLabel" data-backdrop="static">
+    <div class="modal-dialog" order="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("SendOrderMail")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-footer">
+                    <form name="orderSendMail" order="form" novalidate class="form-validation">
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <select id="EmailTemplateId" name="emailTemplateId" required asp-items="Model.EmailTemplates" class="validate form-control"></select>
+                                        <label for="EmailTemplateId" class="form-label">@L("EmailTemplates")</label>
+                                        <input type="hidden" name="orderId" id="OrderId" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("SendMail")</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

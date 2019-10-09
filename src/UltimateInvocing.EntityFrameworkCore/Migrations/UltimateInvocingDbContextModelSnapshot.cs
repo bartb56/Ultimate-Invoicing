@@ -1159,16 +1159,19 @@ namespace UltimateInvocing.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CompanyEmail")
+                    b.Property<string>("CustomerEmail")
                         .IsRequired()
                         .HasMaxLength(128);
 
-                    b.Property<string>("CompanyName")
+                    b.Property<string>("CustomerMainPhonenumber")
                         .IsRequired()
                         .HasMaxLength(128);
 
-                    b.Property<string>("CompanyPhonenumber")
+                    b.Property<string>("CustomerName")
                         .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("CustomerTaxNumber")
                         .HasMaxLength(128);
 
                     b.Property<int>("Number");
@@ -1194,6 +1197,60 @@ namespace UltimateInvocing.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("CustomerAddresses");
+                });
+
+            modelBuilder.Entity("UltimateInvocing.Models.EmailSettings", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("DefaultFromAddress");
+
+                    b.Property<string>("DefaultFromDisplayName");
+
+                    b.Property<string>("Domain");
+
+                    b.Property<bool>("EnableSsl");
+
+                    b.Property<string>("Host");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Port");
+
+                    b.Property<bool>("UseDefaultCredentials");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmailSettings");
+                });
+
+            modelBuilder.Entity("UltimateInvocing.Models.EmailTemplate", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("CompanyId");
+
+                    b.Property<int>("DisplayOrder");
+
+                    b.Property<string>("HtmlContent")
+                        .IsRequired();
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("TemplateType");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("EmailTemplates");
                 });
 
             modelBuilder.Entity("UltimateInvocing.Models.Order", b =>
@@ -1632,6 +1689,14 @@ namespace UltimateInvocing.Migrations
                     b.HasOne("UltimateInvocing.Models.Customer", "Customer")
                         .WithMany("CustomerAddresses")
                         .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("UltimateInvocing.Models.EmailTemplate", b =>
+                {
+                    b.HasOne("UltimateInvocing.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

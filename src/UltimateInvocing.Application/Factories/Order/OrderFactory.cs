@@ -11,6 +11,7 @@ using UltimateInvocing.Customers.Address.AddressDto;
 using UltimateInvocing.Order;
 using UltimateInvocing.Order.Dto;
 using UltimateInvocing.PaymentType;
+using UltimateInvocing.Services.Emails.EmailTemplates;
 
 namespace UltimateInvocing.Factories.Order
 {
@@ -20,19 +21,22 @@ namespace UltimateInvocing.Factories.Order
         private readonly IAddressAppService _addressAppService;
         private readonly ICustomerAppService _customerAppService;
         private readonly ICompanyAppService _companyAppService;
-        private readonly IPaymentTypeAppService _paymentTypeAppService; 
+        private readonly IPaymentTypeAppService _paymentTypeAppService;
+        private readonly IEmailTemplateAppService _emailTemplateAppService;
 
         public OrderFactory(IOrderAppService appService,
             IAddressAppService addressAppService,
             ICustomerAppService customerAppService,
             ICompanyAppService companyAppService,
-            IPaymentTypeAppService paymentTypeAppService)
+            IPaymentTypeAppService paymentTypeAppService,
+            IEmailTemplateAppService emailTemplateAppService)
         {
             _appService = appService;
             _addressAppService = addressAppService;
             _customerAppService = customerAppService;
             _companyAppService = companyAppService;
             _paymentTypeAppService = paymentTypeAppService;
+            _emailTemplateAppService = emailTemplateAppService;
         }
 
         public async Task<OrderListModel> PrepareEditModel(Guid orderId)
@@ -42,7 +46,7 @@ namespace UltimateInvocing.Factories.Order
             model.OrderId = orderId;
             model.NewOrderNumber = order.Number;
             var customers = await _customerAppService.GetAll();
-            model.Customers = customers.Select(x => new SelectListItem { Text = x.CompanyName, Value = x.Id.ToString() }).ToList();
+            model.Customers = customers.Select(x => new SelectListItem { Text = x.CustomerName, Value = x.Id.ToString() }).ToList();
             model.Customers.FirstOrDefault(x => x.Value == order.CustomerId.ToString()).Selected = true;
 
             var companies = await _companyAppService.GetAll();
@@ -56,13 +60,18 @@ namespace UltimateInvocing.Factories.Order
 
             var paymentTypes = await _paymentTypeAppService.GetAll();
             model.PaymentTypes = paymentTypes.Select(x => new SelectListItem { Text = x.TypeName, Value = x.Id.ToString() }).ToList();
-            model.PaymentTypes.FirstOrDefault(x => x.Value == order.PaymentTypeId.ToString()).Selected = true;
+            model.PaymentTypes.FirstOrDefault(x => x.Value == order.PaymentTypeId.ToString()).Selected = true;     
+           
             return model;
         }
 
         public async Task<OrderListModel> PrepareListModel()
         {
             var model = await _appService.GetAll();
+
+            var emailTemplates = await _emailTemplateAppService.GetAll();
+            model.EmailTemplates = emailTemplates.Where(x => x.IsActive == true).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+
             return model;
         }
 

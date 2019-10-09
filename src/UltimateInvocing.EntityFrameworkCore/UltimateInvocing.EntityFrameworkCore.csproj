@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
@@ -27,6 +27,12 @@
     <Compile Include="Migrations\20190812193608_AddTaxGroupToProductTable2.designer.cs" />
     <Compile Include="Migrations\20190812195703_removeTaxFromProduct.cs" />
     <Compile Include="Migrations\20190812195703_removeTaxFromProduct.designer.cs" />
+    <Compile Include="Migrations\20190910195228_EmailTable.cs" />
+    <Compile Include="Migrations\20190910195228_EmailTable.designer.cs" />
+    <Compile Include="Migrations\20190911215239_EmailTypes.cs" />
+    <Compile Include="Migrations\20190911215239_EmailTypes.designer.cs" />
+    <Compile Include="Migrations\20190925163213_CustomersEmailTypeReFactor.cs" />
+    <Compile Include="Migrations\20190925163213_CustomersEmailTypeReFactor.designer.cs" />
     <Compile Include="Migrations\UltimateInvocingDbContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,7 @@ using UltimateInvocing.Product.Dto;
 
 namespace UltimateInvocing.Product
 {
+    [AbpAuthorize]
     [AbpAuthorize(PermissionNames.Pages_Products)]
     public class ProductAppService : UltimateInvocingAppServiceBase, IProductAppService
     {

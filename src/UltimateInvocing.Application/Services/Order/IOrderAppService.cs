@@ -19,8 +19,5 @@ namespace UltimateInvocing.Order
         Task Update(OrderCreateModel orderCreateModel);
         Task UpdateCustomerDetails(Guid orderId);
         Task UpdateCompanyDetails(Guid orderId);
-
-        Task<string> GetWeeklyBestSellers();
-        Task<string> GetLastWeekOrderCount();
     }
 }

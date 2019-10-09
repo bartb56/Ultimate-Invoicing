@@ -21,5 +21,6 @@
         public const string Pages_Orders = "Pages.Orders";
 
         public const string Pages_TaxGroups = "Pages.TaxGroups";
+        public const string Pages_Emails = "Pages.Emails";
     }
 }

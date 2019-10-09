@@ -11,6 +11,7 @@ using UltimateInvocing.Province.Dto;
 
 namespace UltimateInvocing.Province
 {
+    [AbpAuthorize]
     [AbpAuthorize(PermissionNames.Pages_General_Settings)]
     public class ProvinceAppService : UltimateInvocingAppServiceBase, IProvinceAppService
     {

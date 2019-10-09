@@ -33,5 +33,10 @@ namespace UltimateInvocing.OrderItem.Dto
 
         public OrderDto Order { get; set; }
         public Guid OrderId { get; set; }
+
+        public virtual void Add()
+        {
+
+        }
     }
 }
