@@ -15,6 +15,7 @@
                     <div class="form-line">
                         <input id="Name" type="text" name="Name" value="@Model.Name" required maxlength="128" minlength="2" class="validate form-control">
                         <label for="Name" class="form-label">@L("Country.Name")</label>
+                        @Html.LabelFor(x => x.Name);
                     </div>
                 </div>
             </div>
